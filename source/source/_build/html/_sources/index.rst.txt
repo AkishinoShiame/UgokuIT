@@ -34,21 +34,22 @@
 
   * パソコン環境
 
-.. 内容
-.. ====
-
-.. :doc:`mobnet`
-
-.. :doc:`net`
-
-.. :doc:`question`
-
 
 .. toctree::
    :caption: コンテンツ
    :hidden:
 
    index
+
+
+
+内容
+----
+
+* 経験によって追加します。
+
+.. toctree::
+
    mobnet
    net
    question
