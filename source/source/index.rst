@@ -3,8 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+========
 動く！IT
-====================================
+========
 
 ここはOSSやITとしての仕事から勉強したのノート整理です。
 
@@ -13,7 +14,7 @@
 
 
 歴史
-====================================
+====
 
 1. モバイルネットワーク
 
@@ -35,12 +36,21 @@
 
   * パソコン環境
 
+内容
+====
+
+:doc:`mobnet`
+
+:doc:`net`
+
+:doc:`question`
+
 
 .. toctree::
    :maxdepth: 2
-   :caption: 内容
+   :hidden:
 
-   モバイルネットワーク <mobnet.rst>
-   IT関連サービス <net.rst>
-   問題集 <question.rst>
+   mobnet
+   net
+   question
 

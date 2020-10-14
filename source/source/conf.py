@@ -113,6 +113,7 @@ html_sidebars = {
     ]
 }
 
+html_search_language = 'ja'
 
 # -- Options for HTMLHelp output ------------------------------------------
 
