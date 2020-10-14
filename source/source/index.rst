@@ -3,18 +3,22 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-========
-動く！IT
+動く！IT！
 ========
 
 ここはOSSやITとしての仕事から勉強したのノート整理です。
 
 整理者：秋篠詩雨。
 
-
+.. toctree::
+   :maxdepth: 2
+   :caption: 動く！IT！
+   
+   index
+   
 
 歴史
------
+----
 
 1. モバイルネットワーク
 
@@ -47,7 +51,6 @@
 
 
 .. toctree::
-   :maxdepth: 2
    :caption: コンテンツ
    :hidden:
 
