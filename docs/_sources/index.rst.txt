@@ -37,20 +37,9 @@
 
 .. toctree::
    :caption: コンテンツ
-   :hidden:
-
-   index
-
-
-
-内容
-----
-
-* 経験によって追加します。
-
-.. toctree::
 
    mobnet
    net
    question
 
+* 経験によって追加します。
