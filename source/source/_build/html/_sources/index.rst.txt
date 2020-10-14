@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 動く！IT！
-========
+===========
 
 ここはOSSやITとしての仕事から勉強したのノート整理です。
 
@@ -13,6 +13,7 @@
 .. toctree::
    :maxdepth: 2
    :caption: 動く！IT！
+   :hidden:
    
    index
    
