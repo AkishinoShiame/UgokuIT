@@ -10,13 +10,6 @@
 
 整理者：秋篠詩雨。
 
-.. toctree::
-   :maxdepth: 2
-   :caption: 動く！IT！
-   :hidden:
-   
-   index
-   
 
 歴史
 ----
@@ -55,6 +48,7 @@
    :caption: コンテンツ
    :hidden:
 
+   index
    mobnet
    net
    question
