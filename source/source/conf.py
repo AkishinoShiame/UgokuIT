@@ -171,5 +171,5 @@ texinfo_documents = [
      'Miscellaneous'),
 ]
 
-
-
+# -- to not show source --
+html_show_sourcelink = False
