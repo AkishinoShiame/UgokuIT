@@ -48,6 +48,7 @@
 
 .. toctree::
    :maxdepth: 2
+   :caption: コンテンツ
    :hidden:
 
    mobnet
