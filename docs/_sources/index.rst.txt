@@ -34,14 +34,14 @@
 
   * パソコン環境
 
-内容
-====
+.. 内容
+.. ====
 
-:doc:`mobnet`
+.. :doc:`mobnet`
 
-:doc:`net`
+.. :doc:`net`
 
-:doc:`question`
+.. :doc:`question`
 
 
 .. toctree::
