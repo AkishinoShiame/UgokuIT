@@ -1,3 +1,5 @@
+.. _index:
+
 .. 動く！IT documentation master file, created by
    sphinx-quickstart on Wed Oct 14 13:44:52 2020.
    You can adapt this file completely to your liking, but it should at least
