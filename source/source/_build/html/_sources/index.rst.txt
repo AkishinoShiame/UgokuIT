@@ -1,9 +1,12 @@
-.. 動く！IT documentation master file, created by
+.. _index:
+
+.. 動く！IT！ documentation master file, created by
    sphinx-quickstart on Wed Oct 14 13:44:52 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-動く！IT！
+===========
+動く！IT！　
 ===========
 
 ここはOSSやITとしての仕事から勉強したのノート整理です。
