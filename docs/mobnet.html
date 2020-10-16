@@ -98,10 +98,28 @@
               <p class="caption"><span class="caption-text">コンテンツ</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">1. モバイルネットワーク</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#g">3Gネットワーク</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">4Gネットワーク</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">5Gネットワーク</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">クラウド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#g">3Gネットワーク</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">第3世代移動通信システム</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">構造</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">4Gネットワーク</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">第4世代移動通信システム</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">構造</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">5Gネットワーク</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">第5世代移動通信システム</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">基地局の詳細</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">構造</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">クラウド</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#openstack">OpenStack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#docker-container">Docker Container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">マイクロサービス</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="net.html">2. IT関連サービス</a></li>
@@ -174,22 +192,68 @@
 <span id="id1"></span><h1>1. モバイルネットワーク<a class="headerlink" href="#mobnet" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="g">
 <h2>3Gネットワーク<a class="headerlink" href="#g" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>第3世代移動通信システム<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>3Gネットワークは主にcurcit netがメインで、電話通信を使うことが多いです。</p>
 <p>モバイルネットワークもありますが、品質と便利性はまだです。</p>
-<p>ネットワークのメイン技術からは、通称 <strong>RNC</strong> です</p>
+<p>ネットワークのメイン技術からは、通称 <strong>RNC</strong> です。</p>
+<p>基地局は「NodeB」って呼ばれます。</p>
 </div>
-<div class="section" id="id2">
-<h2>4Gネットワーク<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>構造<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<img alt="png/3G.png" src="png/3G.png" />
+</div>
+</div>
+<div class="section" id="id4">
+<h2>4Gネットワーク<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>第4世代移動通信システム<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>4Gネットワークは3Gの技術を上に、モバイルネットワークをもっとアップグレードでの技術を使います。</p>
 <p>あとは最も3GでのRNC構造を効率的に改良で、 <strong>LTE</strong> の技術を発明する。</p>
 <p>他には、音声をcercitじゃなくて、ネットで音声電話の技術を発展する。
 それがVoLTE、もはやVoWiFiです。</p>
+<p>基地局は「eNodeB」って呼ばれます。</p>
 </div>
-<div class="section" id="id3">
-<h2>5Gネットワーク<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>構造<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<img alt="png/4G.png" src="png/4G.png" />
 </div>
-<div class="section" id="id4">
-<h2>クラウド<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id7">
+<h2>5Gネットワーク<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>第5世代移動通信システム<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>5Gネットワークは全てを違うの次元で始めます、スマホだけではなく、IoTデバイスの接続も考えます。</p>
+<p>主にはクラウドサービスに応用します。OpenStackとしてクラウドプラットフォームを立てます。</p>
+<p>構造はEdge CloudとCore Cloudで立ち上がります。すべての機能はクラウドにdocker containerとして働いてます。</p>
+<p>基地局は「gNodeB」って呼ばれます。</p>
+</div>
+<div class="section" id="id9">
+<h3>基地局の詳細<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>周波数の理想な発展は三つの種類があります。</p>
+<ul class="simple">
+<li>長いのは範囲の大きさを想定で使えます。</li>
+<li>中型のは今までと似ているなネットワーク通信使いをやります。</li>
+<li>短いのはデータのダウロード／アップロードスビートの速さとして狙います。</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h3>構造<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<img alt="png/5G.png" src="png/5G.png" />
+</div>
+</div>
+<div class="section" id="id11">
+<h2>クラウド<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>OpenStackや、Docker Containerや、マイクロサービスというクラウド原生なサービスについてを成立します。</p>
+<div class="section" id="openstack">
+<h3>OpenStack<a class="headerlink" href="#openstack" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="docker-container">
+<h3>Docker Container<a class="headerlink" href="#docker-container" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id12">
+<h3>マイクロサービス<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 </div>
 
