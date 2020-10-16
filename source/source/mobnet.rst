@@ -79,6 +79,7 @@
 .. image:: png/5G.png
 
 
+=================
 クラウド
 =================
 
@@ -86,13 +87,36 @@ OpenStackや、Docker Containerや、マイクロサービスというクラウ�
 
 
 OpenStack
--------------
+==============
+
+OpenStackはOpen SourceのクラウドOSです。こちらで `公式サイト`_ でアクセスできます。
+
+メインの構造はController NodeとCompute Nodeです。　全てを計算、ストレージと管理をすべで繋がります。
+
+OpenStackの基礎はLinuxシステムが必要です。その上から、OpenStackツールと、様なプロジェクトをインストールして、立ち上げます。
+
+最低限は内部API用のKeynote、Web制御のHorizon、ネットワークのNeutron、計算（VM）用のNovaとストレージのSwiftが必要です。
+
+
+構造
+--------------
+
+基本コンセプトは公式からの図で表示します。
+
+.. image:: https://www.openstack.org/assets/openstack-map/openstack-map-v20190601.svg
+
+
+仕込み・インストール
+--------------------------
+
 
 
 Docker Container
---------------------
+=================
 
 
 マイクロサービス
---------------------
+=================
 
+
+.. _公式サイト: https://www.openstack.org/

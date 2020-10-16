@@ -105,12 +105,16 @@
 <li class="toctree-l3"><a class="reference internal" href="#id10">構造</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id11">クラウド</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#openstack">OpenStack</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#docker-container">Docker Container</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id12">マイクロサービス</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="#id11">クラウド</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#openstack">OpenStack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">構造</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">仕込み・インストール</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#docker-container">Docker Container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">マイクロサービス</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="net.html">2. IT関連サービス</a></li>
@@ -233,18 +237,29 @@
 <img alt="png/5G.png" src="png/5G.png" />
 </div>
 </div>
+</div>
 <div class="section" id="id11">
-<h2>クラウド<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<h1>クラウド<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h1>
 <p>OpenStackや、Docker Containerや、マイクロサービスというクラウド原生なサービスについてを成立します。</p>
 <div class="section" id="openstack">
-<h3>OpenStack<a class="headerlink" href="#openstack" title="Permalink to this headline">¶</a></h3>
+<h2>OpenStack<a class="headerlink" href="#openstack" title="Permalink to this headline">¶</a></h2>
+<p>OpenStackはOpen SourceのクラウドOSです。こちらで <a class="reference external" href="https://www.openstack.org/">公式サイト</a> でアクセスできます。</p>
+<p>メインの構造はController NodeとCompute Nodeです。　全てを計算、ストレージと管理をすべで繋がります。</p>
+<p>OpenStackの基礎はLinuxシステムが必要です。その上から、OpenStackツールと、様なプロジェクトをインストールして、立ち上げます。</p>
+<p>最低限は内部API用のKeynote、Web制御のHorizon、ネットワークのNeutron、計算（VM）用のNovaとストレージのSwiftが必要です。</p>
+<div class="section" id="id12">
+<h3>構造<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>基本コンセプトは公式からの図で表示します。</p>
+<img alt="https://www.openstack.org/assets/openstack-map/openstack-map-v20190601.svg" src="https://www.openstack.org/assets/openstack-map/openstack-map-v20190601.svg" /></div>
+<div class="section" id="id13">
+<h3>仕込み・インストール<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 <div class="section" id="docker-container">
-<h3>Docker Container<a class="headerlink" href="#docker-container" title="Permalink to this headline">¶</a></h3>
+<h2>Docker Container<a class="headerlink" href="#docker-container" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="id12">
-<h3>マイクロサービス<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
-</div>
+<div class="section" id="id14">
+<h2>マイクロサービス<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
