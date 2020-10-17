@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="jp" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="jp" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="jp" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,29 +12,27 @@
   
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-
-  
   
   
   
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="2. IT関連サービス" href="net.html" />
@@ -51,7 +50,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> 動く！IT！
+            <a href="index.html" class="icon icon-home"> 動く！IT！
           
 
           
@@ -78,7 +77,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -92,29 +90,40 @@
 <li class="toctree-l2"><a class="reference internal" href="#g">3Gネットワーク</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">第3世代移動通信システム</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">構造</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oss">OSS</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id4">4Gネットワーク</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id5">第4世代移動通信システム</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id6">構造</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">OSS</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">5Gネットワーク</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id8">第5世代移動通信システム</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">基地局の詳細</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">構造</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">5Gネットワーク</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">第5世代移動通信システム</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">基地局の詳細</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">構造</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">応用</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#id11">クラウド</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="#id13">* クラウド</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#openstack">OpenStack</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id12">構造</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id13">仕込み・インストール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">構造</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">仕込み・インストール</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#docker-container">Docker Container</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id14">マイクロサービス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docker-container">Docker Container</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#docker">Dockerのインストール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Dockerを使う</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">Dockerイメージを作る</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dockerfile">*Dockerfile</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id30">マイクロサービス</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="net.html">2. IT関連サービス</a></li>
@@ -125,7 +134,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -164,7 +172,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
       <li>1. モバイルネットワーク</li>
     
@@ -198,6 +206,13 @@
 <h3>構造<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <img alt="png/3G.png" src="png/3G.png" />
 </div>
+<div class="section" id="oss">
+<h3>OSS<a class="headerlink" href="#oss" title="Permalink to this headline">¶</a></h3>
+<p>OSSとしての部分は全てのハードウェアをNetAct(Nokia Solution)に接続し、アラームを監視することです。</p>
+<p>それから、色んなプラットフォームからやＮＥ（繋がった設備）からの問題を発見、もはや解決します。</p>
+<p>技術によって、RANの直接的な接続が無理なので、OMSという設備が必要で、管理と監視が可能になります。</p>
+<p>RANはWBTSやBTSと呼ばれます。</p>
+</div>
 </div>
 <div class="section" id="id4">
 <h2>4Gネットワーク<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
@@ -212,34 +227,48 @@
 <div class="section" id="id6">
 <h3>構造<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <img alt="png/4G.png" src="png/4G.png" />
-</div>
+<ul class="simple">
+<li>PS.ピュア環境はサービスを提供としては不可能です。　この構造の中に実際な技術は「GERAN=2G,UTRAN=3G,EUTRAN=4G」です。</li>
+</ul>
 </div>
 <div class="section" id="id7">
-<h2>5Gネットワーク<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h3>OSS<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>OSSとしての部分は全てのハードウェアをNetAct(Nokia Solution)に接続し、アラームを監視することです。</p>
+<p>それから、色んなプラットフォームからやＮＥ（繋がった設備）からの問題を発見、もはや解決します。</p>
+<p>技術によって、RANの直接的な接続が無理なので、iOMSという設備が必要で、管理と監視が可能になります。</p>
+<p>RANはMRBTSと呼ばれます。</p>
+</div>
+</div>
 <div class="section" id="id8">
-<h3>第5世代移動通信システム<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h2>5Gネットワーク<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3>第5世代移動通信システム<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>5Gネットワークは全てを違うの次元で始めます、スマホだけではなく、IoTデバイスの接続も考えます。</p>
 <p>主にはクラウドサービスに応用します。OpenStackとしてクラウドプラットフォームを立てます。</p>
 <p>構造はEdge CloudとCore Cloudで立ち上がります。すべての機能はクラウドにdocker containerとして働いてます。</p>
 <p>基地局は「gNodeB」って呼ばれます。</p>
 </div>
-<div class="section" id="id9">
-<h3>基地局の詳細<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>基地局の詳細<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>周波数の理想な発展は三つの種類があります。</p>
 <ul class="simple">
-<li><p>長いのは範囲の大きさを想定で使えます。</p></li>
-<li><p>中型のは今までと似ているなネットワーク通信使いをやります。</p></li>
-<li><p>短いのはデータのダウロード／アップロードスビートの速さとして狙います。</p></li>
+<li>長いのは範囲の大きさを想定で使えます。</li>
+<li>中型のは今までと似ているなネットワーク通信使いをやります。</li>
+<li>短いのはデータのダウロード／アップロードスビートの速さとして狙います。</li>
 </ul>
 </div>
-<div class="section" id="id10">
-<h3>構造<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h3>構造<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <img alt="png/5G.png" src="png/5G.png" />
 </div>
+<div class="section" id="id12">
+<h3>応用<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<img alt="https://i.imgur.com/e1dg7MS.png" src="https://i.imgur.com/e1dg7MS.png" />
 </div>
 </div>
-<div class="section" id="id11">
-<h1>クラウド<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="id13">
+<h1>* クラウド<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h1>
 <p>OpenStackや、Docker Containerや、マイクロサービスというクラウド原生なサービスについてを成立します。</p>
 <div class="section" id="openstack">
 <h2>OpenStack<a class="headerlink" href="#openstack" title="Permalink to this headline">¶</a></h2>
@@ -247,19 +276,99 @@
 <p>メインの構造はController NodeとCompute Nodeです。　全てを計算、ストレージと管理をすべで繋がります。</p>
 <p>OpenStackの基礎はLinuxシステムが必要です。その上から、OpenStackツールと、様なプロジェクトをインストールして、立ち上げます。</p>
 <p>最低限は内部API用のKeynote、Web制御のHorizon、ネットワークのNeutron、計算（VM）用のNovaとストレージのSwiftが必要です。</p>
-<div class="section" id="id12">
-<h3>構造<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h3>構造<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <p>基本コンセプトは公式からの図で表示します。</p>
 <img alt="https://www.openstack.org/assets/openstack-map/openstack-map-v20190601.svg" src="https://www.openstack.org/assets/openstack-map/openstack-map-v20190601.svg" /></div>
-<div class="section" id="id13">
-<h3>仕込み・インストール<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id15">
+<h3>仕込み・インストール<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>最低限なお勧めは2台のPCやVMがお勧めです。　公式サイトからのお勧めは以下のハードウェアが必要です。</p>
+<ul class="simple">
+<li>Controller Node　ｘ１台:<ul>
+<li>プロセッサー：　1個</li>
+<li>メモリー：　4 GB</li>
+<li>ストレージ（利用可能）：　5 GB</li>
+</ul>
+</li>
+<li>Compute Node　ｘ１台:<ul>
+<li>プロセッサー：　1個</li>
+<li>メモリー：　2 GB</li>
+<li>ストレージ（利用可能）：　10 GB</li>
+</ul>
+</li>
+</ul>
+<p>OSシステムの基本は、Linuxが必要です、お勧めの選ぶは以下となります。</p>
+<ul class="simple">
+<li>お試し：<ul>
+<li>Ubuntu</li>
+</ul>
+</li>
+<li>実際応用：<ul>
+<li>CentOS/RHEL</li>
+<li>Fedora</li>
+</ul>
+</li>
+</ul>
+<p><strong>手順：</strong></p>
 </div>
 </div>
 <div class="section" id="docker-container">
 <h2>Docker Container<a class="headerlink" href="#docker-container" title="Permalink to this headline">¶</a></h2>
+<p>DockerとContainerは二つ違うのソフトウェア/技術です。　でもお互いで一緒に応用すると、良いな結果が出てきます。</p>
+<p>この二つを組み合わせの目的はシステムとアップリケ―ションを軽量化、そうしたら応用の立ち上がりが早くなる。</p>
+<p>この技術を使っているクラウドは、大量デプロイを可能になった。そうして更新と替えることがとても便利になった。</p>
+<p>Containerの概念はLinux Kernalを元のシステムを使って、独立しようの事です。だからDockerはイメージとして、軽量化を可能になります。</p>
+<p>このすべての実行も、一部がHostの借りるで動作しているから、速いなデプロイを実現する。</p>
+<p>以下は、Dockerを使用も、イメージの作り方も簡単な紹介する。</p>
+<p><a href="#id16"><span class="problematic" id="id17">*</span></a>PS現在はWindowsのdocker containerも実現できます。</p>
+<div class="section" id="docker">
+<h3>Dockerのインストール<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h3>
+<p>WindowsやmacOSの環境を使っていますの方は、 <a class="reference external" href="https://www.docker.com/products/docker-desktop">docker公式サイト</a> からダウンロードとインストールがお勧めです。</p>
+<p>Linuxの環境は、もう既にオリジナルなリポジトリがありますので、プラットフォームによって、以下のコマンドからインストール可能です。</p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">docker-ce</span> <span class="pre">docker-ce-cli</span> <span class="pre">containerd.io</span></code>
+<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">install</span> <span class="pre">docker-ce</span> <span class="pre">docker-ce-cli</span> <span class="pre">containerd.io</span></code>
+<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">dnf</span> <span class="pre">install</span> <span class="pre">docker-ce</span> <span class="pre">docker-ce-cli</span> <span class="pre">containerd.io</span></code></p>
+<p>まだ、 <a class="reference external" href="https://docs.docker.com/engine/install/">ここから</a> も参考可能です。</p>
 </div>
-<div class="section" id="id14">
-<h2>マイクロサービス<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id18">
+<h3>Dockerを使う<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://hub.docker.com/search?q=&amp;type=image">Base image</a> は公式サイトから検索可能です。　<strong>★無料アカウントを作成は必要です</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">&lt;リポジトリ[:latest]&gt;</span></code>　リポジトリのイメージをローカルにダウンロードする。デフォルトのVer.は最新(latest)です、定義可能です。</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">images</span></code>　ローカルのイメージを確認する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">[OPTIONS]</span> <span class="pre">IMAGE</span> <span class="pre">[COMMAND]</span> <span class="pre">[ARG...]</span></code>　Dockerイメージを実行（実体化）する。Containerは今から立ち上がります。　<a class="reference external" href="https://docs.docker.com/engine/reference/commandline/run/">もっと説明</a> は公式サイトへ。</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span> <span class="pre">[-a]</span></code> 実行していますのContainerを表示されます。 <strong>-a</strong>　は実行していないのも出ます。</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">[OPTIONS]</span> <span class="pre">CONTAINER</span> <span class="pre">COMMAND</span> <span class="pre">[ARG...]</span></code>　docker　container内にコマンドを実行可能です。　<a class="reference external" href="https://docs.docker.com/engine/reference/commandline/exec/">詳細は</a> 公式へ。</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">attach</span> <span class="pre">&lt;container_id&gt;</span></code> 実際にContainerの中にを接続する。(sshと似ています。)</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop</span> <span class="pre">container_id</span></code>　Containerを不要（停止）する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">rm</span> <span class="pre">[OPTIONS]</span> <span class="pre">CONTAINER</span> <span class="pre">[CONTAINER...]</span></code>　Containerを削除する。</p>
+</div>
+<div class="section" id="id19">
+<h3>Dockerイメージを作る<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>ますは、Base Imageを確認するが必要です。</p>
+<p>それから、Dockerfileを作ります。</p>
+<div class="section" id="dockerfile">
+<h4><a href="#id20"><span class="problematic" id="id21">*</span></a>Dockerfile<a class="headerlink" href="#dockerfile" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FROM</span> <span class="n">navidonskis</span><span class="o">/</span><span class="n">nginx</span><span class="o">-</span><span class="n">php7</span><span class="o">.</span><span class="mi">1</span><span class="p">:</span><span class="n">latest</span>
+<span class="n">RUN</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span>
+<span class="n">RUN</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hpcslag</span><span class="o">/</span><span class="n">aws</span><span class="o">-</span><span class="n">compt</span><span class="o">-</span><span class="n">web</span><span class="o">.</span><span class="n">git</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span>
+<span class="n">RUN</span> <span class="n">cd</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="p">;</span><span class="n">git</span> <span class="n">pull</span>
+</pre></div>
+</div>
+<p>ファイルの中に、<a href="#id22"><span class="problematic" id="id23">``</span></a>FROM``は如何なBase Imageを使うのを指定する。　それから、<a href="#id24"><span class="problematic" id="id25">``</span></a>RUN``は、コマンドを追加実行する。</p>
+<p>ファイルを完成したと、同じところで次のコマンドを実行する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">-t</span> <span class="pre">&lt;your_username&gt;/&lt;repo-name&gt;</span> <span class="pre">.</span></code> <a href="#id26"><span class="problematic" id="id27">**</span></a>.**は今（Dockerfileいる）の場所です。 <a href="#id28"><span class="problematic" id="id29">**</span></a>-t　の後ろ**はdockerアカウントとプロジェクトを付けたい名前です。</p>
+<p>上のコマンドを実行したら、ローカルでイメージを作ります。　そうして、<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">image</span></code> で表示します。</p>
+<p>もし、この作ったimageを試したいなら、 <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">&lt;your_username&gt;/&lt;repo-name&gt;</span></code>　って試運転可能です。</p>
+<p>最後、もし他のCommunityの人とシェアしたいなら、次のコマンドを実行し、Docker Hubへアップロードする。</p>
+<p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">push</span> <span class="pre">&lt;your_username&gt;/&lt;repo-name&gt;</span></code></p>
+<p>成功なら、こうな感じの画面が出ます。</p>
+<img alt="https://docs.docker.com/docker-hub/images/index-terminal-2019.png" src="https://docs.docker.com/docker-hub/images/index-terminal-2019.png" />
+<p>そうして、ログインしたの <a class="reference external" href="https://hub.docker.com/?ref=login">Docker Hub サイト</a> も表示します。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id30">
+<h2>マイクロサービス<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -283,19 +392,11 @@
 
   <div role="contentinfo">
     <p>
-        
         &copy; Copyright 2020, 秋篠詩雨
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -306,6 +407,7 @@
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {
