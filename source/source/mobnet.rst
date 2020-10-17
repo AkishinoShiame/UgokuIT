@@ -103,6 +103,12 @@ RANはMRBTSと呼ばれます。
 .. image:: png/5G.png
 
 
+応用
+----------------
+
+.. image:: https://i.imgur.com/e1dg7MS.png
+
+
 =================
 * クラウド
 =================
