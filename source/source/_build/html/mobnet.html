@@ -90,29 +90,31 @@
 <li class="toctree-l2"><a class="reference internal" href="#g">3Gネットワーク</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">第3世代移動通信システム</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">構造</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oss">OSS</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id4">4Gネットワーク</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id5">第4世代移動通信システム</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id6">構造</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">OSS</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">5Gネットワーク</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id8">第5世代移動通信システム</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">基地局の詳細</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">構造</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">5Gネットワーク</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">第5世代移動通信システム</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">基地局の詳細</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">構造</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#id11">クラウド</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="#id12">* クラウド</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#openstack">OpenStack</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id12">構造</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id13">仕込み・インストール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">構造</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">仕込み・インストール</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#docker-container">Docker Container</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id14">マイクロサービス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">マイクロサービス</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="net.html">2. IT関連サービス</a></li>
@@ -195,6 +197,13 @@
 <h3>構造<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <img alt="png/3G.png" src="png/3G.png" />
 </div>
+<div class="section" id="oss">
+<h3>OSS<a class="headerlink" href="#oss" title="Permalink to this headline">¶</a></h3>
+<p>OSSとしての部分は全てのハードウェアをNetAct(Nokia Solution)に接続し、アラームを監視することです。</p>
+<p>それから、色んなプラットフォームからやＮＥ（繋がった設備）からの問題を発見、もはや解決します。</p>
+<p>技術によって、RANの直接的な接続が無理なので、OMSという設備が必要で、管理と監視が可能になります。</p>
+<p>RANはWBTSやBTSと呼ばれます。</p>
+</div>
 </div>
 <div class="section" id="id4">
 <h2>4Gネットワーク<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
@@ -209,19 +218,29 @@
 <div class="section" id="id6">
 <h3>構造<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <img alt="png/4G.png" src="png/4G.png" />
-</div>
+<ul class="simple">
+<li>PS.ピュア環境はサービスを提供としては不可能です。　この構造の中に実際な技術は「GERAN=2G,UTRAN=3G,EUTRAN=4G」です。</li>
+</ul>
 </div>
 <div class="section" id="id7">
-<h2>5Gネットワーク<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h3>OSS<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>OSSとしての部分は全てのハードウェアをNetAct(Nokia Solution)に接続し、アラームを監視することです。</p>
+<p>それから、色んなプラットフォームからやＮＥ（繋がった設備）からの問題を発見、もはや解決します。</p>
+<p>技術によって、RANの直接的な接続が無理なので、iOMSという設備が必要で、管理と監視が可能になります。</p>
+<p>RANはMRBTSと呼ばれます。</p>
+</div>
+</div>
 <div class="section" id="id8">
-<h3>第5世代移動通信システム<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h2>5Gネットワーク<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3>第5世代移動通信システム<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>5Gネットワークは全てを違うの次元で始めます、スマホだけではなく、IoTデバイスの接続も考えます。</p>
 <p>主にはクラウドサービスに応用します。OpenStackとしてクラウドプラットフォームを立てます。</p>
 <p>構造はEdge CloudとCore Cloudで立ち上がります。すべての機能はクラウドにdocker containerとして働いてます。</p>
 <p>基地局は「gNodeB」って呼ばれます。</p>
 </div>
-<div class="section" id="id9">
-<h3>基地局の詳細<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>基地局の詳細<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>周波数の理想な発展は三つの種類があります。</p>
 <ul class="simple">
 <li>長いのは範囲の大きさを想定で使えます。</li>
@@ -229,14 +248,14 @@
 <li>短いのはデータのダウロード／アップロードスビートの速さとして狙います。</li>
 </ul>
 </div>
-<div class="section" id="id10">
-<h3>構造<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h3>構造<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <img alt="png/5G.png" src="png/5G.png" />
 </div>
 </div>
 </div>
-<div class="section" id="id11">
-<h1>クラウド<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id12">
+<h1>* クラウド<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h1>
 <p>OpenStackや、Docker Containerや、マイクロサービスというクラウド原生なサービスについてを成立します。</p>
 <div class="section" id="openstack">
 <h2>OpenStack<a class="headerlink" href="#openstack" title="Permalink to this headline">¶</a></h2>
@@ -244,19 +263,47 @@
 <p>メインの構造はController NodeとCompute Nodeです。　全てを計算、ストレージと管理をすべで繋がります。</p>
 <p>OpenStackの基礎はLinuxシステムが必要です。その上から、OpenStackツールと、様なプロジェクトをインストールして、立ち上げます。</p>
 <p>最低限は内部API用のKeynote、Web制御のHorizon、ネットワークのNeutron、計算（VM）用のNovaとストレージのSwiftが必要です。</p>
-<div class="section" id="id12">
-<h3>構造<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h3>構造<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p>基本コンセプトは公式からの図で表示します。</p>
 <img alt="https://www.openstack.org/assets/openstack-map/openstack-map-v20190601.svg" src="https://www.openstack.org/assets/openstack-map/openstack-map-v20190601.svg" /></div>
-<div class="section" id="id13">
-<h3>仕込み・インストール<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h3>仕込み・インストール<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>最低限なお勧めは2台のPCやVMがお勧めです。　公式サイトからのお勧めは以下のハードウェアが必要です。</p>
+<ul class="simple">
+<li>Controller Node　ｘ１台:<ul>
+<li>プロセッサー：　1個</li>
+<li>メモリー：　4 GB</li>
+<li>ストレージ（利用可能）：　5 GB</li>
+</ul>
+</li>
+<li>Compute Node　ｘ１台:<ul>
+<li>プロセッサー：　1個</li>
+<li>メモリー：　2 GB</li>
+<li>ストレージ（利用可能）：　10 GB</li>
+</ul>
+</li>
+</ul>
+<p>OSシステムの基本は、Linuxが必要です、お勧めの選ぶは以下となります。</p>
+<ul class="simple">
+<li>お試し：<ul>
+<li>Ubuntu</li>
+</ul>
+</li>
+<li>実際応用：<ul>
+<li>CentOS/RHEL</li>
+<li>Fedora</li>
+</ul>
+</li>
+</ul>
+<p>手順：</p>
 </div>
 </div>
 <div class="section" id="docker-container">
 <h2>Docker Container<a class="headerlink" href="#docker-container" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="id14">
-<h2>マイクロサービス<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h2>マイクロサービス<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
