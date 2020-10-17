@@ -164,11 +164,97 @@ OSシステムの基本は、Linuxが必要です、お勧めの選ぶは以下�
   * CentOS/RHEL
   * Fedora
 
-手順：
+**手順：**
 
 
 Docker Container
 =================
+
+DockerとContainerは二つ違うのソフトウェア/技術です。　でもお互いで一緒に応用すると、良いな結果が出てきます。
+
+この二つを組み合わせの目的はシステムとアップリケ―ションを軽量化、そうしたら応用の立ち上がりが早くなる。
+
+この技術を使っているクラウドは、大量デプロイを可能になった。そうして更新と替えることがとても便利になった。
+
+Containerの概念はLinux Kernalを元のシステムを使って、独立しようの事です。だからDockerはイメージとして、軽量化を可能になります。
+
+このすべての実行も、一部がHostの借りるで動作しているから、速いなデプロイを実現する。
+
+以下は、Dockerを使用も、イメージの作り方も簡単な紹介する。
+
+*PS現在はWindowsのdocker containerも実現できます。
+
+Dockerのインストール
+----------------------
+
+WindowsやmacOSの環境を使っていますの方は、 `docker公式サイト`_ からダウンロードとインストールがお勧めです。
+
+Linuxの環境は、もう既にオリジナルなリポジトリがありますので、プラットフォームによって、以下のコマンドからインストール可能です。
+
+``sudo apt-get install docker-ce docker-ce-cli containerd.io``
+``sudo yum install docker-ce docker-ce-cli containerd.io``
+``sudo dnf install docker-ce docker-ce-cli containerd.io``
+
+まだ、 `ここから`_ も参考可能です。
+
+
+Dockerを使う
+-------------------
+
+`Base image`_ は公式サイトから検索可能です。　**★無料アカウントを作成は必要です**
+
+``docker pull <リポジトリ[:latest]>``　リポジトリのイメージをローカルにダウンロードする。デフォルトのVer.は最新(latest)です、定義可能です。
+
+``docker images``　ローカルのイメージを確認する。
+
+``docker run [OPTIONS] IMAGE [COMMAND] [ARG...]``　Dockerイメージを実行（実体化）する。Containerは今から立ち上がります。　`もっと説明`_ は公式サイトへ。
+
+``docker ps [-a]`` 実行していますのContainerを表示されます。 **-a**　は実行していないのも出ます。
+
+``docker exec [OPTIONS] CONTAINER COMMAND [ARG...]``　docker　container内にコマンドを実行可能です。　`詳細は`_ 公式へ。
+
+``docker attach <container_id>`` 実際にContainerの中にを接続する。(sshと似ています。)
+
+``docker stop container_id``　Containerを不要（停止）する。
+
+``docker rm [OPTIONS] CONTAINER [CONTAINER...]``　Containerを削除する。
+
+Dockerイメージを作る
+-------------------------
+
+ますは、Base Imageを確認するが必要です。
+
+それから、Dockerfileを作ります。
+
+*Dockerfile
+^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+  FROM navidonskis/nginx-php7.1:latest
+  RUN rm -rf /var/www
+  RUN git clone https://github.com/hpcslag/aws-compt-web.git /var/www
+  RUN cd /var/www;git pull
+
+ファイルの中に、``FROM``は如何なBase Imageを使うのを指定する。　それから、``RUN``は、コマンドを追加実行する。
+
+ファイルを完成したと、同じところで次のコマンドを実行する。
+
+``docker build -t <your_username>/<repo-name> .`` **.**は今（Dockerfileいる）の場所です。 **-t　の後ろ**はdockerアカウントとプロジェクトを付けたい名前です。
+
+上のコマンドを実行したら、ローカルでイメージを作ります。　そうして、``docker image`` で表示します。
+
+もし、この作ったimageを試したいなら、 ``docker run <your_username>/<repo-name>``　って試運転可能です。
+
+最後、もし他のCommunityの人とシェアしたいなら、次のコマンドを実行し、Docker Hubへアップロードする。
+
+``docker push <your_username>/<repo-name>``
+
+成功なら、こうな感じの画面が出ます。
+
+.. image:: https://docs.docker.com/docker-hub/images/index-terminal-2019.png
+
+そうして、ログインしたの `サイト`_ も表示します。
 
 
 マイクロサービス
@@ -176,3 +262,9 @@ Docker Container
 
 
 .. _公式サイト: https://www.openstack.org/
+.. _docker公式サイト: https://www.docker.com/products/docker-desktop
+.. _ここから: https://docs.docker.com/engine/install/
+.. _Base image: https://hub.docker.com/search?q=&type=image
+.. _もっと説明: https://docs.docker.com/engine/reference/commandline/run/
+.. _詳細は: https://docs.docker.com/engine/reference/commandline/exec/
+.. _サイト: https://hub.docker.com/?ref=login
