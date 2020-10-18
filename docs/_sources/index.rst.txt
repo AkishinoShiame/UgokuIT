@@ -13,6 +13,8 @@
 
 整理者：秋篠詩雨。
 
+.. image:: https://i.imgur.com/Hhf1tow.png
+
 
 コンテンツ
 -------------------
