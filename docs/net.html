@@ -99,12 +99,17 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="mobnet.html">1. モバイルネットワーク</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. IT関連サービス</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">構造やコンセプト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">構造やコンセプト</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">とある企業の構造設定 其の壱</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">とある企業の構造設定 其の弐</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">ゼロから自分のIT考え方</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#ldap">LDAP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#m-ad">M$ AD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#azure-ad">Azure AD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ip">IP・ネットワーク管理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">システムインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">システムインストール</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="question.html">3. 問題集</a></li>
@@ -176,6 +181,34 @@
 <span id="net"></span><h1>2. IT関連サービス<a class="headerlink" href="#it" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2>構造やコンセプト<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>とある企業の構造設定 其の壱<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>社内証明書サーバーからのサインした証明書が必要です。</li>
+<li>サインしたの証明書はメールが入っています。</li>
+<li>有効期限以内の証明書があれば、社内WIFIや、VPNが使えます。</li>
+<li>VPNの最初は、ローカル持つの証明書をサーバーに検証する、確認できますの場合は接続とアカウントやパスワードなどの認証が可能です。</li>
+<li>VPNはMFA認証サービスが導入し、アカウント、パスワードと認証番号（MFA）はすべてが必要です。</li>
+<li>社内はLDAP✙ADサーバがあります。社員はLDAP IDとAD IDが持ちます。パスワードが同じです。</li>
+<li>社内ネットはVPN/Windowsログイン（？）でのSSO(Single Sign-On)があります。</li>
+<li>社内SMSのMFAのサービスがありましたけど、その後は他のMFAクラウドサービスを使ってます。</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>とある企業の構造設定 其の弐<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>社内サイトは共用の証明書があります。</li>
+<li>グローバルとしてLDAP✙ADサーバーがあります。</li>
+<li>MFAが導入します、すべてのLDAP/ADや使用しているITサービスはMFAのプラットフォームと連携します。</li>
+<li>社内ネットは専用ネットで繋がってます。</li>
+<li>ネットワークケーブルはMACアドレスとDHCPで管理する。</li>
+<li>エンドポイントのセキュリティと安全が優先事項。</li>
+<li>コストとセキュリティのバランスで、一部のクラウドADも使用します。</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>ゼロから自分のIT考え方<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 <div class="section" id="ldap">
 <h2>LDAP<a class="headerlink" href="#ldap" title="Permalink to this headline">¶</a></h2>
@@ -189,8 +222,8 @@
 <div class="section" id="ip">
 <h2>IP・ネットワーク管理<a class="headerlink" href="#ip" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="id2">
-<h2>システムインストール<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>システムインストール<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
