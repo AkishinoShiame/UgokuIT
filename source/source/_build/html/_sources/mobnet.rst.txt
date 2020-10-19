@@ -168,11 +168,11 @@ OSシステムの基本は、Linuxが必要です、お勧めの選ぶは以下�
 
 #. 事前準備（OSインストール、hosts、基本ネットワーク設置、openstackclientとselinux）
 #. 依存性パッケージ（MariaDB、RabbitMQ、memcached、etcd）
-#. Keystone・OpenStack身分認証サービス
-#. Glance・イメージ保存の場所
-#. Nova・OpenStackの計算
-#. NEUTRON・OpenStackの中に使うネットワークサービス
-#. （他）HORIZON・ダッシュボード、おすすめです
+#. `Keystone`_ ・OpenStack身分認証サービス
+#. `Glance`_ ・イメージ保存の場所
+#. `Nova`_ ・OpenStackの計算
+#. `Neutron`_ ・OpenStackの中に使うネットワークサービス
+#. （他） `Horizon`_ ・ダッシュボード、おすすめです
 
 +--------------------------------------------------+
 |  構造                                            |
@@ -214,9 +214,10 @@ OSシステムの基本は、Linuxが必要です、お勧めの選ぶは以下�
 | *場合によって変更や追加可能です。                |
 +--------------------------------------------------+
 
+
 構造図：
 
-.. image:: 
+.. image:: https://i.imgur.com/OSuTHTl.png
 
 
 Docker Container
@@ -311,8 +312,26 @@ Dockerイメージを作る
 マイクロサービス
 --------------------------
 
+マイクロサービスの概念は、システムやアプリケーションをパーツにする。
+
+マイクロサービスの中にはAPIがあります、他のマイクロサービスを使うために存在する。
+
+新しい問題への対応や新機能の追加を迅速になるということです。
+
+現世代の速さな変化を対応出来ますの開発方法です。
+
+他の応用は、アプリケーションのシステムを全てdocker化に一気に開発が難しい事です。
+効率として段階的に変換なら、大体まずマイクロサービス化に進めます。その最後はそのマイクロサービスをdokcerイメージに変換する。
+
+おすすめの使え方は **Go** とか、 **Python** や **Purl** などの言語で開発がおすすめです。
+
 
 .. _公式サイト: https://www.openstack.org/
+.. _Keystone: https://docs.openstack.org/keystone/latest/
+.. _Glance: https://docs.openstack.org/glance/latest/
+.. _Nova: https://docs.openstack.org/nova/latest/
+.. _Neutron: https://docs.openstack.org/neutron/latest/
+.. _Horizon: https://docs.openstack.org/horizon/latest/
 .. _docker公式サイト: https://www.docker.com/products/docker-desktop
 .. _ここから: https://docs.docker.com/engine/install/
 .. _Base image: https://hub.docker.com/search?q=&type=image
