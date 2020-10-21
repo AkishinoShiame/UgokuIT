@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="jp" >
+<html class="writer-html5" lang="jp" >
 <head>
   <meta charset="utf-8">
   
@@ -25,20 +25,11 @@
   <![endif]-->
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'./',
-              VERSION:'v1.0',
-              LANGUAGE:'jp',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -184,30 +175,49 @@
 <div class="section" id="id2">
 <h3>とある企業の構造設定 其の壱<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>社内証明書サーバーからのサインした証明書が必要です。</li>
-<li>サインしたの証明書はメールが入っています。</li>
-<li>有効期限以内の証明書があれば、社内WIFIや、VPNが使えます。</li>
-<li>VPNの最初は、ローカル持つの証明書をサーバーに検証する、確認できますの場合は接続とアカウントやパスワードなどの認証が可能です。</li>
-<li>VPNはMFA認証サービスが導入し、アカウント、パスワードと認証番号（MFA）はすべてが必要です。</li>
-<li>社内はLDAP✙ADサーバがあります。社員はLDAP IDとAD IDが持ちます。パスワードが同じです。</li>
-<li>社内ネットはVPN/Windowsログイン（？）でのSSO(Single Sign-On)があります。</li>
-<li>社内SMSのMFAのサービスがありましたけど、その後は他のMFAクラウドサービスを使ってます。</li>
+<li><p>社内証明書サーバーからのサインした証明書が必要です。</p></li>
+<li><p>サインしたの証明書はメールが入っています。</p></li>
+<li><p>有効期限以内の証明書があれば、社内WIFIや、VPNが使えます。</p></li>
+<li><p>VPNの最初は、ローカル持つの証明書をサーバーに検証する、確認できますの場合は接続とアカウントやパスワードなどの認証が可能です。</p></li>
+<li><p>VPNはMFA認証サービスが導入し、アカウント、パスワードと認証番号（MFA）はすべてが必要です。</p></li>
+<li><p>社内はLDAP✙ADサーバがあります。社員はLDAP IDとAD IDが持ちます。パスワードが同じです。</p></li>
+<li><p>社内ネットはVPN/Windowsログイン（？）でのSSO(Single Sign-On)があります。</p></li>
+<li><p>社内SMSのMFAのサービスがありましたけど、その後は他のMFAクラウドサービスを使ってます。</p></li>
+<li><p>ITサービスはグローバルとして展開です、もし社内の使用者は問題があれば、Caseシステムを使って、ケースを開います。世界からのITエンジニヤがケースを受けます。</p></li>
 </ul>
 </div>
 <div class="section" id="id3">
 <h3>とある企業の構造設定 其の弐<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>社内サイトは共用の証明書があります。</li>
-<li>グローバルとしてLDAP✙ADサーバーがあります。</li>
-<li>MFAが導入します、すべてのLDAP/ADや使用しているITサービスはMFAのプラットフォームと連携します。</li>
-<li>社内ネットは専用ネットで繋がってます。</li>
-<li>ネットワークケーブルはMACアドレスとDHCPで管理する。</li>
-<li>エンドポイントのセキュリティと安全が優先事項。</li>
-<li>コストとセキュリティのバランスで、一部のクラウドADも使用します。</li>
+<li><p>社内サイトは共用の証明書があります。</p></li>
+<li><p>グローバルとしてLDAP✙ADサーバーがあります。</p></li>
+<li><p>MFAが導入します、すべてのLDAP/ADや使用しているITサービスはMFAのプラットフォームと連携します。</p></li>
+<li><p>社内ネットは専用ネットで繋がってます。</p></li>
+<li><p>ネットワークケーブルはMACアドレスとDHCPで管理する。</p></li>
+<li><p>エンドポイントのセキュリティと安全が優先事項。</p></li>
+<li><p>コストとセキュリティのバランスで、一部のクラウドADも使用します。</p></li>
+<li><p>ITは社内が居ます、もし問題があれば、直接解決可能です。</p></li>
 </ul>
 </div>
 <div class="section" id="id4">
 <h3>ゼロから自分のIT考え方<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>ITエンジニアの主な目的が二つ：</p>
+<ol class="arabic simple">
+<li><p>ユーザーが社内・社外仕事を成功の為にITを求めます。その上に色んなＩＴサービスを提供と連携する。</p></li>
+<li><p>一般的にはPCサポートが基本です。ユーザーを手伝うと基礎概念を教えるが重要です。</p></li>
+</ol>
+<p>今まで居たの会社は大体グロバール展開企業、だからその上での考えが出発点です。</p>
+<p>実際な環境と規模によって、段階的に準備と展開が重要です。</p>
+<p>前に述べだ二点を目的として発展は次な結論ができます：</p>
+<ul class="simple">
+<li><p>ITのなかに色んな専門チームが必要です。世界全部のその専門技術の為に提供と支えます。</p></li>
+<li><p>地域なITは集中提供とサポートが良いです。主のサービス提供が上の専門チームからです。</p></li>
+<li><p>地域のITはできる限りまずにユーザーの問題解決が優先です、その上にはグローバルのQA経験システムが必要です。</p></li>
+<li><p>地域なITは専門家と定期に技術討論会を開催する。</p></li>
+<li><p>できる限りにはITサービスポートるが必要です、上にはユーザー向けの基礎問題解決集とIT向けの経験システムを提供します。</p></li>
+<li><p>他のはAI技術を使って、ネットから色んなIT技術を収集整理する、最も最新な情報や技術をまとめする。</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">PS.</span> <span class="pre">ここまでは主に自分の経験です、まだ改善と環境によって改変が必要かもです。</span></code></p>
 </div>
 </div>
 <div class="section" id="ldap">
