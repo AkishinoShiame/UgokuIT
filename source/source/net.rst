@@ -201,4 +201,5 @@ USBのメディアはこうして作成します。
 
 .. _UNetbootin: https://unetbootin.github.io/
 .. _Rufus: https://rufus.ie/
+.. _メディア作成ツール: https://go.microsoft.com/fwlink/?LinkId=691209
 .. _DECRYPT-MULTI-RELEASE: https://rg-adguard.net/decrypt-multi-release/
