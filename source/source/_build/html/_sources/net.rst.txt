@@ -91,3 +91,114 @@ IP・ネットワーク管理
 システムインストール
 ======================
 
+インストールメディアの作成
+------------------------------
+
+公式や技術としては、macOSとLinuxの作り方がとても簡単です。複雑な部分はWindows OSだけです。
+
+Windowsの更新とセキュリティパッチは非常に複雑も長いです、その上に出来れば最新版のメディアを入手がポイントです。
+
+MacOS
+^^^^^^^^^^^^^^^^^
+
+基本はアップルマックのハードウェアと現存システムが必要です。
+
+メディアのダウロードは直接アップルストアからで入手可能です。
+
+それからのステップは簡単です、ストアからダウンロードしたとか確認すると、次のコマンドでbootable installerのUSBメディアを作成する。
+
+*Catalina:*
+
+``sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/<Volume名>``
+
+*Mojave:*
+
+``sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/<Volume名>``
+
+*High Sierra:*
+
+``sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/<Volume名>``
+
+*El Capitan:*
+
+``sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/<Volume名> --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app``
+
+
+Linux
+^^^^^^^^^^^^^
+
+各Linuxの公式サイトから、インストールISOがあります。
+
+直接でダウンロード可能です。
+
+インストールメディアの作成は、もし同じLinuxシステムがあれば、システム内は関連ツールで直接作れます。
+
+他には、おすすめの `UNetbootin`_ プロジェクトも簡単で作ります。
+
+もしWindowsシステムで使うなら、ISOをダウンロードし、 `Rufus`_ のソフトで作るもおすすめです。
+
+**公式サイト**
+
+- Ubuntu https://www.ubuntulinux.jp/
+
+- CentOS https://www.centos.org/
+
+- Fedora https://getfedora.org/ja/
+
+- Arch Linux https://www.archlinux.org/download/
+
+
+Windows
+^^^^^^^^^^^^^^^^
+
+Windowsシステムのインストールと更新は最も面倒なシステムです。
+
+今の技術でのUEFI BIOSやSecure Bootなどの技術も彼らが提出されたの。
+
+現在Windowsのインストールメディアは大体ISOの中にのWIMやESDファイルがメインです。
+
+オフィシャルから、現在は `メディア作成ツール`_ がありますけど、最新版ではないです。
+便利で作成出来ますけど、システムをインストールすると、いっぱいなアップロードが必要でとても面倒です。
+
+現在、Windows 10はinsiderというプロジェクトの状態で、一程度なESDをりりーすし、もっと最新版のイメージを提供するです。
+
+でもそのESDは実際にインストール不可です、だから変換が必要です。
+
+ESDファイルのおすすめダウンロードサイトはこちらです：https://tb.rg-adguard.net/public.php
+
+ESDファイルを変換で、インストール可能にするなISOメディアのツールは `DECRYPT-MULTI-RELEASE`_ というツールがおすすめです。
+
+DECRYPT-MULTI-RELEASE直接ダウンロード：https://rg-adguard.net/dl-decryp
+
+他には、最新版のISOが欲しいけど、マイクロソフト社がリリースしていないという悩みがあれば、
+あるグループな人が努力し、開発したのコマンドツールがあります。
+
+そのツールはマイクロソフト社に直接最新版のアップデートとインストールファイルをダウンロードし、ISOファイルを作成します。
+UUPというツールで名を付けました。
+
+おすすめのUUPツールは二つのサイトから使用できます：
+
+* UUP dump - https://uupdump.ml/
+* UUP Generation Project (v2.4.10) [by @rgadguard & whatever127] - https://uup.rg-adguard.net/
+
+最後の作業は簡単です。
+
+それぞれ選んだソースから作成されたISOファイルをUSBメモリにインストールメディアを作るは、Rufusが一番おすすめです。
+
+RUFUS(https://rufus.ie/)で作成のメディアは注意事項があります。 
+
+``BIOSはUEFIモードなら、パーティションの構成はGPTが必要です。あとはもしSECURE BOOTのモードがあれば、ファイルシステムは必ずFAT32が必要です。``
+
+USBのメディアはこうして作成します。
+
+
+ディスクのパーティション
+-------------------------
+
+インストール方法
+------------------------
+
+
+.. _UNetbootin: https://unetbootin.github.io/
+.. _Rufus: https://rufus.ie/
+.. _DECRYPT-MULTI-RELEASE: https://rg-adguard.net/decrypt-multi-release/

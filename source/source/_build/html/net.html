@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="jp" >
+<html class="writer-html4" lang="jp" >
 <head>
   <meta charset="utf-8">
   
@@ -25,11 +25,20 @@
   <![endif]-->
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'v1.0',
+              LANGUAGE:'jp',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -100,7 +109,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#m-ad">M$ AD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#azure-ad">Azure AD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ip">IP・ネットワーク管理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">システムインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">システムインストール</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">インストールメディアの作成</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#macos">MacOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#linux">Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#windows">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">ディスクのパーティション</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">インストール方法</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="question.html">3. 問題集</a></li>
@@ -175,49 +194,49 @@
 <div class="section" id="id2">
 <h3>とある企業の構造設定 其の壱<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>社内証明書サーバーからのサインした証明書が必要です。</p></li>
-<li><p>サインしたの証明書はメールが入っています。</p></li>
-<li><p>有効期限以内の証明書があれば、社内WIFIや、VPNが使えます。</p></li>
-<li><p>VPNの最初は、ローカル持つの証明書をサーバーに検証する、確認できますの場合は接続とアカウントやパスワードなどの認証が可能です。</p></li>
-<li><p>VPNはMFA認証サービスが導入し、アカウント、パスワードと認証番号（MFA）はすべてが必要です。</p></li>
-<li><p>社内はLDAP✙ADサーバがあります。社員はLDAP IDとAD IDが持ちます。パスワードが同じです。</p></li>
-<li><p>社内ネットはVPN/Windowsログイン（？）でのSSO(Single Sign-On)があります。</p></li>
-<li><p>社内SMSのMFAのサービスがありましたけど、その後は他のMFAクラウドサービスを使ってます。</p></li>
-<li><p>ITサービスはグローバルとして展開です、もし社内の使用者は問題があれば、Caseシステムを使って、ケースを開います。世界からのITエンジニヤがケースを受けます。</p></li>
+<li>社内証明書サーバーからのサインした証明書が必要です。</li>
+<li>サインしたの証明書はメールが入っています。</li>
+<li>有効期限以内の証明書があれば、社内WIFIや、VPNが使えます。</li>
+<li>VPNの最初は、ローカル持つの証明書をサーバーに検証する、確認できますの場合は接続とアカウントやパスワードなどの認証が可能です。</li>
+<li>VPNはMFA認証サービスが導入し、アカウント、パスワードと認証番号（MFA）はすべてが必要です。</li>
+<li>社内はLDAP✙ADサーバがあります。社員はLDAP IDとAD IDが持ちます。パスワードが同じです。</li>
+<li>社内ネットはVPN/Windowsログイン（？）でのSSO(Single Sign-On)があります。</li>
+<li>社内SMSのMFAのサービスがありましたけど、その後は他のMFAクラウドサービスを使ってます。</li>
+<li>ITサービスはグローバルとして展開です、もし社内の使用者は問題があれば、Caseシステムを使って、ケースを開います。世界からのITエンジニヤがケースを受けます。</li>
 </ul>
 </div>
 <div class="section" id="id3">
 <h3>とある企業の構造設定 其の弐<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>社内サイトは共用の証明書があります。</p></li>
-<li><p>グローバルとしてLDAP✙ADサーバーがあります。</p></li>
-<li><p>MFAが導入します、すべてのLDAP/ADや使用しているITサービスはMFAのプラットフォームと連携します。</p></li>
-<li><p>社内ネットは専用ネットで繋がってます。</p></li>
-<li><p>ネットワークケーブルはMACアドレスとDHCPで管理する。</p></li>
-<li><p>エンドポイントのセキュリティと安全が優先事項。</p></li>
-<li><p>コストとセキュリティのバランスで、一部のクラウドADも使用します。</p></li>
-<li><p>ITは社内が居ます、もし問題があれば、直接解決可能です。</p></li>
+<li>社内サイトは共用の証明書があります。</li>
+<li>グローバルとしてLDAP✙ADサーバーがあります。</li>
+<li>MFAが導入します、すべてのLDAP/ADや使用しているITサービスはMFAのプラットフォームと連携します。</li>
+<li>社内ネットは専用ネットで繋がってます。</li>
+<li>ネットワークケーブルはMACアドレスとDHCPで管理する。</li>
+<li>エンドポイントのセキュリティと安全が優先事項。</li>
+<li>コストとセキュリティのバランスで、一部のクラウドADも使用します。</li>
+<li>ITは社内が居ます、もし問題があれば、直接解決可能です。</li>
 </ul>
 </div>
 <div class="section" id="id4">
 <h3>ゼロから自分のIT考え方<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>ITエンジニアの主な目的が二つ：</p>
 <ol class="arabic simple">
-<li><p>ユーザーが社内・社外仕事を成功の為にITを求めます。その上に色んなＩＴサービスを提供と連携する。</p></li>
-<li><p>一般的にはPCサポートが基本です。ユーザーを手伝うと基礎概念を教えるが重要です。</p></li>
+<li>ユーザーが社内・社外仕事を成功の為にITを求めます。その上に色んなＩＴサービスを提供と連携する。</li>
+<li>一般的にはPCサポートが基本です。ユーザーを手伝うと基礎概念を教えるが重要です。</li>
 </ol>
 <p>今まで居たの会社は大体グロバール展開企業、だからその上での考えが出発点です。</p>
 <p>実際な環境と規模によって、段階的に準備と展開が重要です。</p>
 <p>前に述べだ二点を目的として発展は次な結論ができます：</p>
 <ul class="simple">
-<li><p>ITのなかに色んな専門チームが必要です。世界全部のその専門技術の為に提供と支えます。</p></li>
-<li><p>地域なITは集中提供とサポートが良いです。主のサービス提供が上の専門チームからです。</p></li>
-<li><p>地域のITはできる限りまずにユーザーの問題解決が優先です、その上にはグローバルのQA経験システムが必要です。</p></li>
-<li><p>地域なITは専門家と定期に技術討論会を開催する。</p></li>
-<li><p>できる限りにはITサービスポートるが必要です、上にはユーザー向けの基礎問題解決集とIT向けの経験システムを提供します。</p></li>
-<li><p>他のはAI技術を使って、ネットから色んなIT技術を収集整理する、最も最新な情報や技術をまとめする。</p></li>
+<li>ITのなかに色んな専門チームが必要です。世界全部のその専門技術の為に提供と支えます。</li>
+<li>地域なITは集中提供とサポートが良いです。主のサービス提供が上の専門チームからです。</li>
+<li>地域のITはできる限りまずにユーザーの問題解決が優先です、その上にはグローバルのQA経験システムが必要です。</li>
+<li>地域なITは専門家と定期に技術討論会を開催する。</li>
+<li>できる限りにはITサービスポートるが必要です、上にはユーザー向けの基礎問題解決集とIT向けの経験システムを提供します。</li>
+<li>他のはAI技術を使って、ネットから色んなIT技術を収集整理する、最も最新な情報や技術をまとめする。</li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">PS.</span> <span class="pre">ここまでは主に自分の経験です、まだ改善と環境によって改変が必要かもです。</span></code></p>
+<p><code class="docutils literal"><span class="pre">PS.</span> <span class="pre">ここまでは主に自分の経験です、まだ改善と環境によって改変が必要かもです。</span></code></p>
 </div>
 </div>
 <div class="section" id="ldap">
@@ -242,6 +261,73 @@
 </div>
 <div class="section" id="id5">
 <h2>システムインストール<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>インストールメディアの作成<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>公式や技術としては、macOSとLinuxの作り方がとても簡単です。複雑な部分はWindows OSだけです。</p>
+<p>Windowsの更新とセキュリティパッチは非常に複雑も長いです、その上に出来れば最新版のメディアを入手がポイントです。</p>
+<div class="section" id="macos">
+<h4>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h4>
+<p>基本はアップルマックのハードウェアと現存システムが必要です。</p>
+<p>メディアのダウロードは直接アップルストアからで入手可能です。</p>
+<p>それからのステップは簡単です、ストアからダウンロードしたとか確認すると、次のコマンドでbootable installerのUSBメディアを作成する。</p>
+<p><em>Catalina:</em></p>
+<p><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">/Applications/Install\</span> <span class="pre">macOS\</span> <span class="pre">Catalina.app/Contents/Resources/createinstallmedia</span> <span class="pre">--volume</span> <span class="pre">/Volumes/&lt;Volume名&gt;</span></code></p>
+<p><em>Mojave:</em></p>
+<p><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">/Applications/Install\</span> <span class="pre">macOS\</span> <span class="pre">Mojave.app/Contents/Resources/createinstallmedia</span> <span class="pre">--volume</span> <span class="pre">/Volumes/&lt;Volume名&gt;</span></code></p>
+<p><em>High Sierra:</em></p>
+<p><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">/Applications/Install\</span> <span class="pre">macOS\</span> <span class="pre">High\</span> <span class="pre">Sierra.app/Contents/Resources/createinstallmedia</span> <span class="pre">--volume</span> <span class="pre">/Volumes/&lt;Volume名&gt;</span></code></p>
+<p><em>El Capitan:</em></p>
+<p><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">/Applications/Install\</span> <span class="pre">OS\</span> <span class="pre">X\</span> <span class="pre">El\</span> <span class="pre">Capitan.app/Contents/Resources/createinstallmedia</span> <span class="pre">--volume</span> <span class="pre">/Volumes/&lt;Volume名&gt;</span> <span class="pre">--applicationpath</span> <span class="pre">/Applications/Install\</span> <span class="pre">OS\</span> <span class="pre">X\</span> <span class="pre">El\</span> <span class="pre">Capitan.app</span></code></p>
+</div>
+<div class="section" id="linux">
+<h4>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h4>
+<p>各Linuxの公式サイトから、インストールISOがあります。</p>
+<p>直接でダウンロード可能です。</p>
+<p>インストールメディアの作成は、もし同じLinuxシステムがあれば、システム内は関連ツールで直接作れます。</p>
+<p>他には、おすすめの <a class="reference external" href="https://unetbootin.github.io/">UNetbootin</a> プロジェクトも簡単で作ります。</p>
+<p>もしWindowsシステムで使うなら、ISOをダウンロードし、 <a class="reference external" href="https://rufus.ie/">Rufus</a> のソフトで作るもおすすめです。</p>
+<p><strong>公式サイト</strong></p>
+<ul class="simple">
+<li>Ubuntu <a class="reference external" href="https://www.ubuntulinux.jp/">https://www.ubuntulinux.jp/</a></li>
+<li>CentOS <a class="reference external" href="https://www.centos.org/">https://www.centos.org/</a></li>
+<li>Fedora <a class="reference external" href="https://getfedora.org/ja/">https://getfedora.org/ja/</a></li>
+<li>Arch Linux <a class="reference external" href="https://www.archlinux.org/download/">https://www.archlinux.org/download/</a></li>
+</ul>
+</div>
+<div class="section" id="windows">
+<h4>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h4>
+<p>Windowsシステムのインストールと更新は最も面倒なシステムです。</p>
+<p>今の技術でのUEFI BIOSやSecure Bootなどの技術も彼らが提出されたの。</p>
+<p>現在Windowsのインストールメディアは大体ISOの中にのWIMやESDファイルがメインです。</p>
+<p>オフィシャルから、現在は <a href="#id9"><span class="problematic" id="id10">`メディア作成ツール`_</span></a> がありますけど、最新版ではないです。
+便利で作成出来ますけど、システムをインストールすると、いっぱいなアップロードが必要でとても面倒です。</p>
+<p>現在、Windows 10はinsiderというプロジェクトの状態で、一程度なESDをりりーすし、もっと最新版のイメージを提供するです。</p>
+<p>でもそのESDは実際にインストール不可です、だから変換が必要です。</p>
+<p>ESDファイルのおすすめダウンロードサイトはこちらです：<a class="reference external" href="https://tb.rg-adguard.net/public.php">https://tb.rg-adguard.net/public.php</a></p>
+<p>ESDファイルを変換で、インストール可能にするなISOメディアのツールは <a class="reference external" href="https://rg-adguard.net/decrypt-multi-release/">DECRYPT-MULTI-RELEASE</a> というツールがおすすめです。</p>
+<p>DECRYPT-MULTI-RELEASE直接ダウンロード：<a class="reference external" href="https://rg-adguard.net/dl-decryp">https://rg-adguard.net/dl-decryp</a></p>
+<p>他には、最新版のISOが欲しいけど、マイクロソフト社がリリースしていないという悩みがあれば、
+あるグループな人が努力し、開発したのコマンドツールがあります。</p>
+<p>そのツールはマイクロソフト社に直接最新版のアップデートとインストールファイルをダウンロードし、ISOファイルを作成します。
+UUPというツールで名を付けました。</p>
+<p>おすすめのUUPツールは二つのサイトから使用できます：</p>
+<ul class="simple">
+<li>UUP dump - <a class="reference external" href="https://uupdump.ml/">https://uupdump.ml/</a></li>
+<li>UUP Generation Project (v2.4.10) [by &#64;rgadguard &amp; whatever127] - <a class="reference external" href="https://uup.rg-adguard.net/">https://uup.rg-adguard.net/</a></li>
+</ul>
+<p>最後の作業は簡単です。</p>
+<p>それぞれ選んだソースから作成されたISOファイルをUSBメモリにインストールメディアを作るは、Rufusが一番おすすめです。</p>
+<p>RUFUS(<a class="reference external" href="https://rufus.ie/">https://rufus.ie/</a>)で作成のメディアは注意事項があります。</p>
+<p><code class="docutils literal"><span class="pre">BIOSはUEFIモードなら、パーティションの構成はGPTが必要です。あとはもしSECURE</span> <span class="pre">BOOTのモードがあれば、ファイルシステムは必ずFAT32が必要です。</span></code></p>
+<p>USBのメディアはこうして作成します。</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>ディスクのパーティション<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id8">
+<h3>インストール方法<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 </div>
 
