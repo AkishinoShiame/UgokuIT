@@ -2,4 +2,4 @@
 
 参考サイト：　https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
 
-![うごく！IT！](https://i.imgur.com/Hhf1tow.png)
+![うごく！IT！](https://i.imgur.com/WQUwxvt.png)
