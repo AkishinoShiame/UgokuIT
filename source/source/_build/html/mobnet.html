@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="jp" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="jp" > <!--<![endif]-->
+<html class="writer-html5" lang="jp" >
 <head>
   <meta charset="utf-8">
   
@@ -12,27 +11,29 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="2. IT関連サービス" href="net.html" />
@@ -50,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> 動く！IT！
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> 動く！IT！
           
 
           
@@ -77,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -131,6 +133,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -169,7 +172,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>1. モバイルネットワーク</li>
     
@@ -225,7 +228,7 @@
 <h3>構造<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <img alt="png/4G.png" src="png/4G.png" />
 <ul class="simple">
-<li>PS.ピュア環境はサービスを提供としては不可能です。　この構造の中に実際な技術は「GERAN=2G,UTRAN=3G,EUTRAN=4G」です。</li>
+<li><p>PS.ピュア環境はサービスを提供としては不可能です。　この構造の中に実際な技術は「GERAN=2G,UTRAN=3G,EUTRAN=4G」です。</p></li>
 </ul>
 </div>
 <div class="section" id="id7">
@@ -249,9 +252,9 @@
 <h3>基地局の詳細<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>周波数の理想な発展は三つの種類があります。</p>
 <ul class="simple">
-<li>長いのは範囲の大きさを想定で使えます。</li>
-<li>中型のは今までと似ているなネットワーク通信使いをやります。</li>
-<li>短いのはデータのダウロード／アップロードスビートの速さとして狙います。</li>
+<li><p>長いのは範囲の大きさを想定で使えます。</p></li>
+<li><p>中型のは今までと似ているなネットワーク通信使いをやります。</p></li>
+<li><p>短いのはデータのダウロード／アップロードスビートの速さとして狙います。</p></li>
 </ul>
 </div>
 <div class="section" id="id11">
@@ -280,121 +283,125 @@
 <h4>仕込み・インストール<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
 <p>最低限なお勧めは2台のPCやVMがお勧めです。　公式サイトからのお勧めは以下のハードウェアが必要です。</p>
 <ul class="simple">
-<li>Controller Node　ｘ１台:<ul>
-<li>プロセッサー：　1個</li>
-<li>メモリー：　4 GB</li>
-<li>ストレージ（利用可能）：　5 GB</li>
+<li><p>Controller Node　ｘ１台:</p>
+<ul>
+<li><p>プロセッサー：　1個</p></li>
+<li><p>メモリー：　4 GB</p></li>
+<li><p>ストレージ（利用可能）：　5 GB</p></li>
 </ul>
 </li>
-<li>Compute Node　ｘ１台:<ul>
-<li>プロセッサー：　1個</li>
-<li>メモリー：　2 GB</li>
-<li>ストレージ（利用可能）：　10 GB</li>
+<li><p>Compute Node　ｘ１台:</p>
+<ul>
+<li><p>プロセッサー：　1個</p></li>
+<li><p>メモリー：　2 GB</p></li>
+<li><p>ストレージ（利用可能）：　10 GB</p></li>
 </ul>
 </li>
 </ul>
 <p>OSシステムの基本は、Linuxが必要です、お勧めの選ぶは以下となります。</p>
 <ul class="simple">
-<li>お試し：<ul>
-<li>Ubuntu</li>
+<li><p>お試し：</p>
+<ul>
+<li><p>Ubuntu</p></li>
 </ul>
 </li>
-<li>実際応用：<ul>
-<li>CentOS/RHEL</li>
-<li>Fedora</li>
+<li><p>実際応用：</p>
+<ul>
+<li><p>CentOS/RHEL</p></li>
+<li><p>Fedora</p></li>
 </ul>
 </li>
 </ul>
 <p><strong>手順：</strong></p>
 <ol class="arabic simple">
-<li>事前準備（OSインストール、hosts、基本ネットワーク設置、openstackclientとselinux）</li>
-<li>依存性パッケージ（MariaDB、RabbitMQ、memcached、etcd）</li>
-<li><a class="reference external" href="https://docs.openstack.org/keystone/latest/">Keystone</a> ・OpenStack身分認証サービス</li>
-<li><a class="reference external" href="https://docs.openstack.org/glance/latest/">Glance</a> ・イメージ保存の場所</li>
-<li><a class="reference external" href="https://docs.openstack.org/nova/latest/">Nova</a> ・OpenStackの計算</li>
-<li><a class="reference external" href="https://docs.openstack.org/neutron/latest/">Neutron</a> ・OpenStackの中に使うネットワークサービス</li>
-<li>（他） <a class="reference external" href="https://docs.openstack.org/horizon/latest/">Horizon</a> ・ダッシュボード、おすすめです</li>
+<li><p>事前準備（OSインストール、hosts、基本ネットワーク設置、openstackclientとselinux）</p></li>
+<li><p>依存性パッケージ（MariaDB、RabbitMQ、memcached、etcd）</p></li>
+<li><p><a class="reference external" href="https://docs.openstack.org/keystone/latest/">Keystone</a> ・OpenStack身分認証サービス</p></li>
+<li><p><a class="reference external" href="https://docs.openstack.org/glance/latest/">Glance</a> ・イメージ保存の場所</p></li>
+<li><p><a class="reference external" href="https://docs.openstack.org/nova/latest/">Nova</a> ・OpenStackの計算</p></li>
+<li><p><a class="reference external" href="https://docs.openstack.org/neutron/latest/">Neutron</a> ・OpenStackの中に使うネットワークサービス</p></li>
+<li><p>（他） <a class="reference external" href="https://docs.openstack.org/horizon/latest/">Horizon</a> ・ダッシュボード、おすすめです</p></li>
 </ol>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="56%" />
-<col width="25%" />
-<col width="19%" />
+<col style="width: 56%" />
+<col style="width: 25%" />
+<col style="width: 19%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head" colspan="3">構造</th>
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p>構造</p></th>
 </tr>
-<tr class="row-even"><th class="head">プロジェクト</th>
-<th class="head">Controller</th>
-<th class="head">Compute</th>
+<tr class="row-even"><th class="head"><p>プロジェクト</p></th>
+<th class="head"><p>Controller</p></th>
+<th class="head"><p>Compute</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-odd"><td>Keystone  service(api)</td>
-<td>o</td>
-<td>&#160;</td>
+<tbody>
+<tr class="row-odd"><td><p>Keystone  service(api)</p></td>
+<td><p>o</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>Glance api</td>
-<td>o</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>Glance api</p></td>
+<td><p>o</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>Glance registry</td>
-<td>o</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>Glance registry</p></td>
+<td><p>o</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>Nova api</td>
-<td>o</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>Nova api</p></td>
+<td><p>o</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>Nova conductor</td>
-<td>o</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>Nova conductor</p></td>
+<td><p>o</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>Nova compute</td>
-<td>o</td>
-<td>o</td>
+<tr class="row-even"><td><p>Nova compute</p></td>
+<td><p>o</p></td>
+<td><p>o</p></td>
 </tr>
-<tr class="row-odd"><td>Nova metadata service</td>
-<td>o</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>Nova metadata service</p></td>
+<td><p>o</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>Nova novncproxy</td>
-<td>o</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>Nova novncproxy</p></td>
+<td><p>o</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>Nova placement api</td>
-<td>o</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>Nova placement api</p></td>
+<td><p>o</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>Nova scheduler</td>
-<td>o</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>Nova scheduler</p></td>
+<td><p>o</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>neutron server(api)</td>
-<td>o</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>neutron server(api)</p></td>
+<td><p>o</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>neutron dhcp agent</td>
-<td>o</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>neutron dhcp agent</p></td>
+<td><p>o</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>neutron metadata agent</td>
-<td>o</td>
-<td>&#160;</td>
+<tr class="row-odd"><td><p>neutron metadata agent</p></td>
+<td><p>o</p></td>
+<td></td>
 </tr>
-<tr class="row-even"><td>neutron l3 agent</td>
-<td>o</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>neutron l3 agent</p></td>
+<td><p>o</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td>neutron openvswitch agent</td>
-<td>o</td>
-<td>o</td>
+<tr class="row-odd"><td><p>neutron openvswitch agent</p></td>
+<td><p>o</p></td>
+<td><p>o</p></td>
 </tr>
-<tr class="row-even"><td>Horizon</td>
-<td>o</td>
-<td>&#160;</td>
+<tr class="row-even"><td><p>Horizon</p></td>
+<td><p>o</p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td colspan="3"><a href="#id16"><span class="problematic" id="id17">*</span></a>場合によって変更や追加可能です。</td>
+<tr class="row-odd"><td colspan="3"><p><a href="#id16"><span class="problematic" id="id17">*</span></a>場合によって変更や追加可能です。</p></td>
 </tr>
 </tbody>
 </table>
@@ -488,11 +495,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, 秋篠詩雨
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -503,7 +518,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
