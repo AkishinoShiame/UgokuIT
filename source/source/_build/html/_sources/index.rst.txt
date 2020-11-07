@@ -22,8 +22,14 @@
 :doc:`mobnet`
     初仕事で勉強した技術です。
 
-:doc:`net`
-    大学から続いて勉強しているのネットとIT知識です。
+:doc:`itnet`
+    大学から続いて勉強しているのネット関連とIT知識です。
+
+:doc:`internet`
+    ネットワーク知識整理。
+
+:doc:`programming`
+    プログラミング関連。
 
 :doc:`question`
     仕事で解決した色んな問題です。
@@ -38,7 +44,9 @@
    :hidden:
 
    mobnet
-   net
+   itnet
+   internet
+   programming
    question
    tool
 
