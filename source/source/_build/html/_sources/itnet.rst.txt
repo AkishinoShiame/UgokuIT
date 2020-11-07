@@ -87,6 +87,49 @@ Azure AD
 WSUS　(ウィンドウズアップデートサーバー)
 ==========================================================
 
+WSUSとは？
+---------------------
+
+WSUSサーバーはWindows Server Update Servicesです。もう簡単に言うと、Windowsの更新を管理できるように用のサーバーです。
+
+イメージ図はこれです
+
+.. code-block:: python
+
+                             ターゲット↓
+    +------------------+    +------------------+     +------------------+
+    | インターネットの  |    | Windwos Server   |     |  Windows 10 /    |
+    | Windwos update   | -> | Update Services  | <=> |  Windows Server  |
+    | Server by M$     |    | 自己構築サーバー  |     | クライアント      |
+    +------------------+    +------------------+     +------------------+
+
+このサーバーを構築すると、マイクロソフト社からの色んなサービス、ソフトウェアやOSなどの更新を管理とキャッシュ・指定更新できます。
+
+後はもしセキュリティーの一部も管理できます。　（例えば、CVE-○○○とか。）
+
+構築手順
+---------------------
+
+#. Windowsサーバーをインストール
+#. WSUSロールを追加する
+#. 後付け作業
+#. WSUSの初セットアップ
+#. クライアントシステムの設定
+#. 更新の配布・管理
+
+実際実験
+---------------------
+
+- Windows Server vNext Preview Build 20206 `公式リリースブログ`_　。
+- Windows 10 Version 1909 Pro.
+- 仮想マシンも実機も試しました
+
+  - サーバー：2/2コア/スレッド・2Gメモリ（仮想マシン）
+  - サーバー：2/4コア/スレッド・8Gメモリ（実機）
+
+**スクリーンショット：**
+
+
 
 システムインストール
 ======================
@@ -369,6 +412,7 @@ Linuxの方はちょっと複雑です。
 最後はBoot Loaderの選ぶが重要です。大体の場合はGRUB2がおすすめです。
 
 
+.. _公式リリースブログ: https://blogs.windows.com/windowsexperience/2020/09/02/announcing-windows-server-vnext-preview-build-20206/
 .. _UNetbootin: https://unetbootin.github.io/
 .. _Rufus: https://rufus.ie/
 .. _メディア作成ツール: https://go.microsoft.com/fwlink/?LinkId=691209
