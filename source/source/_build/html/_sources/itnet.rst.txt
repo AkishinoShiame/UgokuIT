@@ -412,6 +412,14 @@ Linuxの方はちょっと複雑です。
 最後はBoot Loaderの選ぶが重要です。大体の場合はGRUB2がおすすめです。
 
 
+GrayLogプラットフォーム
+==========================
+
+graylogは、Opensourceのログ検索と管理プラットフォームです。
+
+この集中プラットフォームがあれば、サーバー状態の管理や分析や色んな応用が出来ます。
+
+
 .. _公式リリースブログ: https://blogs.windows.com/windowsexperience/2020/09/02/announcing-windows-server-vnext-preview-build-20206/
 .. _UNetbootin: https://unetbootin.github.io/
 .. _Rufus: https://rufus.ie/
