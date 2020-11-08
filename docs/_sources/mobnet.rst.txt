@@ -110,10 +110,10 @@ RANはMRBTSと呼ばれます。
 
 
 
-クラウド
+クラウド概念
 =================
 
-OpenStackや、Docker Containerや、マイクロサービスというクラウド原生なサービスについてを成立します。
+OpenStackや、Docker Containerや、マイクロサービスというクラウド原生なサービスについてを整理します。
 
 
 OpenStack

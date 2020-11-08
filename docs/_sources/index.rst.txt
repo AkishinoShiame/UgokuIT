@@ -28,6 +28,9 @@
 :doc:`internet`
     ネットワーク知識整理。
 
+:doc:`cloud`
+    クラウドや仮想化について技術。
+
 :doc:`programming`
     プログラミング関連。
 
@@ -46,6 +49,7 @@
    mobnet
    itnet
    internet
+   cloud
    programming
    question
    tool
