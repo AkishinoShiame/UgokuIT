@@ -115,6 +115,10 @@ WSUSサーバーはWindows Server Update Servicesです。もう簡単に言う�
 #. 後付け作業
 #. WSUSの初セットアップ
 #. クライアントシステムの設定
+
+  - [gpedit.msc] ローカルコンピューター ポリシー　＞　コンピューター構成　＞　管理用テンプレート　＞　Windowsコンポーネント　＞　Windows Update <自動更新を構成する>
+  - [gpedit.msc] ローカルコンピューター ポリシー　＞　コンピューター構成　＞　管理用テンプレート　＞　Windowsコンポーネント　＞　Windows Update <イントラネットのMicrosoft更新サービスの場所を指定する>
+
 #. 更新の配布・管理
 
 実際実験
@@ -129,6 +133,49 @@ WSUSサーバーはWindows Server Update Servicesです。もう簡単に言う�
 
 **スクリーンショット：**
 
+.. image:: https://imgur.com/frgA1uV.png
+
+.. image:: https://imgur.com/xCZ8A8a.png
+
+.. image:: https://imgur.com/zFFQwOo.png
+
+.. image:: https://imgur.com/Qt4fUDa.png
+
+.. image:: https://imgur.com/vGuIMmq.png
+
+.. image:: https://imgur.com/F1DlWsw.png
+
+.. image:: https://imgur.com/uoJj7Xa.png
+
+.. image:: https://imgur.com/zqrVJ5Q.png
+
+.. image:: https://imgur.com/p8osO7W.png
+
+.. image:: https://imgur.com/5i0Zh1V.png
+
+.. image:: https://imgur.com/9M41D1f.png
+
+.. image:: https://imgur.com/xpjnvJ1.png
+
+.. image:: https://imgur.com/8xYXMK4.png
+
+.. image:: https://imgur.com/UbEMtye.png
+
+.. image:: https://imgur.com/SwE2BLP.png
+
+.. image:: https://imgur.com/UFgvwnR.png
+
+.. image:: https://imgur.com/oARvYmv.png
+
+.. image:: https://imgur.com/0b6PZhb.png
+
+.. image:: https://imgur.com/tDVmQlE.png
+
+.. image:: https://imgur.com/9LZMXWE.png
+
+.. image:: https://imgur.com/5n5ktlJ.png
+
+.. image:: https://imgur.com/PWcyfEG.png
 
 
 システムインストール
