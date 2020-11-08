@@ -116,10 +116,10 @@ WSUSサーバーはWindows Server Update Servicesです。もう簡単に言う�
 #. WSUSの初セットアップ
 #. クライアントシステムの設定
 
-  - [gpedit.msc] ローカルコンピューター ポリシー　＞　コンピューター構成　＞　管理用テンプレート　＞　Windowsコンポーネント　＞　Windows Update <自動更新を構成する>
-  - [gpedit.msc] ローカルコンピューター ポリシー　＞　コンピューター構成　＞　管理用テンプレート　＞　Windowsコンポーネント　＞　Windows Update <イントラネットのMicrosoft更新サービスの場所を指定する>
+  * [gpedit.msc] ローカルコンピューター ポリシー　＞　コンピューター構成　＞　管理用テンプレート　＞　Windowsコンポーネント　＞　Windows Update <自動更新を構成する>
+  * [gpedit.msc] ローカルコンピューター ポリシー　＞　コンピューター構成　＞　管理用テンプレート　＞　Windowsコンポーネント　＞　Windows Update <イントラネットのMicrosoft更新サービスの場所を指定する>
 
-#. 更新の配布・管理
+6. 更新の配布・管理
 
 実際実験
 ---------------------
