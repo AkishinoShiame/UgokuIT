@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="jp" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="jp" > <!--<![endif]-->
+<html class="writer-html5" lang="jp" >
 <head>
   <meta charset="utf-8">
   
@@ -12,27 +11,29 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="3. ネットワーク・管理" href="internet.html" />
@@ -50,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> 動く！IT！
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> 動く！IT！
           
 
           
@@ -77,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -136,6 +138,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -174,7 +177,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>2. IT関連サービス</li>
     
@@ -200,47 +203,47 @@
 <div class="section" id="id2">
 <h3>とある企業の構造設定 其の壱<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>社内証明書サーバーからのサインした証明書が必要です。</li>
-<li>サインしたの証明書はメールが入っています。</li>
-<li>有効期限以内の証明書があれば、社内WIFIや、VPNが使えます。</li>
-<li>VPNの最初は、ローカル持つの証明書をサーバーに検証する、確認できますの場合は接続とアカウントやパスワードなどの認証が可能です。</li>
-<li>VPNはMFA認証サービスが導入し、アカウント、パスワードと認証番号（MFA）はすべてが必要です。</li>
-<li>社内はLDAP✙ADサーバがあります。社員はLDAP IDとAD IDが持ちます。パスワードが同じです。</li>
-<li>社内ネットはVPN/Windowsログイン（？）でのSSO(Single Sign-On)があります。</li>
-<li>社内SMSのMFAのサービスがありましたけど、その後は他のMFAクラウドサービスを使ってます。</li>
-<li>ITサービスはグローバルとして展開です、もし社内の使用者は問題があれば、Caseシステムを使って、ケースを開います。世界からのITエンジニヤがケースを受けます。</li>
+<li><p>社内証明書サーバーからのサインした証明書が必要です。</p></li>
+<li><p>サインしたの証明書はメールが入っています。</p></li>
+<li><p>有効期限以内の証明書があれば、社内WIFIや、VPNが使えます。</p></li>
+<li><p>VPNの最初は、ローカル持つの証明書をサーバーに検証する、確認できますの場合は接続とアカウントやパスワードなどの認証が可能です。</p></li>
+<li><p>VPNはMFA認証サービスが導入し、アカウント、パスワードと認証番号（MFA）はすべてが必要です。</p></li>
+<li><p>社内はLDAP✙ADサーバがあります。社員はLDAP IDとAD IDが持ちます。パスワードが同じです。</p></li>
+<li><p>社内ネットはVPN/Windowsログイン（？）でのSSO(Single Sign-On)があります。</p></li>
+<li><p>社内SMSのMFAのサービスがありましたけど、その後は他のMFAクラウドサービスを使ってます。</p></li>
+<li><p>ITサービスはグローバルとして展開です、もし社内の使用者は問題があれば、Caseシステムを使って、ケースを開います。世界からのITエンジニヤがケースを受けます。</p></li>
 </ul>
 </div>
 <div class="section" id="id3">
 <h3>とある企業の構造設定 其の弐<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>社内サイトは共用の証明書があります。</li>
-<li>グローバルとしてLDAP✙ADサーバーがあります。</li>
-<li>MFAが導入します、すべてのLDAP/ADや使用しているITサービスはMFAのプラットフォームと連携します。</li>
-<li>社内ネットは専用ネットで繋がってます。</li>
-<li>ネットワークケーブルはMACアドレスとDHCPで管理する。</li>
-<li>エンドポイントのセキュリティと安全が優先事項。</li>
-<li>コストとセキュリティのバランスで、一部のクラウドADも使用します。</li>
-<li>ITは社内が居ます、もし問題があれば、直接解決可能です。</li>
+<li><p>社内サイトは共用の証明書があります。</p></li>
+<li><p>グローバルとしてLDAP✙ADサーバーがあります。</p></li>
+<li><p>MFAが導入します、すべてのLDAP/ADや使用しているITサービスはMFAのプラットフォームと連携します。</p></li>
+<li><p>社内ネットは専用ネットで繋がってます。</p></li>
+<li><p>ネットワークケーブルはMACアドレスとDHCPで管理する。</p></li>
+<li><p>エンドポイントのセキュリティと安全が優先事項。</p></li>
+<li><p>コストとセキュリティのバランスで、一部のクラウドADも使用します。</p></li>
+<li><p>ITは社内が居ます、もし問題があれば、直接解決可能です。</p></li>
 </ul>
 </div>
 <div class="section" id="id4">
 <h3>ゼロから自分のIT考え方<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>ITエンジニアの主な目的が二つ：</p>
 <ol class="arabic simple">
-<li>ユーザーが社内・社外仕事を成功の為にITを求めます。その上に色んなＩＴサービスを提供と連携する。</li>
-<li>一般的にはPCサポートが基本です。ユーザーを手伝うと基礎概念を教えるが重要です。</li>
+<li><p>ユーザーが社内・社外仕事を成功の為にITを求めます。その上に色んなＩＴサービスを提供と連携する。</p></li>
+<li><p>一般的にはPCサポートが基本です。ユーザーを手伝うと基礎概念を教えるが重要です。</p></li>
 </ol>
 <p>今まで居たの会社は大体グロバール展開企業、だからその上での考えが出発点です。</p>
 <p>実際な環境と規模によって、段階的に準備と展開が重要です。</p>
 <p>前に述べだ二点を目的として発展は次な結論ができます：</p>
 <ul class="simple">
-<li>ITのなかに色んな専門チームが必要です。世界全部のその専門技術の為に提供と支えます。</li>
-<li>地域なITは集中提供とサポートが良いです。主のサービス提供が上の専門チームからです。</li>
-<li>地域のITはできる限りまずにユーザーの問題解決が優先です、その上にはグローバルのQA経験システムが必要です。</li>
-<li>地域なITは専門家と定期に技術討論会を開催する。</li>
-<li>できる限りにはITサービスポートるが必要です、上にはユーザー向けの基礎問題解決集とIT向けの経験システムを提供します。</li>
-<li>他のはAI技術を使って、ネットから色んなIT技術を収集整理する、最も最新な情報や技術をまとめする。</li>
+<li><p>ITのなかに色んな専門チームが必要です。世界全部のその専門技術の為に提供と支えます。</p></li>
+<li><p>地域なITは集中提供とサポートが良いです。主のサービス提供が上の専門チームからです。</p></li>
+<li><p>地域のITはできる限りまずにユーザーの問題解決が優先です、その上にはグローバルのQA経験システムが必要です。</p></li>
+<li><p>地域なITは専門家と定期に技術討論会を開催する。</p></li>
+<li><p>できる限りにはITサービスポートるが必要です、上にはユーザー向けの基礎問題解決集とIT向けの経験システムを提供します。</p></li>
+<li><p>他のはAI技術を使って、ネットから色んなIT技術を収集整理する、最も最新な情報や技術をまとめする。</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">PS.</span> <span class="pre">ここまでは主に自分の経験です、まだ改善と環境によって改変が必要かもです。</span></code></p>
 </div>
@@ -282,26 +285,57 @@
 <div class="section" id="id6">
 <h3>構築手順<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Windowsサーバーをインストール</li>
-<li>WSUSロールを追加する</li>
-<li>後付け作業</li>
-<li>WSUSの初セットアップ</li>
-<li>クライアントシステムの設定</li>
-<li>更新の配布・管理</li>
+<li><p>Windowsサーバーをインストール</p></li>
+<li><p>WSUSロールを追加する</p></li>
+<li><p>後付け作業</p></li>
+<li><p>WSUSの初セットアップ</p></li>
+<li><p>クライアントシステムの設定</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>[gpedit.msc] ローカルコンピューター ポリシー　＞　コンピューター構成　＞　管理用テンプレート　＞　Windowsコンポーネント　＞　Windows Update &lt;自動更新を構成する&gt;</p></li>
+<li><p>[gpedit.msc] ローカルコンピューター ポリシー　＞　コンピューター構成　＞　管理用テンプレート　＞　Windowsコンポーネント　＞　Windows Update &lt;イントラネットのMicrosoft更新サービスの場所を指定する&gt;</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>更新の配布・管理</p></li>
 </ol>
 </div>
 <div class="section" id="id7">
 <h3>実際実験<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Windows Server vNext Preview Build 20206 <a class="reference external" href="https://blogs.windows.com/windowsexperience/2020/09/02/announcing-windows-server-vnext-preview-build-20206/">公式リリースブログ</a>　。</li>
-<li>Windows 10 Version 1909 Pro.</li>
-<li>仮想マシンも実機も試しました<ul>
-<li>サーバー：2/2コア/スレッド・2Gメモリ（仮想マシン）</li>
-<li>サーバー：2/4コア/スレッド・8Gメモリ（実機）</li>
+<li><p>Windows Server vNext Preview Build 20206 <a class="reference external" href="https://blogs.windows.com/windowsexperience/2020/09/02/announcing-windows-server-vnext-preview-build-20206/">公式リリースブログ</a>　。</p></li>
+<li><p>Windows 10 Version 1909 Pro.</p></li>
+<li><p>仮想マシンも実機も試しました</p>
+<ul>
+<li><p>サーバー：2/2コア/スレッド・2Gメモリ（仮想マシン）</p></li>
+<li><p>サーバー：2/4コア/スレッド・8Gメモリ（実機）</p></li>
 </ul>
 </li>
 </ul>
 <p><strong>スクリーンショット：</strong></p>
+<img alt="https://imgur.com/frgA1uV.png" src="https://imgur.com/frgA1uV.png" />
+<img alt="https://imgur.com/xCZ8A8a.png" src="https://imgur.com/xCZ8A8a.png" />
+<img alt="https://imgur.com/zFFQwOo.png" src="https://imgur.com/zFFQwOo.png" />
+<img alt="https://imgur.com/Qt4fUDa.png" src="https://imgur.com/Qt4fUDa.png" />
+<img alt="https://imgur.com/vGuIMmq.png" src="https://imgur.com/vGuIMmq.png" />
+<img alt="https://imgur.com/F1DlWsw.png" src="https://imgur.com/F1DlWsw.png" />
+<img alt="https://imgur.com/uoJj7Xa.png" src="https://imgur.com/uoJj7Xa.png" />
+<img alt="https://imgur.com/zqrVJ5Q.png" src="https://imgur.com/zqrVJ5Q.png" />
+<img alt="https://imgur.com/p8osO7W.png" src="https://imgur.com/p8osO7W.png" />
+<img alt="https://imgur.com/5i0Zh1V.png" src="https://imgur.com/5i0Zh1V.png" />
+<img alt="https://imgur.com/9M41D1f.png" src="https://imgur.com/9M41D1f.png" />
+<img alt="https://imgur.com/xpjnvJ1.png" src="https://imgur.com/xpjnvJ1.png" />
+<img alt="https://imgur.com/8xYXMK4.png" src="https://imgur.com/8xYXMK4.png" />
+<img alt="https://imgur.com/UbEMtye.png" src="https://imgur.com/UbEMtye.png" />
+<img alt="https://imgur.com/SwE2BLP.png" src="https://imgur.com/SwE2BLP.png" />
+<img alt="https://imgur.com/UFgvwnR.png" src="https://imgur.com/UFgvwnR.png" />
+<img alt="https://imgur.com/oARvYmv.png" src="https://imgur.com/oARvYmv.png" />
+<img alt="https://imgur.com/0b6PZhb.png" src="https://imgur.com/0b6PZhb.png" />
+<img alt="https://imgur.com/tDVmQlE.png" src="https://imgur.com/tDVmQlE.png" />
+<img alt="https://imgur.com/9LZMXWE.png" src="https://imgur.com/9LZMXWE.png" />
+<img alt="https://imgur.com/5n5ktlJ.png" src="https://imgur.com/5n5ktlJ.png" />
+<img alt="https://imgur.com/PWcyfEG.png" src="https://imgur.com/PWcyfEG.png" />
 </div>
 </div>
 <div class="section" id="id8">
@@ -333,10 +367,10 @@
 <p>もしWindowsシステムで使うなら、ISOをダウンロードし、 <a class="reference external" href="https://rufus.ie/">Rufus</a> のソフトで作るもおすすめです。</p>
 <p><strong>公式サイト</strong></p>
 <ul class="simple">
-<li>Ubuntu <a class="reference external" href="https://www.ubuntulinux.jp/">https://www.ubuntulinux.jp/</a></li>
-<li>CentOS <a class="reference external" href="https://www.centos.org/">https://www.centos.org/</a></li>
-<li>Fedora <a class="reference external" href="https://getfedora.org/ja/">https://getfedora.org/ja/</a></li>
-<li>Arch Linux <a class="reference external" href="https://www.archlinux.org/download/">https://www.archlinux.org/download/</a></li>
+<li><p>Ubuntu <a class="reference external" href="https://www.ubuntulinux.jp/">https://www.ubuntulinux.jp/</a></p></li>
+<li><p>CentOS <a class="reference external" href="https://www.centos.org/">https://www.centos.org/</a></p></li>
+<li><p>Fedora <a class="reference external" href="https://getfedora.org/ja/">https://getfedora.org/ja/</a></p></li>
+<li><p>Arch Linux <a class="reference external" href="https://www.archlinux.org/download/">https://www.archlinux.org/download/</a></p></li>
 </ul>
 </div>
 <div class="section" id="windows">
@@ -357,8 +391,8 @@
 UUPというツールで名を付けました。</p>
 <p>おすすめのUUPツールは二つのサイトから使用できます：</p>
 <ul class="simple">
-<li>UUP dump - <a class="reference external" href="https://uupdump.ml/">https://uupdump.ml/</a></li>
-<li>UUP Generation Project (v2.4.10) [by &#64;rgadguard &amp; whatever127] - <a class="reference external" href="https://uup.rg-adguard.net/">https://uup.rg-adguard.net/</a></li>
+<li><p>UUP dump - <a class="reference external" href="https://uupdump.ml/">https://uupdump.ml/</a></p></li>
+<li><p>UUP Generation Project (v2.4.10) [by &#64;rgadguard &amp; whatever127] - <a class="reference external" href="https://uup.rg-adguard.net/">https://uup.rg-adguard.net/</a></p></li>
 </ul>
 <p>最後の作業は簡単です。</p>
 <p>それぞれ選んだソースから作成されたISOファイルをUSBメモリにインストールメディアを作るは、Rufusが一番おすすめです。</p>
@@ -378,14 +412,14 @@ UUPというツールで名を付けました。</p>
 <p>マックシステムのはとてもシンプルです。アップル社が全てを用意したので、インストールしたいの時は１つのパーティションで大丈夫です。</p>
 <p>パーティションの形式はOSの時期によって、HFS+やAPFSがデフォルトでインストールする。</p>
 <ul class="simple">
-<li>ハードティースクの構成</li>
+<li><p>ハードティースクの構成</p></li>
 </ul>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="100%" />
+<col style="width: 100%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>HFS+ / APFS</td>
+<tbody>
+<tr class="row-odd"><td><p>HFS+ / APFS</p></td>
 </tr>
 </tbody>
 </table>
@@ -395,327 +429,327 @@ UUPというツールで名を付けました。</p>
 <p>LinuxシステムはUEFIとLagacyのBIOSをサポートしています。</p>
 <p>そうしてBIOSの歴史から、Lagacyが先に生まれたので、UEFIよりシンプルです。</p>
 <ul class="simple">
-<li>ハードティースクの構成</li>
+<li><p>ハードティースクの構成</p></li>
 </ul>
 <p>Lagacyの基本型：</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="72%" />
-<col width="28%" />
+<col style="width: 72%" />
+<col style="width: 28%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>/ (/root)</dt>
-<dd>[ext4]</dd>
+<tbody>
+<tr class="row-odd"><td><dl class="simple">
+<dt>/ (/root)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td>SWAP
-[swap]</td>
+<td><p>SWAP
+[swap]</p></td>
 </tr>
 </tbody>
 </table>
 <p>Lagacyの独立型：</p>
 <p><em>Type 1</em></p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="41%" />
-<col width="35%" />
-<col width="24%" />
+<col style="width: 41%" />
+<col style="width: 35%" />
+<col style="width: 24%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>Boot(/boot)</dt>
-<dd>[ext4]</dd>
+<tbody>
+<tr class="row-odd"><td><dl class="simple">
+<dt>Boot(/boot)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>/ (/root)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>/ (/root)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td>SWAP
-[swap]</td>
+<td><p>SWAP
+[swap]</p></td>
 </tr>
 </tbody>
 </table>
 <p><em>Type 2</em></p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="29%" />
-<col width="25%" />
-<col width="29%" />
-<col width="17%" />
+<col style="width: 29%" />
+<col style="width: 25%" />
+<col style="width: 29%" />
+<col style="width: 17%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>Boot(/boot)</dt>
-<dd>[ext4]</dd>
+<tbody>
+<tr class="row-odd"><td><dl class="simple">
+<dt>Boot(/boot)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>/ (/root)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>/ (/root)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>Home(/home)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>Home(/home)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td>SWAP
-[swap]</td>
+<td><p>SWAP
+[swap]</p></td>
 </tr>
 </tbody>
 </table>
 <p><em>Type 3</em></p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="23%" />
-<col width="20%" />
-<col width="20%" />
-<col width="23%" />
-<col width="14%" />
+<col style="width: 23%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 23%" />
+<col style="width: 14%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>Boot(/boot)</dt>
-<dd>[ext4]</dd>
+<tbody>
+<tr class="row-odd"><td><dl class="simple">
+<dt>Boot(/boot)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>/ (/root)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>/ (/root)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>var(/var)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>var(/var)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>Home(/home)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>Home(/home)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td>SWAP
-[swap]</td>
+<td><p>SWAP
+[swap]</p></td>
 </tr>
 </tbody>
 </table>
 <p><em>Type 4</em></p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="19%" />
-<col width="16%" />
-<col width="16%" />
-<col width="19%" />
-<col width="18%" />
-<col width="11%" />
+<col style="width: 19%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 19%" />
+<col style="width: 18%" />
+<col style="width: 11%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>Boot(/boot)</dt>
-<dd>[ext4]</dd>
+<tbody>
+<tr class="row-odd"><td><dl class="simple">
+<dt>Boot(/boot)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>/ (/root)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>/ (/root)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>var(/var)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>var(/var)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>Home(/home)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>Home(/home)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>Temp(/tmp)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>Temp(/tmp)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td>SWAP
-[swap]</td>
+<td><p>SWAP
+[swap]</p></td>
 </tr>
 </tbody>
 </table>
 <p>UEFIの基本型：</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="27%" />
-<col width="53%" />
-<col width="20%" />
+<col style="width: 27%" />
+<col style="width: 53%" />
+<col style="width: 20%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>EFI (/efi)</dt>
-<dd>[fat32]</dd>
+<tbody>
+<tr class="row-odd"><td><dl class="simple">
+<dt>EFI (/efi)</dt><dd><p>[fat32]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>/ (/root)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>/ (/root)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td>SWAP
-[swap]</td>
+<td><p>SWAP
+[swap]</p></td>
 </tr>
 </tbody>
 </table>
 <p>UEFIの独立型：</p>
 <p><em>Type 1</em></p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="26%" />
-<col width="30%" />
-<col width="26%" />
-<col width="18%" />
+<col style="width: 26%" />
+<col style="width: 30%" />
+<col style="width: 26%" />
+<col style="width: 18%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>EFI (/efi)</dt>
-<dd>[fat32]</dd>
+<tbody>
+<tr class="row-odd"><td><dl class="simple">
+<dt>EFI (/efi)</dt><dd><p>[fat32]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>Boot(/boot)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>Boot(/boot)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>/ (/root)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>/ (/root)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td>SWAP
-[swap]</td>
+<td><p>SWAP
+[swap]</p></td>
 </tr>
 </tbody>
 </table>
 <p><em>Type 2</em></p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="23%" />
-<col width="20%" />
-<col width="23%" />
-<col width="14%" />
+<col style="width: 20%" />
+<col style="width: 23%" />
+<col style="width: 20%" />
+<col style="width: 23%" />
+<col style="width: 14%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>EFI (/efi)</dt>
-<dd>[fat32]</dd>
+<tbody>
+<tr class="row-odd"><td><dl class="simple">
+<dt>EFI (/efi)</dt><dd><p>[fat32]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>Boot(/boot)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>Boot(/boot)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>/ (/root)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>/ (/root)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>Home(/home)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>Home(/home)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td>SWAP
-[swap]</td>
+<td><p>SWAP
+[swap]</p></td>
 </tr>
 </tbody>
 </table>
 <p><em>Type 3</em></p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="17%" />
-<col width="19%" />
-<col width="17%" />
-<col width="17%" />
-<col width="19%" />
-<col width="12%" />
+<col style="width: 17%" />
+<col style="width: 19%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 19%" />
+<col style="width: 12%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>EFI (/efi)</dt>
-<dd>[fat32]</dd>
+<tbody>
+<tr class="row-odd"><td><dl class="simple">
+<dt>EFI (/efi)</dt><dd><p>[fat32]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>Boot(/boot)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>Boot(/boot)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>/ (/root)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>/ (/root)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>var(/var)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>var(/var)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>Home(/home)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>Home(/home)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td>SWAP
-[swap]</td>
+<td><p>SWAP
+[swap]</p></td>
 </tr>
 </tbody>
 </table>
 <p><em>Type 4</em></p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="14%" />
-<col width="16%" />
-<col width="14%" />
-<col width="14%" />
-<col width="16%" />
-<col width="15%" />
-<col width="10%" />
+<col style="width: 14%" />
+<col style="width: 16%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 16%" />
+<col style="width: 15%" />
+<col style="width: 10%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>EFI (/efi)</dt>
-<dd>[fat32]</dd>
+<tbody>
+<tr class="row-odd"><td><dl class="simple">
+<dt>EFI (/efi)</dt><dd><p>[fat32]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>Boot(/boot)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>Boot(/boot)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>/ (/root)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>/ (/root)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>var(/var)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>var(/var)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>Home(/home)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>Home(/home)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>Temp(/tmp)</dt>
-<dd>[ext4]</dd>
+<td><dl class="simple">
+<dt>Temp(/tmp)</dt><dd><p>[ext4]</p>
+</dd>
 </dl>
 </td>
-<td>SWAP
-[swap]</td>
+<td><p>SWAP
+[swap]</p></td>
 </tr>
 </tbody>
 </table>
@@ -725,34 +759,34 @@ UUPというツールで名を付けました。</p>
 <p>Windows Systemは以前からLagacy BIOSだけをサポートする。Windows 7は革新の分水嶺です。 Windows 7から以降のシステムはEFI/UEFIもLagacyもサポートして居ます。</p>
 <p>Lagacy：</p>
 <p><em>形１</em></p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="100%" />
+<col style="width: 100%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>C:¥ (OS files)</dt>
-<dd>[NTFS]</dd>
+<tbody>
+<tr class="row-odd"><td><dl class="simple">
+<dt>C:¥ (OS files)</dt><dd><p>[NTFS]</p>
+</dd>
 </dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p><em>形２（おすすめ）</em></p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="63%" />
-<col width="37%" />
+<col style="width: 63%" />
+<col style="width: 37%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>System Reserved (Boot Loader)</dt>
-<dd>[NTFS]</dd>
+<tbody>
+<tr class="row-odd"><td><dl class="simple">
+<dt>System Reserved (Boot Loader)</dt><dd><p>[NTFS]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>C:¥ (OS files)</dt>
-<dd>[NTFS]</dd>
+<td><dl class="simple">
+<dt>C:¥ (OS files)</dt><dd><p>[NTFS]</p>
+</dd>
 </dl>
 </td>
 </tr>
@@ -760,78 +794,78 @@ UUPというツールで名を付けました。</p>
 </table>
 <p>EFI：</p>
 <p><em>形１</em></p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="53%" />
-<col width="48%" />
+<col style="width: 53%" />
+<col style="width: 48%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>EFI (Boot Loader)</dt>
-<dd>[fat32]</dd>
+<tbody>
+<tr class="row-odd"><td><dl class="simple">
+<dt>EFI (Boot Loader)</dt><dd><p>[fat32]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>C:¥ (OS files)</dt>
-<dd>[NTFS]</dd>
+<td><dl class="simple">
+<dt>C:¥ (OS files)</dt><dd><p>[NTFS]</p>
+</dd>
 </dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p><em>形２</em></p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="31%" />
-<col width="40%" />
-<col width="28%" />
+<col style="width: 31%" />
+<col style="width: 40%" />
+<col style="width: 28%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>EFI (Boot Loader)</dt>
-<dd>[fat32]</dd>
+<tbody>
+<tr class="row-odd"><td><dl class="simple">
+<dt>EFI (Boot Loader)</dt><dd><p>[fat32]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>MSR (Project GPT format)</dt>
-<dd>[MSR]</dd>
+<td><dl class="simple">
+<dt>MSR (Project GPT format)</dt><dd><p>[MSR]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>C:¥ (OS files)</dt>
-<dd>[NTFS]</dd>
+<td><dl class="simple">
+<dt>C:¥ (OS files)</dt><dd><p>[NTFS]</p>
+</dd>
 </dl>
 </td>
 </tr>
 </tbody>
 </table>
 <p><em>形３</em></p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="21%" />
-<col width="27%" />
-<col width="19%" />
-<col width="32%" />
+<col style="width: 21%" />
+<col style="width: 27%" />
+<col style="width: 19%" />
+<col style="width: 32%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>EFI (Boot Loader)</dt>
-<dd>[fat32]</dd>
+<tbody>
+<tr class="row-odd"><td><dl class="simple">
+<dt>EFI (Boot Loader)</dt><dd><p>[fat32]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>MSR (Project GPT format)</dt>
-<dd>[MSR]</dd>
+<td><dl class="simple">
+<dt>MSR (Project GPT format)</dt><dd><p>[MSR]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>C:¥ (OS files)</dt>
-<dd>[NTFS]</dd>
+<td><dl class="simple">
+<dt>C:¥ (OS files)</dt><dd><p>[NTFS]</p>
+</dd>
 </dl>
 </td>
-<td><dl class="first last docutils">
-<dt>Recovery (回復用OSが入ってる)</dt>
-<dd>[NTFS]</dd>
+<td><dl class="simple">
+<dt>Recovery (回復用OSが入ってる)</dt><dd><p>[NTFS]</p>
+</dd>
 </dl>
 </td>
 </tr>
@@ -882,11 +916,19 @@ UUPというツールで名を付けました。</p>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, 秋篠詩雨
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -897,7 +939,6 @@ UUPというツールで名を付けました。</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
