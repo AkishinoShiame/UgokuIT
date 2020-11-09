@@ -288,6 +288,26 @@
 </div>
 <div class="section" id="vlan">
 <h3>VLAN技術<a class="headerlink" href="#vlan" title="Permalink to this headline">¶</a></h3>
+<p>VLANは、Virtual Local Area Networkの略称です。つまり、LANを仮想化するの技術です。</p>
+<p>この技術の重要性に付いて話前に、LANが実際の動くを話します。</p>
+<p>LANはMACアドレスを使って、コミュニケーションが出来ます。この技術は、全てのLANが同じSwitchで繋がないといけない。</p>
+<p>つまり、下の構造での表現がLANです。</p>
+<img alt="https://imgur.com/lAH6hiY.png" src="https://imgur.com/lAH6hiY.png" />
+<p>図から見ると、問題は無さそうですけど、実際にネットを立ち上がる時はこうなる：</p>
+<img alt="https://imgur.com/2C4BRF3.png" src="https://imgur.com/2C4BRF3.png" />
+<p>機械の認識は２つのLANが別々で立ち上がります。この場合、もし左のパソコンや設備が右のと連絡（繋がる）時は、なにも設定しないと、接続出来ない。</p>
+<p>この状況は、VLANが必要です。　全てを仮想化で、みんなが繋がれる。</p>
+<p>技術からと述べるなら、SwitchとSwitchの間に、trunk tunnelを構築、全てのパケットをタッグにする。そうすると、みんなは同じロジカルSwitchを繋いてます。</p>
+<p>設定の部分は、Switchに設置で大丈夫です。</p>
+<p>そうすると、構造はこうになった：</p>
+<img alt="https://imgur.com/mf4Xvc9.png" src="https://imgur.com/mf4Xvc9.png" />
+<p>そうして、仮想化だから、指定のパソコンや設備をグループとして、別々のLANを分離するも可能です。</p>
+<img alt="https://imgur.com/Mk6ihh7.png" src="https://imgur.com/Mk6ihh7.png" />
+<p>主のコマンドは：</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">switchport</span> <span class="pre">mode</span> <span class="pre">trunk</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">switchport</span> <span class="pre">trunk</span> <span class="pre">native</span> <span class="pre">vlan</span> <span class="pre">&lt;vlan-id&gt;</span></code></p>
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="routing-layer3">

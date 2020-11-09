@@ -122,6 +122,42 @@ Mac/Linux/Windows、全てのコマンドは``arp -a``
 VLAN技術
 ------------
 
+VLANは、Virtual Local Area Networkの略称です。つまり、LANを仮想化するの技術です。
+
+この技術の重要性に付いて話前に、LANが実際の動くを話します。
+
+LANはMACアドレスを使って、コミュニケーションが出来ます。この技術は、全てのLANが同じSwitchで繋がないといけない。
+
+つまり、下の構造での表現がLANです。
+
+.. image:: https://imgur.com/lAH6hiY.png
+
+図から見ると、問題は無さそうですけど、実際にネットを立ち上がる時はこうなる：
+
+.. image:: https://imgur.com/2C4BRF3.png
+
+機械の認識は２つのLANが別々で立ち上がります。この場合、もし左のパソコンや設備が右のと連絡（繋がる）時は、なにも設定しないと、接続出来ない。
+
+この状況は、VLANが必要です。　全てを仮想化で、みんなが繋がれる。
+
+技術からと述べるなら、SwitchとSwitchの間に、trunk tunnelを構築、全てのパケットをタッグにする。そうすると、みんなは同じロジカルSwitchを繋いてます。
+
+設定の部分は、Switchに設置で大丈夫です。
+
+そうすると、構造はこうになった：
+
+.. image:: https://imgur.com/mf4Xvc9.png
+
+そうして、仮想化だから、指定のパソコンや設備をグループとして、別々のLANを分離するも可能です。
+
+.. image:: https://imgur.com/Mk6ihh7.png
+
+主のコマンドは：
+
+  ``switchport mode trunk``
+
+  ``switchport trunk native vlan <vlan-id>``
+
 
 パケットRouting (Layer3)
 ==========================
