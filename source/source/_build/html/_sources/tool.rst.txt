@@ -15,21 +15,21 @@
 Windowsの最新イメージを作成ツール
 =================================
 
-`ESDや色んなソフトウェアダウロード`_
-`decrypt-multi-release`_
-`adguard UUP 選択ツール`_
-`UUP Dump の公式サイト`_
-`Rufusツール`_
+* `ESDや色んなソフトウェアダウロード`_
+* `decrypt-multi-release`_
+* `adguard UUP 選択ツール`_
+* `UUP Dump の公式サイト`_
+* `Rufusツール`_
 
 
 ハードウェア・ドライブ・資料回復/消す
 =====================================
 
-`CrystalDiskInfo`_ HDD・SSD検査ソフトウェア
-`CPU-Z`_ ハードウェア確認ソフトウェア
-`Kill Disk`_ ストレージを物理で消すツール 
-`UndeletePlus`_ 資料回復
-`HDD Regenerator`_ HDD BadSector 回避ツール
+* `CrystalDiskInfo`_ HDD・SSD検査ソフトウェア
+* `CPU-Z`_ ハードウェア確認ソフトウェア
+* `Kill Disk`_ ストレージを物理で消すツール 
+* `UndeletePlus`_ 資料回復
+* `HDD Regenerator`_ HDD BadSector 回避ツール
 
 
 .. _パスワード作る、zipフォーマット: https://akishinoshiame.github.io/UgokuIT/tool/passcode.zip
