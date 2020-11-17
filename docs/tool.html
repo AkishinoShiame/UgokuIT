@@ -106,6 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id2">パスワード作るツール</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#windows">Windowsの最新イメージを作成ツール</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">ハードウェア・ドライブ・資料回復/消す</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">開発環境用</a></li>
 </ul>
 </li>
 </ul>
@@ -198,6 +199,53 @@
 <li><a class="reference external" href="https://www.killdisk.com/erasedata_win.htm">Kill Disk</a> ストレージを物理で消すツール</li>
 <li><a class="reference external" href="https://www.undeleteplus.com/">UndeletePlus</a> 資料回復</li>
 <li><a class="reference external" href="http://www.dposoft.net/hdd.html">HDD Regenerator</a> HDD BadSector 回避ツール</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>開発環境用<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">GitHubとSSH自動認証:</p>
+<p>FileName:gitssh.sh</p>
+<p>#!/usr/bin/expect -f
+spawn ssh-add
+expect &quot;Enter passphrase for /root/.ssh/id_rsa:&quot;
+send &quot;&lt;passphraseパスワード&gt;n&quot;;
+# expect &quot;Identity added: /root/.ssh/id_rsa (/root/.ssh/id_rsa)&quot;
+interact</p>
+<p>FileName:.bashrc</p>
+<p>前略
+..</p>
+<p># github ssh agent auto complete
+SSH_ENV=&quot;$HOME/.ssh/agent-environment&quot;</p>
+<dl class="docutils">
+<dt>function start_agent {</dt>
+<dd><p class="first last">echo &quot;Initialising new SSH agent...&quot;
+/usr/bin/ssh-agent | sed 's/^echo/#echo/' &gt; &quot;${SSH_ENV}&quot;
+echo succeeded
+chmod 600 &quot;${SSH_ENV}&quot;
+. &quot;${SSH_ENV}&quot; &gt; /dev/null
+/root/.gitssh.sh</p>
+</dd>
+</dl>
+<p>}</p>
+<p># Source SSH settings, if applicable</p>
+<dl class="docutils">
+<dt>if [ -f &quot;${SSH_ENV}&quot; ]; then</dt>
+<dd><p class="first">. &quot;${SSH_ENV}&quot; &gt; /dev/null
+ps ${SSH_AGENT_PID} #doesn't work under cywgin
+ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ &gt; /dev/null || {</p>
+<blockquote class="last">
+<div><p>start_agent;</p>
+</div></blockquote>
+</dd>
+</dl>
+<p>}
+else</p>
+<blockquote>
+<div><p>start_agent;</p>
+</div></blockquote>
+<p>fi</p>
+</li>
 </ul>
 </div>
 </div>
