@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="jp" >
+<html class="writer-html4" lang="jp" >
 <head>
   <meta charset="utf-8">
   
@@ -25,11 +25,20 @@
   <![endif]-->
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'v1.0',
+              LANGUAGE:'jp',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -93,7 +102,17 @@
 <li class="toctree-l1"><a class="reference internal" href="internet.html">3. ネットワーク・管理</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cloud.html">4.クラウド計算</a></li>
 <li class="toctree-l1"><a class="reference internal" href="programming.html">5.プログラミング</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">[疑]. 問題集</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">[疑]. 問題集</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">システムエラー</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#windows-10bsod-ntfs-file-system-stop-code">Windows 10をスタートアップすると、BSODで&quot;NTFS FILE SYSTEM&quot;とのSTOP CODEが出てくる</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">システムインストール</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rufuswindows">RufusでWindowsインストールメディアを作成とエラーが出る。</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="tool.html">[おまけ]. ツール</a></li>
 </ul>
 
@@ -160,6 +179,40 @@
             
   <div class="section" id="question">
 <span id="id1"></span><h1>[疑]. 問題集<a class="headerlink" href="#question" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>システムエラー<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="windows-10bsod-ntfs-file-system-stop-code">
+<h3>Windows 10をスタートアップすると、BSODで&quot;NTFS FILE SYSTEM&quot;とのSTOP CODEが出てくる<a class="headerlink" href="#windows-10bsod-ntfs-file-system-stop-code" title="Permalink to this headline">¶</a></h3>
+<p>A: この状況が発生する時、大体はSafe Modeも入れないです。</p>
+<p>まずは以下の状況を試す、もし何もできない場合は、ハードウェアが問題ありの方向で考えます。</p>
+<ul class="simple">
+<li>回復モードのターミナルを開います。もしBitLockerがセットするの場合があれば、回復キーを入力してください。</li>
+<li>diskpartを使って、パーティションの状況を確認。 <code class="docutils literal"><span class="pre">diskpart</span></code> <code class="docutils literal"><span class="pre">lis</span> <span class="pre">dis</span></code> <code class="docutils literal"><span class="pre">sel</span> <span class="pre">dis</span> <span class="pre">&lt;num&gt;</span></code> <code class="docutils literal"><span class="pre">lis</span> <span class="pre">par</span></code>。</li>
+<li>パーティションが見える場合は、大体ハードウェアの問題ではないで確認できます。</li>
+<li>ハードウェアではないの状況として、次のコマンドで修復する<ul>
+<li><code class="docutils literal"><span class="pre">chkdsk</span> <span class="pre">/f</span> <span class="pre">C:</span></code> C[システム]ディスクの検索やインデックスを検証と回復する。<strong>大体このステップで修復できます。</strong></li>
+<li><code class="docutils literal"><span class="pre">cd</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">sfc</span> <span class="pre">/scannow</span></code> システムの実際エラーを回復する。 「C」はシステムが居るの場所。</li>
+<li><code class="docutils literal"><span class="pre">cd</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">C:</span></code> でシステムの場所に確定、 <code class="docutils literal"><span class="pre">DISM</span> <span class="pre">/Online</span> <span class="pre">/Cleanup-Image</span> <span class="pre">/CheckHealth</span></code></li>
+<li><code class="docutils literal"><span class="pre">cd</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">C:</span></code> でシステムの場所に確定、 <code class="docutils literal"><span class="pre">DISM</span> <span class="pre">/Online</span> <span class="pre">/Cleanup-Image</span> <span class="pre">/RestoreHealth</span></code></li>
+<li>外部で修復： <code class="docutils literal"><span class="pre">DISM</span> <span class="pre">/Online</span> <span class="pre">/Cleanup-Image</span> <span class="pre">/RestoreHealth</span> <span class="pre">/Source:F:\Sources\install.wim</span></code> Fがインストールメディアの場所です。</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>システムインストール<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rufuswindows">
+<h3>RufusでWindowsインストールメディアを作成とエラーが出る。<a class="headerlink" href="#rufuswindows" title="Permalink to this headline">¶</a></h3>
+<p>A: explorer.exeのプロセスを停止すると、正常に作ることができます。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tasklist</span> <span class="o">|</span> <span class="n">find</span> <span class="s2">&quot;explorer.exe&quot;</span>
+<span class="n">taskkill</span> <span class="o">/</span><span class="n">F</span> <span class="o">/</span><span class="n">PID</span> <span class="o">&lt;</span><span class="n">pid_number</span><span class="o">&gt;</span>
+
+<span class="n">explorer</span><span class="o">.</span><span class="n">exe</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
 

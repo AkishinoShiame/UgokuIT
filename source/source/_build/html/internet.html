@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="jp" >
+<html class="writer-html4" lang="jp" >
 <head>
   <meta charset="utf-8">
   
@@ -25,11 +25,20 @@
   <![endif]-->
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'v1.0',
+              LANGUAGE:'jp',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -98,7 +107,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#vlan">VLAN技術</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#routing-layer3">パケットRouting (Layer3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#routing-layer3">パケットRouting (Layer3)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ip">IP・マスク・ゲートウェイ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ipv4">IPv4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ipv6">IPv6</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">レーヤー４以上</a></li>
 </ul>
 </li>
@@ -173,45 +187,45 @@
 <span id="id1"></span><h1>3. ネットワーク・管理<a class="headerlink" href="#internet" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="tcp-ip">
 <h2>TCP/IP<a class="headerlink" href="#tcp-ip" title="Permalink to this headline">¶</a></h2>
-<table class="docutils align-default">
+<table border="1" class="docutils">
 <colgroup>
-<col style="width: 13%" />
-<col style="width: 17%" />
-<col style="width: 27%" />
-<col style="width: 42%" />
+<col width="13%" />
+<col width="17%" />
+<col width="27%" />
+<col width="42%" />
 </colgroup>
-<tbody>
-<tr class="row-odd"><td rowspan="8"><p>OSI</p>
-<p>MODEL</p>
+<tbody valign="top">
+<tr class="row-odd"><td rowspan="8"><p class="first">OSI</p>
+<p class="last">MODEL</p>
 </td>
-<td colspan="2"><p>レイヤーと名前</p></td>
-<td><p>簡単説明</p></td>
+<td colspan="2">レイヤーと名前</td>
+<td>簡単説明</td>
 </tr>
-<tr class="row-even"><td><p>Layer 7</p></td>
-<td><p>Application</p></td>
-<td rowspan="3"><p>アップリケーション</p></td>
+<tr class="row-even"><td>Layer 7</td>
+<td>Application</td>
+<td rowspan="3">アップリケーション</td>
 </tr>
-<tr class="row-odd"><td><p>Layer 6</p></td>
-<td><p>Presentation</p></td>
+<tr class="row-odd"><td>Layer 6</td>
+<td>Presentation</td>
 </tr>
-<tr class="row-even"><td><p>Layer 5</p></td>
-<td><p>Session</p></td>
+<tr class="row-even"><td>Layer 5</td>
+<td>Session</td>
 </tr>
-<tr class="row-odd"><td><p>Layer 4</p></td>
-<td><p>Transport</p></td>
-<td><p>TCP/UDP ポートとか</p></td>
+<tr class="row-odd"><td>Layer 4</td>
+<td>Transport</td>
+<td>TCP/UDP ポートとか</td>
 </tr>
-<tr class="row-even"><td><p>Layer 3</p></td>
-<td><p>Network</p></td>
-<td><p>IPアドレスなど</p></td>
+<tr class="row-even"><td>Layer 3</td>
+<td>Network</td>
+<td>IPアドレスなど</td>
 </tr>
-<tr class="row-odd"><td><p>Layer 2</p></td>
-<td><p>Data Link</p></td>
-<td><p>MACアドレスなど</p></td>
+<tr class="row-odd"><td>Layer 2</td>
+<td>Data Link</td>
+<td>MACアドレスなど</td>
 </tr>
-<tr class="row-even"><td><p>Layer 1</p></td>
-<td><p>Physical</p></td>
-<td><p>ハードウェアケーブル</p></td>
+<tr class="row-even"><td>Layer 1</td>
+<td>Physical</td>
+<td>ハードウェアケーブル</td>
 </tr>
 </tbody>
 </table>
@@ -221,8 +235,8 @@
 <p>ネットワークのフィジカルはinternet packetを転送するの為に使うハードウェアです。</p>
 <p>現在の技術としては二つ回線があります。</p>
 <ul class="simple">
-<li><p>Copper (カッパー)</p></li>
-<li><p>Fiber （光ファイバ）</p></li>
+<li>Copper (カッパー)</li>
+<li>Fiber （光ファイバ）</li>
 </ul>
 <p><strong>Copper Network</strong></p>
 <p>カッパーを使って構築のネットワークは、電を使ってパケットを交換する。
@@ -248,21 +262,21 @@
 <p>MACアドレスは「Media Access Control address」の略称です。実際に48ビットの長さ、表示方法はHEXとしてプリントされる。</p>
 <p>実際に使えるのタイプは二つがあります。</p>
 <ul>
-<li><p><strong>ローカルMAC</strong></p>
+<li><p class="first"><strong>ローカルMAC</strong></p>
 <p>ローカルとして、ネットワーク機械の管理者が管理必要としてアレンジしたのアドレスです。</p>
 <p>基準として、以下のアドレスを編列できます。</p>
-<table class="docutils align-default">
+<table border="1" class="docutils">
 <colgroup>
-<col style="width: 100%" />
+<col width="100%" />
 </colgroup>
-<tbody>
-<tr class="row-odd"><td><p>x2 - xx - xx - xx - xx - xx</p></td>
+<tbody valign="top">
+<tr class="row-odd"><td>x2 - xx - xx - xx - xx - xx</td>
 </tr>
-<tr class="row-even"><td><p>x6 - xx - xx - xx - xx - xx</p></td>
+<tr class="row-even"><td>x6 - xx - xx - xx - xx - xx</td>
 </tr>
-<tr class="row-odd"><td><p>xA - xx - xx - xx - xx - xx</p></td>
+<tr class="row-odd"><td>xA - xx - xx - xx - xx - xx</td>
 </tr>
-<tr class="row-even"><td><p>xE - xx - xx - xx - xx - xx</p></td>
+<tr class="row-even"><td>xE - xx - xx - xx - xx - xx</td>
 </tr>
 </tbody>
 </table>
@@ -277,12 +291,12 @@
 <p>MACアドレスの後半は組織によって、自己編成できます。</p>
 <p>だから、こちらのサイトで、ハードウェアの製作者が検索できます：</p>
 </div></blockquote>
-<p>他に、MACアドレスの放送(検索)アドレスは <code class="docutils literal notranslate"><span class="pre">FF:FF:FF:FF:FF:FF</span></code> です。</p>
+<p>他に、MACアドレスの放送(検索)アドレスは <code class="docutils literal"><span class="pre">FF:FF:FF:FF:FF:FF</span></code> です。</p>
 <p>MACの使え方法は、同じ所・場所・ルームに接続な設備はSwitchがお互いのアドレスを知る為に、検索とテーブルとして記録される。
 そのテーブルは「CAM Table」や「MAC Address Table」と呼ばれる。</p>
 <p>こうなると、ローカルのパケッジ交換がもっと効率で完全できます。</p>
 <ul class="simple">
-<li><p>MAC tableはPCでも検査可能です。</p></li>
+<li>MAC tableはPCでも検査可能です。</li>
 </ul>
 <p>Mac/Linux/Windows、全てのコマンドは``arp -a``</p>
 </div>
@@ -305,13 +319,26 @@
 <img alt="https://imgur.com/Mk6ihh7.png" src="https://imgur.com/Mk6ihh7.png" />
 <p>主のコマンドは：</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">switchport</span> <span class="pre">mode</span> <span class="pre">trunk</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">switchport</span> <span class="pre">trunk</span> <span class="pre">native</span> <span class="pre">vlan</span> <span class="pre">&lt;vlan-id&gt;</span></code></p>
+<div><p><code class="docutils literal"><span class="pre">switchport</span> <span class="pre">mode</span> <span class="pre">trunk</span></code></p>
+<p><code class="docutils literal"><span class="pre">switchport</span> <span class="pre">trunk</span> <span class="pre">native</span> <span class="pre">vlan</span> <span class="pre">&lt;vlan-id&gt;</span></code></p>
 </div></blockquote>
 </div>
 </div>
 <div class="section" id="routing-layer3">
 <h2>パケットRouting (Layer3)<a class="headerlink" href="#routing-layer3" title="Permalink to this headline">¶</a></h2>
+<p>Routingは、IPの配属、分割とMACをもっとインターネットの範囲にサポートする為の存在。</p>
+<p>ゼロから世界まで、展開も繋がるも可能です。</p>
+<p>IPの世界にも、プライベート（ローカル）と、パブリック（インターネット）との概念があります。</p>
+<p>現時点のIPも、IPv4とIPv6この二つのメインバージョンが有ります。</p>
+<div class="section" id="ip">
+<h3>IP・マスク・ゲートウェイ<a class="headerlink" href="#ip" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="ipv4">
+<h3>IPv4<a class="headerlink" href="#ipv4" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="ipv6">
+<h3>IPv6<a class="headerlink" href="#ipv6" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 <div class="section" id="id2">
 <h2>レーヤー４以上<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
