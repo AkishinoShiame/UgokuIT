@@ -106,6 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id2">パスワード作るツール</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#windows">Windowsの最新イメージを作成ツール</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">ハードウェア・ドライブ・資料回復/消す</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">開発環境用</a></li>
 </ul>
 </li>
 </ul>
@@ -199,6 +200,86 @@
 <li><a class="reference external" href="https://www.undeleteplus.com/">UndeletePlus</a> 資料回復</li>
 <li><a class="reference external" href="http://www.dposoft.net/hdd.html">HDD Regenerator</a> HDD BadSector 回避ツール</li>
 </ul>
+</div>
+<div class="section" id="id4">
+<h2>開発環境用<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>GitHubとSSH自動認証</li>
+</ul>
+<div class="highlight-bash"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>FileName:gitssh.sh
+
+<span class="c1">#!/usr/bin/expect -f</span>
+spawn ssh-add
+expect <span class="s2">&quot;Enter passphrase for /root/.ssh/id_rsa:&quot;</span>
+send <span class="s2">&quot;&lt;passphraseパスワード&gt;\n&quot;</span><span class="p">;</span>
+<span class="c1"># expect &quot;Identity added: /root/.ssh/id_rsa (/root/.ssh/id_rsa)&quot;</span>
+interact
+</pre></div>
+</td></tr></table></div>
+<div class="highlight-bash"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span>FileName:.bashrc
+
+前略
+..
+
+<span class="c1"># github ssh agent auto complete</span>
+<span class="nv">SSH_ENV</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.ssh/agent-environment&quot;</span>
+
+<span class="k">function</span> start_agent <span class="o">{</span>
+        <span class="nb">echo</span> <span class="s2">&quot;Initialising new SSH agent...&quot;</span>
+        /usr/bin/ssh-agent <span class="p">|</span> sed <span class="s1">&#39;s/^echo/#echo/&#39;</span> &gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">SSH_ENV</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="nb">echo</span> succeeded
+        chmod <span class="m">600</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">SSH_ENV</span><span class="si">}</span><span class="s2">&quot;</span>
+        . <span class="s2">&quot;</span><span class="si">${</span><span class="nv">SSH_ENV</span><span class="si">}</span><span class="s2">&quot;</span> &gt; /dev/null
+        /root/.gitssh.sh
+<span class="o">}</span>
+
+<span class="c1"># Source SSH settings, if applicable</span>
+
+<span class="k">if</span> <span class="o">[</span> -f <span class="s2">&quot;</span><span class="si">${</span><span class="nv">SSH_ENV</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        . <span class="s2">&quot;</span><span class="si">${</span><span class="nv">SSH_ENV</span><span class="si">}</span><span class="s2">&quot;</span> &gt; /dev/null
+        ps <span class="si">${</span><span class="nv">SSH_AGENT_PID</span><span class="si">}</span> <span class="c1">#doesn&#39;t work under cywgin</span>
+        ps -ef <span class="p">|</span> grep <span class="si">${</span><span class="nv">SSH_AGENT_PID</span><span class="si">}</span> <span class="p">|</span> grep ssh-agent$ &gt; /dev/null <span class="o">||</span> <span class="o">{</span>
+                start_agent<span class="p">;</span>
+<span class="o">}</span>
+<span class="k">else</span>
+        start_agent<span class="p">;</span>
+<span class="k">fi</span>
+</pre></div>
+</td></tr></table></div>
 </div>
 </div>
 

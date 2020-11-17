@@ -35,7 +35,10 @@ Windowsの最新イメージを作成ツール
 開発環境用
 ==========
 
-* GitHubとSSH自動認証::
+* GitHubとSSH自動認証
+
+.. code-block:: bash
+  :linenos:
 
   FileName:gitssh.sh
 
@@ -46,8 +49,9 @@ Windowsの最新イメージを作成ツール
   # expect "Identity added: /root/.ssh/id_rsa (/root/.ssh/id_rsa)"
   interact
 
-  ==================================================================
-
+.. code-block:: bash
+  :linenos:
+  
   FileName:.bashrc
 
   前略
