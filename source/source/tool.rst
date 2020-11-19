@@ -81,6 +81,61 @@ Windowsの最新イメージを作成ツール
           start_agent;
   fi
 
+ネットワーク探索
+==================
+
+
+DHCPでホストを確認.sh
+-----------------------
+
+.. code-block:: bash
+  
+  #!/bin/bash
+  
+  #ここはネットワークの定義コーナー、対話系もスクリプトの後ろでも入力出来ます。
+  if [ -z "$1" ] ; then
+          echo Network Header Required \(Ex 10.0.1\):
+          read NetHead
+  else
+          NetHead=$1;
+  fi
+  
+  #本番のネットワーク探知
+  for i in {1..255}; do
+          Result=$(nslookup "$NetHead.$i" <DNS_server_IP> | grep -v 'NXDOMAIN'); #ここの-v NXDOMAIN は 応用として、grep 'arpa' で普通に全ゲットもいいです。
+          if [ -z "$Result" ]; then
+                  continue;
+          else
+                  printf "$Result\n";
+          fi
+  done
+
+
+PINGでIPとしてのホストが生存確認.sh
+-------------------------------------
+
+.. code-block:: bash
+  
+  #!/bin/bash
+  
+  #ここはネットワークの定義コーナー、対話系もスクリプトの後ろでも入力出来ます。
+  if [ -z "$1" ] ; then
+          echo Network Header Required \(Ex 10.0.1\):
+          read NetHead
+  else
+          NetHead=$1;
+  fi
+  
+  #One Time Pingでホストの存在を確認する
+  for i in {1..255}; do
+          Result=$(ping "$NetHead.$i" -c 1 | grep 'ttl');
+          if [ -z "$Result" ]; then
+                  continue;
+          else
+                  printf "$Result\n";
+          fi
+  done
+
 
 .. _パスワード作る、zipフォーマット: https://akishinoshiame.github.io/UgokuIT/tool/passcode.zip
 .. _パスワード作る、tar.gzフォーマット: https://akishinoshiame.github.io/UgokuIT/tool/passcode.tar.gz
