@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="jp" >
+<html class="writer-html5" lang="jp" >
 <head>
   <meta charset="utf-8">
   
@@ -25,20 +25,11 @@
   <![endif]-->
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'./',
-              VERSION:'v1.0',
-              LANGUAGE:'jp',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -107,6 +98,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#windows">Windowsの最新イメージを作成ツール</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">ハードウェア・ドライブ・資料回復/消す</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id4">開発環境用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">ネットワーク探索</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dhcp-sh">DHCPでホストを確認.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pingip-sh">PINGでIPとしてのホストが生存確認.sh</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -177,36 +173,36 @@
 <div class="section" id="id2">
 <h2>パスワード作るツール<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Python3環境(Ubuntu) <a class="reference external" href="https://akishinoshiame.github.io/UgokuIT/tool/passcode.zip">パスワード作る、zipフォーマット</a></li>
-<li>Python3環境(Ubuntu) <a class="reference external" href="https://akishinoshiame.github.io/UgokuIT/tool/passcode.tar.gz">パスワード作る、tar.gzフォーマット</a></li>
+<li><p>Python3環境(Ubuntu) <a class="reference external" href="https://akishinoshiame.github.io/UgokuIT/tool/passcode.zip">パスワード作る、zipフォーマット</a></p></li>
+<li><p>Python3環境(Ubuntu) <a class="reference external" href="https://akishinoshiame.github.io/UgokuIT/tool/passcode.tar.gz">パスワード作る、tar.gzフォーマット</a></p></li>
 </ul>
 </div>
 <div class="section" id="windows">
 <h2>Windowsの最新イメージを作成ツール<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://tb.rg-adguard.net/public.php">ESDや色んなソフトウェアダウロード</a></li>
-<li><a class="reference external" href="https://rg-adguard.net/decrypt-multi-release/">decrypt-multi-release</a></li>
-<li><a class="reference external" href="https://uup.rg-adguard.net/">adguard UUP 選択ツール</a></li>
-<li><a class="reference external" href="https://uupdump.ml/">UUP Dump の公式サイト</a></li>
-<li><a class="reference external" href="https://rufus.ie/">Rufusツール</a></li>
+<li><p><a class="reference external" href="https://tb.rg-adguard.net/public.php">ESDや色んなソフトウェアダウロード</a></p></li>
+<li><p><a class="reference external" href="https://rg-adguard.net/decrypt-multi-release/">decrypt-multi-release</a></p></li>
+<li><p><a class="reference external" href="https://uup.rg-adguard.net/">adguard UUP 選択ツール</a></p></li>
+<li><p><a class="reference external" href="https://uupdump.ml/">UUP Dump の公式サイト</a></p></li>
+<li><p><a class="reference external" href="https://rufus.ie/">Rufusツール</a></p></li>
 </ul>
 </div>
 <div class="section" id="id3">
 <h2>ハードウェア・ドライブ・資料回復/消す<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://crystalmark.info/en/software/crystaldiskinfo/">CrystalDiskInfo</a> HDD・SSD検査ソフトウェア</li>
-<li><a class="reference external" href="https://www.cpuid.com/softwares/cpu-z.html">CPU-Z</a> ハードウェア確認ソフトウェア</li>
-<li><a class="reference external" href="https://www.killdisk.com/erasedata_win.htm">Kill Disk</a> ストレージを物理で消すツール</li>
-<li><a class="reference external" href="https://www.undeleteplus.com/">UndeletePlus</a> 資料回復</li>
-<li><a class="reference external" href="http://www.dposoft.net/hdd.html">HDD Regenerator</a> HDD BadSector 回避ツール</li>
+<li><p><a class="reference external" href="https://crystalmark.info/en/software/crystaldiskinfo/">CrystalDiskInfo</a> HDD・SSD検査ソフトウェア</p></li>
+<li><p><a class="reference external" href="https://www.cpuid.com/softwares/cpu-z.html">CPU-Z</a> ハードウェア確認ソフトウェア</p></li>
+<li><p><a class="reference external" href="https://www.killdisk.com/erasedata_win.htm">Kill Disk</a> ストレージを物理で消すツール</p></li>
+<li><p><a class="reference external" href="https://www.undeleteplus.com/">UndeletePlus</a> 資料回復</p></li>
+<li><p><a class="reference external" href="http://www.dposoft.net/hdd.html">HDD Regenerator</a> HDD BadSector 回避ツール</p></li>
 </ul>
 </div>
 <div class="section" id="id4">
 <h2>開発環境用<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>GitHubとSSH自動認証</li>
+<li><p>GitHubとSSH自動認証</p></li>
 </ul>
-<div class="highlight-bash"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -223,7 +219,7 @@ send <span class="s2">&quot;&lt;passphraseパスワード&gt;\n&quot;</span><spa
 interact
 </pre></div>
 </td></tr></table></div>
-<div class="highlight-bash"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -280,6 +276,57 @@ interact
 <span class="k">fi</span>
 </pre></div>
 </td></tr></table></div>
+</div>
+<div class="section" id="id5">
+<h2>ネットワーク探索<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dhcp-sh">
+<h3>DHCPでホストを確認.sh<a class="headerlink" href="#dhcp-sh" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#ここはネットワークの定義コーナー、対話系もスクリプトの後ろでも入力出来ます。</span>
+<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> Network Header Required <span class="se">\(</span>Ex <span class="m">10</span>.0.1<span class="se">\)</span>:
+        <span class="nb">read</span> NetHead
+<span class="k">else</span>
+        <span class="nv">NetHead</span><span class="o">=</span><span class="nv">$1</span><span class="p">;</span>
+<span class="k">fi</span>
+
+<span class="c1">#本番のネットワーク探知</span>
+<span class="k">for</span> i in <span class="o">{</span><span class="m">1</span>..255<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
+        <span class="nv">Result</span><span class="o">=</span><span class="k">$(</span>nslookup <span class="s2">&quot;</span><span class="nv">$NetHead</span><span class="s2">.</span><span class="nv">$i</span><span class="s2">&quot;</span> &lt;DNS_server_IP&gt; <span class="p">|</span> grep -v <span class="s1">&#39;NXDOMAIN&#39;</span><span class="k">)</span><span class="p">;</span> <span class="c1">#ここの-v NXDOMAIN は 応用として、grep &#39;arpa&#39; で普通に全ゲットもいいです。</span>
+        <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$Result</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+                <span class="k">continue</span><span class="p">;</span>
+        <span class="k">else</span>
+                <span class="nb">printf</span> <span class="s2">&quot;</span><span class="nv">$Result</span><span class="s2">\n&quot;</span><span class="p">;</span>
+        <span class="k">fi</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pingip-sh">
+<h3>PINGでIPとしてのホストが生存確認.sh<a class="headerlink" href="#pingip-sh" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#ここはネットワークの定義コーナー、対話系もスクリプトの後ろでも入力出来ます。</span>
+<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> Network Header Required <span class="se">\(</span>Ex <span class="m">10</span>.0.1<span class="se">\)</span>:
+        <span class="nb">read</span> NetHead
+<span class="k">else</span>
+        <span class="nv">NetHead</span><span class="o">=</span><span class="nv">$1</span><span class="p">;</span>
+<span class="k">fi</span>
+
+<span class="c1">#One Time Pingでホストの存在を確認する</span>
+<span class="k">for</span> i in <span class="o">{</span><span class="m">1</span>..255<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
+        <span class="nv">Result</span><span class="o">=</span><span class="k">$(</span>ping <span class="s2">&quot;</span><span class="nv">$NetHead</span><span class="s2">.</span><span class="nv">$i</span><span class="s2">&quot;</span> -c <span class="m">1</span> <span class="p">|</span> grep <span class="s1">&#39;ttl&#39;</span><span class="k">)</span><span class="p">;</span>
+        <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$Result</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+                <span class="k">continue</span><span class="p">;</span>
+        <span class="k">else</span>
+                <span class="nb">printf</span> <span class="s2">&quot;</span><span class="nv">$Result</span><span class="s2">\n&quot;</span><span class="p">;</span>
+        <span class="k">fi</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
