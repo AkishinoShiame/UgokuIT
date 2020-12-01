@@ -51,6 +51,20 @@ WSUSを使うのWindows 10が0x8024401cのエラー
   * メモリが足りない：https://www.saotn.org/wsuspool-keeps-crashing-stops/
 
 
+WSUSサーバーにMicrosoft Update Catalogからパッケージをインポートすると80131509エラーが出た。
+----------------------------------------------------------------------------------------------
+
+このサイトを参考したの修復方法：https://community.spiceworks.com/topic/2144162-import-to-wsus-fails-direct-import-from-ms-update-catalog?fbclid=IwAR2odP4VRogiES4JPYaT_5Kxvepkn93l8l2vhbyQWpPgN1XktNFrLJqBf3I
+
+これは実際にActive-X addonの問題です。
+
+下のコマンドを登録する、サーバーを再起動で解決です。
+
+.. code-block:: shell
+
+    reg add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319 /V SchUseStrongCrypto /T REG_DWORD /D 1
+
+
 WSUSを指定したのPCはMicrosoftストアもはや追加機能がエラー
 -----------------------------------------------------------
 

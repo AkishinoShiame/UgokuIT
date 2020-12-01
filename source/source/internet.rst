@@ -185,3 +185,16 @@ IPv6
 
 レーヤー４以上
 ================
+
+
+Windows 10のNetwork Indicatorを弄る
+-------------------------------------
+
+地球のオフライン状態で、パソコンアイコンのオンライ状態になるにはローカルのDNSとサーバーを以下の設置が必要です。
+
+サーバーにconnecttest.txtのファイルが必要です。
+
+そうして社内のDNSにwww.msftconnecttest.comをサーバーにredirectする。
+
+設置した後、Windows 10のNetwork Indicatorは常にオンラインです。
+
