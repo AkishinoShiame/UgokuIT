@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="jp" >
+<html class="writer-html4" lang="jp" >
 <head>
   <meta charset="utf-8">
   
@@ -25,11 +25,20 @@
   <![endif]-->
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'v1.0',
+              LANGUAGE:'jp',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -102,6 +111,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#zip">zip</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cut">cut</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#awk">awk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sed">sed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#column">column</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#go">Go</a></li>
@@ -182,49 +193,60 @@
 <div class="section" id="ping">
 <h3>ping<a class="headerlink" href="#ping" title="Permalink to this headline">¶</a></h3>
 <p>pingコマンドは、他のホストが生存確認用のツールです。</p>
-<p>普通よ用法は <code class="docutils literal notranslate"><span class="pre">ping</span> <span class="pre">&lt;ターゲットIP&gt;</span></code>  。</p>
-<p>他は <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">数字</span></code> を何回を確認するです。</p>
+<p>普通よ用法は <code class="docutils literal"><span class="pre">ping</span> <span class="pre">&lt;ターゲットIP&gt;</span></code>  。</p>
+<p>他は <code class="docutils literal"><span class="pre">-c</span> <span class="pre">数字</span></code> を何回を確認するです。</p>
 </div>
 <div class="section" id="nslookup">
 <h3>nslookup<a class="headerlink" href="#nslookup" title="Permalink to this headline">¶</a></h3>
 <p>このコマンドは、IP &lt;=&gt; FQDN の変換と確認です。</p>
-<p>デフォルトは、 <code class="docutils literal notranslate"><span class="pre">nslookup</span> <span class="pre">&lt;IP&gt;</span></code> と <code class="docutils literal notranslate"><span class="pre">nslookup</span> <span class="pre">&lt;FQDN&gt;</span></code>　で確認可能です。</p>
+<p>デフォルトは、 <code class="docutils literal"><span class="pre">nslookup</span> <span class="pre">&lt;IP&gt;</span></code> と <code class="docutils literal"><span class="pre">nslookup</span> <span class="pre">&lt;FQDN&gt;</span></code>　で確認可能です。</p>
 <p>もっと確認出来ますのは、後ろをDNS IPを入力し、特定なDNSに検索可能です。</p>
-<p>例えば <code class="docutils literal notranslate"><span class="pre">nslookup</span> <span class="pre">&lt;IP&gt;</span> <span class="pre">&lt;DNS_IP&gt;</span></code></p>
+<p>例えば <code class="docutils literal"><span class="pre">nslookup</span> <span class="pre">&lt;IP&gt;</span> <span class="pre">&lt;DNS_IP&gt;</span></code></p>
 </div>
 <div class="section" id="less">
 <h3>less<a class="headerlink" href="#less" title="Permalink to this headline">¶</a></h3>
 <p>知りたいものを多すぎの時、lessを使って、ゆっくりで見えます。</p>
-<p>普段は <code class="docutils literal notranslate"><span class="pre">&lt;他のコマンド&gt;</span> <span class="pre">|</span> <span class="pre">less</span></code> を使って場合が多いです。</p>
-<p>他のオススメは <code class="docutils literal notranslate"><span class="pre">less</span> <span class="pre">-S</span></code> を使うことです。</p>
+<p>普段は <code class="docutils literal"><span class="pre">&lt;他のコマンド&gt;</span> <span class="pre">|</span> <span class="pre">less</span></code> を使って場合が多いです。</p>
+<p>他のオススメは <code class="docutils literal"><span class="pre">less</span> <span class="pre">-S</span></code> を使うことです。</p>
 </div>
 <div class="section" id="tar">
 <h3>tar<a class="headerlink" href="#tar" title="Permalink to this headline">¶</a></h3>
 <p>パッケージ用のコマンド。</p>
-<p>圧縮 <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-zcvf</span> <span class="pre">xxxx.tar.gz</span> <span class="pre">&lt;directory&gt;</span></code></p>
-<p>解凍 <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-zxvf</span> <span class="pre">xxxx.tar.gz</span></code></p>
-<p>圧縮 <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-Jcvf</span> <span class="pre">xxxx.tar.xz</span> <span class="pre">&lt;directory&gt;</span></code></p>
-<p>解凍 <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-Jxvf</span> <span class="pre">xxxx.tar.xz</span></code></p>
-<p>圧縮 <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-cvf</span> <span class="pre">xxxx.tar</span> <span class="pre">&lt;directory&gt;</span></code></p>
-<p>解凍 <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-xvf</span> <span class="pre">xxxx.tar</span></code></p>
+<p>圧縮 <code class="docutils literal"><span class="pre">tar</span> <span class="pre">-zcvf</span> <span class="pre">xxxx.tar.gz</span> <span class="pre">&lt;directory&gt;</span></code></p>
+<p>解凍 <code class="docutils literal"><span class="pre">tar</span> <span class="pre">-zxvf</span> <span class="pre">xxxx.tar.gz</span></code></p>
+<p>圧縮 <code class="docutils literal"><span class="pre">tar</span> <span class="pre">-Jcvf</span> <span class="pre">xxxx.tar.xz</span> <span class="pre">&lt;directory&gt;</span></code></p>
+<p>解凍 <code class="docutils literal"><span class="pre">tar</span> <span class="pre">-Jxvf</span> <span class="pre">xxxx.tar.xz</span></code></p>
+<p>圧縮 <code class="docutils literal"><span class="pre">tar</span> <span class="pre">-cvf</span> <span class="pre">xxxx.tar</span> <span class="pre">&lt;directory&gt;</span></code></p>
+<p>解凍 <code class="docutils literal"><span class="pre">tar</span> <span class="pre">-xvf</span> <span class="pre">xxxx.tar</span></code></p>
 </div>
 <div class="section" id="zip">
 <h3>zip<a class="headerlink" href="#zip" title="Permalink to this headline">¶</a></h3>
 <p>パッケージ用のコマンド。</p>
-<p>圧縮 <code class="docutils literal notranslate"><span class="pre">zip</span> <span class="pre">-r</span> <span class="pre">xxxx.zip</span> <span class="pre">&lt;directory&gt;</span></code></p>
-<p>解凍 <code class="docutils literal notranslate"><span class="pre">unzip</span> <span class="pre">xxxx.zip</span></code></p>
+<p>圧縮 <code class="docutils literal"><span class="pre">zip</span> <span class="pre">-r</span> <span class="pre">xxxx.zip</span> <span class="pre">&lt;directory&gt;</span></code></p>
+<p>解凍 <code class="docutils literal"><span class="pre">unzip</span> <span class="pre">xxxx.zip</span></code></p>
 </div>
 <div class="section" id="cut">
 <h3>cut<a class="headerlink" href="#cut" title="Permalink to this headline">¶</a></h3>
 <p>資料を分裂する。</p>
-<p>普通はファイルの処理が多いです <code class="docutils literal notranslate"><span class="pre">cut</span> <span class="pre">-f</span> <span class="pre">&lt;1,2,4-5&gt;</span> <span class="pre">-d,</span> <span class="pre">&lt;filename&gt;</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">-f</span></code> は表示されたいセルを指示。</p>
-<p><code class="docutils literal notranslate"><span class="pre">-d</span></code> は分割の基準文字や特殊文字です。</p>
+<p>普通はファイルの処理が多いです <code class="docutils literal"><span class="pre">cut</span> <span class="pre">-f</span> <span class="pre">&lt;1,2,4-5&gt;</span> <span class="pre">-d,</span> <span class="pre">&lt;filename&gt;</span></code></p>
+<p><code class="docutils literal"><span class="pre">-f</span></code> は表示されたいセルを指示。</p>
+<p><code class="docutils literal"><span class="pre">-d</span></code> は分割の基準文字や特殊文字です。</p>
 <p>他にも `` &lt;コマンド&gt; | cut `` の使用も多いです。</p>
 </div>
 <div class="section" id="awk">
 <h3>awk<a class="headerlink" href="#awk" title="Permalink to this headline">¶</a></h3>
-<p>これは <code class="docutils literal notranslate"><span class="pre">cut</span></code> とは似ているコマンド。</p>
+<p>これは <code class="docutils literal"><span class="pre">cut</span></code> とは似ているコマンド。</p>
+<p>普通は <code class="docutils literal"><span class="pre">awk</span> <span class="pre">'{print</span> <span class="pre">$1}'</span> <span class="pre">``</span> <span class="pre">という使う方が多いです、分割の基本文字は&quot;</span> <span class="pre">&quot;空白です。</span> <span class="pre">``$&lt;数字&gt;</span></code> を使うは何列を表示するです。</p>
+<p>もっとは <code class="docutils literal"><span class="pre">-F</span> <span class="pre">&quot;¥t&quot;</span></code> を使って、分裂文字を変更する。</p>
+</div>
+<div class="section" id="sed">
+<h3>sed<a class="headerlink" href="#sed" title="Permalink to this headline">¶</a></h3>
+<p>文字を変わる用のコマンドです。</p>
+<p>基本は <code class="docutils literal"><span class="pre">sed</span> <span class="pre">-i</span> <span class="pre">'s/original/new/g'</span></code> の用法です。 文字を&lt;original&gt;から&lt;new&gt;に変更する。</p>
+</div>
+<div class="section" id="column">
+<h3>column<a class="headerlink" href="#column" title="Permalink to this headline">¶</a></h3>
+<p>テーブルとして、色んなファイルを整理するコマンドです。</p>
 </div>
 </div>
 <div class="section" id="go">

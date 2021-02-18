@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="jp" >
+<html class="writer-html4" lang="jp" >
 <head>
   <meta charset="utf-8">
   
@@ -25,11 +25,20 @@
   <![endif]-->
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'v1.0',
+              LANGUAGE:'jp',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -97,6 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id2">システムエラー</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#windows-10bsod-ntfs-file-system-stop-code">Windows 10をスタートアップすると、BSODで&quot;NTFS FILE SYSTEM&quot;とのSTOP CODEが出てくる</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#wsuswindows-100x8024401c">WSUSを使うのWindows 10が0x8024401cのエラー</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wsusmicrosoft-update-catalog80131509">WSUSサーバーにMicrosoft Update Catalogからパッケージをインポートすると80131509エラーが出た。</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#wsuspcmicrosoft">WSUSを指定したのPCはMicrosoftストアもはや追加機能がエラー</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#wslvscode">WSLのフォントとVScodeの設置</a></li>
 </ul>
@@ -180,16 +190,15 @@
 <p>A: この状況が発生する時、大体はSafe Modeも入れないです。</p>
 <p>まずは以下の状況を試す、もし何もできない場合は、ハードウェアが問題ありの方向で考えます。</p>
 <ul class="simple">
-<li><p>回復モードのターミナルを開います。もしBitLockerがセットするの場合があれば、回復キーを入力してください。</p></li>
-<li><p>diskpartを使って、パーティションの状況を確認。 <code class="docutils literal notranslate"><span class="pre">diskpart</span></code> <code class="docutils literal notranslate"><span class="pre">lis</span> <span class="pre">dis</span></code> <code class="docutils literal notranslate"><span class="pre">sel</span> <span class="pre">dis</span> <span class="pre">&lt;num&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">lis</span> <span class="pre">par</span></code>。</p></li>
-<li><p>パーティションが見える場合は、大体ハードウェアの問題ではないで確認できます。</p></li>
-<li><p>ハードウェアではないの状況として、次のコマンドで修復する</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">chkdsk</span> <span class="pre">/f</span> <span class="pre">C:</span></code> C[システム]ディスクの検索やインデックスを検証と回復する。<strong>大体このステップで修復できます。</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">sfc</span> <span class="pre">/scannow</span></code> システムの実際エラーを回復する。 「C」はシステムが居るの場所。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">C:</span></code> でシステムの場所に確定、 <code class="docutils literal notranslate"><span class="pre">DISM</span> <span class="pre">/Online</span> <span class="pre">/Cleanup-Image</span> <span class="pre">/CheckHealth</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">C:</span></code> でシステムの場所に確定、 <code class="docutils literal notranslate"><span class="pre">DISM</span> <span class="pre">/Online</span> <span class="pre">/Cleanup-Image</span> <span class="pre">/RestoreHealth</span></code></p></li>
-<li><p>外部で修復： <code class="docutils literal notranslate"><span class="pre">DISM</span> <span class="pre">/Online</span> <span class="pre">/Cleanup-Image</span> <span class="pre">/RestoreHealth</span> <span class="pre">/Source:F:\Sources\install.wim</span></code> Fがインストールメディアの場所です。</p></li>
+<li>回復モードのターミナルを開います。もしBitLockerがセットするの場合があれば、回復キーを入力してください。</li>
+<li>diskpartを使って、パーティションの状況を確認。 <code class="docutils literal"><span class="pre">diskpart</span></code> <code class="docutils literal"><span class="pre">lis</span> <span class="pre">dis</span></code> <code class="docutils literal"><span class="pre">sel</span> <span class="pre">dis</span> <span class="pre">&lt;num&gt;</span></code> <code class="docutils literal"><span class="pre">lis</span> <span class="pre">par</span></code>。</li>
+<li>パーティションが見える場合は、大体ハードウェアの問題ではないで確認できます。</li>
+<li>ハードウェアではないの状況として、次のコマンドで修復する<ul>
+<li><code class="docutils literal"><span class="pre">chkdsk</span> <span class="pre">/f</span> <span class="pre">C:</span></code> C[システム]ディスクの検索やインデックスを検証と回復する。<strong>大体このステップで修復できます。</strong></li>
+<li><code class="docutils literal"><span class="pre">cd</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">sfc</span> <span class="pre">/scannow</span></code> システムの実際エラーを回復する。 「C」はシステムが居るの場所。</li>
+<li><code class="docutils literal"><span class="pre">cd</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">C:</span></code> でシステムの場所に確定、 <code class="docutils literal"><span class="pre">DISM</span> <span class="pre">/Online</span> <span class="pre">/Cleanup-Image</span> <span class="pre">/CheckHealth</span></code></li>
+<li><code class="docutils literal"><span class="pre">cd</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">C:</span></code> でシステムの場所に確定、 <code class="docutils literal"><span class="pre">DISM</span> <span class="pre">/Online</span> <span class="pre">/Cleanup-Image</span> <span class="pre">/RestoreHealth</span></code></li>
+<li>外部で修復： <code class="docutils literal"><span class="pre">DISM</span> <span class="pre">/Online</span> <span class="pre">/Cleanup-Image</span> <span class="pre">/RestoreHealth</span> <span class="pre">/Source:F:\Sources\install.wim</span></code> Fがインストールメディアの場所です。</li>
 </ul>
 </li>
 </ul>
@@ -197,28 +206,37 @@
 <div class="section" id="wsuswindows-100x8024401c">
 <h3>WSUSを使うのWindows 10が0x8024401cのエラー<a class="headerlink" href="#wsuswindows-100x8024401c" title="Permalink to this headline">¶</a></h3>
 <p>まずはサーバーとクライアントの接続を試します。:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ping</span> <span class="o">&lt;</span><span class="n">WSUS_Server_IP</span><span class="o">&gt;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ping</span> <span class="o">&lt;</span><span class="n">WSUS_Server_IP</span><span class="o">&gt;</span>
 <span class="n">telnet</span> <span class="o">&lt;</span><span class="n">WSUS_Server_IP</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">WSUS_Port</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>それから、問題がない場合、サーバーのハードウェアやパフォーマンスを考えます：</p>
 <ul class="simple">
-<li><p>ＷＳＵＳでダウロードしたの更新パッケージが多すぎ？</p></li>
-<li><p>ＷＳＵＳのハードウェア、処理能力が足りない？</p></li>
-<li><p>もし、サーバーが2012もはや古いシステムなら、特定なパッチをインストールしましたか？</p>
-<ul>
-<li><p>パッチ：<a class="reference external" href="https://cloudblogs.microsoft.com/windowsserver/2014/04/16/windows-server-2012-r2-update-availability-of-wsus-fix-and-revised-servicing-timing/">https://cloudblogs.microsoft.com/windowsserver/2014/04/16/windows-server-2012-r2-update-availability-of-wsus-fix-and-revised-servicing-timing/</a></p></li>
-<li><p>ESDサポート：<a class="reference external" href="https://support.microsoft.com/en-us/help/3159706/update-enables-esd-decryption-provision-in-wsus-in-windows-server-2012">https://support.microsoft.com/en-us/help/3159706/update-enables-esd-decryption-provision-in-wsus-in-windows-server-2012</a></p></li>
+<li>ＷＳＵＳでダウロードしたの更新パッケージが多すぎ？</li>
+<li>ＷＳＵＳのハードウェア、処理能力が足りない？</li>
+<li>もし、サーバーが2012もはや古いシステムなら、特定なパッチをインストールしましたか？<ul>
+<li>パッチ：<a class="reference external" href="https://cloudblogs.microsoft.com/windowsserver/2014/04/16/windows-server-2012-r2-update-availability-of-wsus-fix-and-revised-servicing-timing/">https://cloudblogs.microsoft.com/windowsserver/2014/04/16/windows-server-2012-r2-update-availability-of-wsus-fix-and-revised-servicing-timing/</a></li>
+<li>ESDサポート：<a class="reference external" href="https://support.microsoft.com/en-us/help/3159706/update-enables-esd-decryption-provision-in-wsus-in-windows-server-2012">https://support.microsoft.com/en-us/help/3159706/update-enables-esd-decryption-provision-in-wsus-in-windows-server-2012</a></li>
 </ul>
 </li>
-<li><p>サーバーのＩＩＳサービスにＷＳＵＳプールのリソースが足りない？ <strong>更新の量が多い場合やクライアントが多いの場合</strong></p></li>
+<li>サーバーのＩＩＳサービスにＷＳＵＳプールのリソースが足りない？ <strong>更新の量が多い場合やクライアントが多いの場合</strong></li>
 </ul>
-<dl class="simple">
-<dt>　* WSUS Server 2016 Best Practice <a class="reference external" href="https://askme4tech.com/wsus-best-practices-windows-server-2016">https://askme4tech.com/wsus-best-practices-windows-server-2016</a></dt><dd><ul class="simple">
-<li><p>メモリが足りない：<a class="reference external" href="https://www.saotn.org/wsuspool-keeps-crashing-stops/">https://www.saotn.org/wsuspool-keeps-crashing-stops/</a></p></li>
+<dl class="docutils">
+<dt>　* WSUS Server 2016 Best Practice <a class="reference external" href="https://askme4tech.com/wsus-best-practices-windows-server-2016">https://askme4tech.com/wsus-best-practices-windows-server-2016</a></dt>
+<dd><ul class="first last simple">
+<li>メモリが足りない：<a class="reference external" href="https://www.saotn.org/wsuspool-keeps-crashing-stops/">https://www.saotn.org/wsuspool-keeps-crashing-stops/</a></li>
 </ul>
 </dd>
 </dl>
+</div>
+<div class="section" id="wsusmicrosoft-update-catalog80131509">
+<h3>WSUSサーバーにMicrosoft Update Catalogからパッケージをインポートすると80131509エラーが出た。<a class="headerlink" href="#wsusmicrosoft-update-catalog80131509" title="Permalink to this headline">¶</a></h3>
+<p>このサイトを参考したの修復方法：<a class="reference external" href="https://community.spiceworks.com/topic/2144162-import-to-wsus-fails-direct-import-from-ms-update-catalog?fbclid=IwAR2odP4VRogiES4JPYaT_5Kxvepkn93l8l2vhbyQWpPgN1XktNFrLJqBf3I">https://community.spiceworks.com/topic/2144162-import-to-wsus-fails-direct-import-from-ms-update-catalog?fbclid=IwAR2odP4VRogiES4JPYaT_5Kxvepkn93l8l2vhbyQWpPgN1XktNFrLJqBf3I</a></p>
+<p>これは実際にActive-X addonの問題です。</p>
+<p>下のコマンドを登録する、サーバーを再起動で解決です。</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>reg add HKEY_LOCAL_MACHINE<span class="se">\S</span>OFTWARE<span class="se">\M</span>icrosoft<span class="se">\.</span>NETFramework<span class="se">\v</span><span class="m">4</span>.0.30319 /V SchUseStrongCrypto /T REG_DWORD /D <span class="m">1</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="wsuspcmicrosoft">
 <h3>WSUSを指定したのPCはMicrosoftストアもはや追加機能がエラー<a class="headerlink" href="#wsuspcmicrosoft" title="Permalink to this headline">¶</a></h3>
@@ -226,11 +244,10 @@
 <p>だから、もしWSUSサーバーはセキュリティだけのパッケージをダウロードとインストール用なら、グループポリシーの変更が必要です。</p>
 <p>GPedit.mscを開いて、以下のパスがに変更する：</p>
 <ul class="simple">
-<li><p>ローカル コンピューター ポリシー ＞ コンピューターの構成 ＞ 管理用テンプレート ＞ システム</p>
-<ul>
-<li><p><strong>オプション コンポーネントのインストールおよびコンポーネントの修復のための設定を指定する</strong></p></li>
-<li><p>↑のポリシーを有効して、↓の選択をチェックする。</p></li>
-<li><p>☑ Windows Server Update Service (WSUS)の代わりに、Windows Updateから修復コンテンツとオプションの機能を直接ダウロードする</p></li>
+<li>ローカル コンピューター ポリシー ＞ コンピューターの構成 ＞ 管理用テンプレート ＞ システム<ul>
+<li><strong>オプション コンポーネントのインストールおよびコンポーネントの修復のための設定を指定する</strong></li>
+<li>↑のポリシーを有効して、↓の選択をチェックする。</li>
+<li>☑ Windows Server Update Service (WSUS)の代わりに、Windows Updateから修復コンテンツとオプションの機能を直接ダウロードする</li>
 </ul>
 </li>
 </ul>
@@ -241,7 +258,7 @@
 <p>VScodeをWSLに接続すると、フォントを見やすいなMigu 1Mを変更したいの場合。</p>
 <p>まずはMigu 1Mを公式サイトにダウンロード：<a class="reference external" href="https://mix-mplus-ipa.osdn.jp/migu/">https://mix-mplus-ipa.osdn.jp/migu/</a></p>
 <p>ダウンロードしたのZipを解凍する、以下のフォルダにコピーする:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[WSL]$ mkdir /usr/share/fonts/truetype/Migu\ 1M
+<div class="highlight-default"><div class="highlight"><pre><span></span>[WSL]$ mkdir /usr/share/fonts/truetype/Migu\ 1M
 [WSL]$ cp *ttf /usr/share/fonts/truetype/Migu\ 1M/
 </pre></div>
 </div>
@@ -253,7 +270,7 @@
 <div class="section" id="rufuswindows">
 <h3>RufusでWindowsインストールメディアを作成とエラーが出る。<a class="headerlink" href="#rufuswindows" title="Permalink to this headline">¶</a></h3>
 <p>A: explorer.exeのプロセスを停止すると、正常に作ることができます。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tasklist</span> <span class="o">|</span> <span class="n">find</span> <span class="s2">&quot;explorer.exe&quot;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tasklist</span> <span class="o">|</span> <span class="n">find</span> <span class="s2">&quot;explorer.exe&quot;</span>
 <span class="n">taskkill</span> <span class="o">/</span><span class="n">F</span> <span class="o">/</span><span class="n">PID</span> <span class="o">&lt;</span><span class="n">pid_number</span><span class="o">&gt;</span>
 
 <span class="n">explorer</span><span class="o">.</span><span class="n">exe</span>

@@ -88,8 +88,9 @@ Windowsの最新イメージを作成ツール
 DHCPでホストを確認.sh
 -----------------------
 
-.. code-block:: bash
-  
+.. code-block:: cmd
+  :linenos:
+
   #!/bin/bash
   
   #ここはネットワークの定義コーナー、対話系もスクリプトの後ろでも入力出来ます。
@@ -115,6 +116,7 @@ PINGでIPとしてのホストが生存確認.sh
 -------------------------------------
 
 .. code-block:: bash
+  :linenos:
   
   #!/bin/bash
   
@@ -137,6 +139,32 @@ PINGでIPとしてのホストが生存確認.sh
   done
 
 
+自己インストーラ作成
+========================
+
+Windows Package 作成
+----------------------
+
+パッケージするの進め方法は二つ
+
+* Windows 10 に入った`IExpress`_を使う。
+* 7-zip さんが提供したの`7zSD.sfx`_を使う。
+
+他には、自動実行用の.batファイルが必要です。
+
+下の部分はbatやcmdファイルに、windowsの最高権限が必要時追加するコードです。
+
+.. code-block:: cmd
+  :linenos:
+  
+  cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %params%", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B )
+
+他に、おすすめのツールは`resource hacker`_という無料EXE編集ツール。
+
+このツールを使ってると、直接EXEのアイコンや色んな設定が変更可能です。
+
+iconが変更したいなら、元のicon groupを別保存し、変わりたいのEXEファイルに使用で変更可能です。
+
 .. _パスワード作る、zipフォーマット: https://akishinoshiame.github.io/UgokuIT/tool/passcode.zip
 .. _パスワード作る、tar.gzフォーマット: https://akishinoshiame.github.io/UgokuIT/tool/passcode.tar.gz
 .. _ESDや色んなソフトウェアダウロード: https://tb.rg-adguard.net/public.php
@@ -149,3 +177,6 @@ PINGでIPとしてのホストが生存確認.sh
 .. _Kill Disk: https://www.killdisk.com/erasedata_win.htm
 .. _UndeletePlus: https://www.undeleteplus.com/
 .. _HDD Regenerator: http://www.dposoft.net/hdd.html
+.. _IExpress: https://docs.microsoft.com/internet-explorer/ie11-ieak/iexpress-wizard-for-win-server
+.. _7zSD.sfx: https://sevenzip.osdn.jp/chm/cmdline/switches/sfx.htm
+.. _resource hacker: http://www.angusj.com/resourcehacker/
