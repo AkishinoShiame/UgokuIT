@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="jp" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="jp" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. ネットワーク・管理 &mdash; 動く！IT！ v1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4.クラウド計算" href="cloud.html" />
+    <link rel="prev" title="2. IT関連サービス" href="itnet.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> 動く！IT！
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">コンテンツ</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mobnet.html">1. モバイルネットワーク</a></li>
+<li class="toctree-l1"><a class="reference internal" href="itnet.html">2. IT関連サービス</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. ネットワーク・管理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tcp-ip">TCP/IP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#layer1">フィジカル (Layer1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#switching-layer2">パケットSwitching (Layer2)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mac">MACアドレス</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vlan">VLAN技術</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#routing-layer3">パケットRouting (Layer3)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ip">IP・マスク・ゲートウェイ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ipv4">IPv4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ipv6">IPv6</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">レーヤー４以上</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#windows-10network-indicator">Windows 10のNetwork Indicatorを弄る</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cloud.html">4.クラウド計算</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programming.html">5.プログラミング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="question.html">[疑]. 問題集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tool.html">[おまけ]. ツール</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">動く！IT！</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>3. ネットワーク・管理</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="internet">
+<span id="id1"></span><h1>3. ネットワーク・管理<a class="headerlink" href="#internet" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tcp-ip">
+<h2>TCP/IP<a class="headerlink" href="#tcp-ip" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="17%" />
+<col width="27%" />
+<col width="42%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td rowspan="8"><p class="first">OSI</p>
+<p class="last">MODEL</p>
+</td>
+<td colspan="2">レイヤーと名前</td>
+<td>簡単説明</td>
+</tr>
+<tr class="row-even"><td>Layer 7</td>
+<td>Application</td>
+<td rowspan="3">アップリケーション</td>
+</tr>
+<tr class="row-odd"><td>Layer 6</td>
+<td>Presentation</td>
+</tr>
+<tr class="row-even"><td>Layer 5</td>
+<td>Session</td>
+</tr>
+<tr class="row-odd"><td>Layer 4</td>
+<td>Transport</td>
+<td>TCP/UDP ポートとか</td>
+</tr>
+<tr class="row-even"><td>Layer 3</td>
+<td>Network</td>
+<td>IPアドレスなど</td>
+</tr>
+<tr class="row-odd"><td>Layer 2</td>
+<td>Data Link</td>
+<td>MACアドレスなど</td>
+</tr>
+<tr class="row-even"><td>Layer 1</td>
+<td>Physical</td>
+<td>ハードウェアケーブル</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="layer1">
+<h2>フィジカル (Layer1)<a class="headerlink" href="#layer1" title="Permalink to this headline">¶</a></h2>
+<p>ネットワークのフィジカルはinternet packetを転送するの為に使うハードウェアです。</p>
+<p>現在の技術としては二つ回線があります。</p>
+<ul class="simple">
+<li>Copper (カッパー)</li>
+<li>Fiber （光ファイバ）</li>
+</ul>
+<p><strong>Copper Network</strong></p>
+<p>カッパーを使って構築のネットワークは、電を使ってパケットを交換する。
+この方法は室内電話からの回路をネット応用な設置です。</p>
+<p>二つの銅線を使って、１ペアの回線が立ち上がります。</p>
+<p>実際はアップロード・ダウロードが別々の実体線が必要です。だから１ペアが回線です。</p>
+<p>この技術はISPが確認したのは、一つの回線のMax　Speedは 50Mです。　物理として電気も減衰しますから、実際の状況はギリギリ50Mが限界です。</p>
+<p>大分の構築は2の回線を同時に使用し、100Mの回線プランが限界。　だから今時代としての必要が厳しいから、光に希望として頼ります。</p>
+<p><strong>Fiber Network</strong></p>
+<p>光ファイバーを導入するのネットワークは、光を使ってパケットを交換する。
+この技術は回線をSpeedUpともっと効率的に使用したいな解決案です。</p>
+<p>実際にも二つの光が必要です、一つはアップロード、もう一つはダウロード。ペアとして組み合わせの回線です。</p>
+<p>技術の進展から、今の光ファイバーは１ファイバーで複数な回線を使用可能です。</p>
+<p>そうして、ＩＳＰが立ち上がるの光回線のスピードは100M以上できます。</p>
+</div>
+<div class="section" id="switching-layer2">
+<h2>パケットSwitching (Layer2)<a class="headerlink" href="#switching-layer2" title="Permalink to this headline">¶</a></h2>
+<p>Switchingとは、MACアドレス間の交換、VLAN技術でネット分離です。</p>
+<div class="section" id="mac">
+<h3>MACアドレス<a class="headerlink" href="#mac" title="Permalink to this headline">¶</a></h3>
+<p>MACアドレスは、生産者がハードウェアを作った時に付けあげたのアドレスです。</p>
+<p>普通に見える場所は、IP・ネットがサポートありの機械です。他にも使う事があります、たとえbluetoothやWiFiです。</p>
+<p>MACアドレスは「Media Access Control address」の略称です。実際に48ビットの長さ、表示方法はHEXとしてプリントされる。</p>
+<p>実際に使えるのタイプは二つがあります。</p>
+<ul>
+<li><p class="first"><strong>ローカルMAC</strong></p>
+<p>ローカルとして、ネットワーク機械の管理者が管理必要としてアレンジしたのアドレスです。</p>
+<p>基準として、以下のアドレスを編列できます。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>x2 - xx - xx - xx - xx - xx</td>
+</tr>
+<tr class="row-even"><td>x6 - xx - xx - xx - xx - xx</td>
+</tr>
+<tr class="row-odd"><td>xA - xx - xx - xx - xx - xx</td>
+</tr>
+<tr class="row-even"><td>xE - xx - xx - xx - xx - xx</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>*　<strong>ユニヴァーサルMAC</strong></p>
+<blockquote>
+<div><p>これは世界通用のMAC アドレスです。</p>
+<p>ハードウェア製造者が付けるアドレス。</p>
+<p>基準も世界の色んな組織が標準を立ち上がりました。</p>
+<p>MACアドレスの前半はOUIと呼ばれる、各組織のユニークなIDです。ここからどうな工場やブランドが製造者が分かります。</p>
+<p>MACアドレスの後半は組織によって、自己編成できます。</p>
+<p>だから、こちらのサイトで、ハードウェアの製作者が検索できます：</p>
+</div></blockquote>
+<p>他に、MACアドレスの放送(検索)アドレスは <code class="docutils literal notranslate"><span class="pre">FF:FF:FF:FF:FF:FF</span></code> です。</p>
+<p>MACの使え方法は、同じ所・場所・ルームに接続な設備はSwitchがお互いのアドレスを知る為に、検索とテーブルとして記録される。
+そのテーブルは「CAM Table」や「MAC Address Table」と呼ばれる。</p>
+<p>こうなると、ローカルのパケッジ交換がもっと効率で完全できます。</p>
+<ul class="simple">
+<li>MAC tableはPCでも検査可能です。</li>
+</ul>
+<p>Mac/Linux/Windows、全てのコマンドは``arp -a``</p>
+</div>
+<div class="section" id="vlan">
+<h3>VLAN技術<a class="headerlink" href="#vlan" title="Permalink to this headline">¶</a></h3>
+<p>VLANは、Virtual Local Area Networkの略称です。つまり、LANを仮想化するの技術です。</p>
+<p>この技術の重要性に付いて話前に、LANが実際の動くを話します。</p>
+<p>LANはMACアドレスを使って、コミュニケーションが出来ます。この技術は、全てのLANが同じSwitchで繋がないといけない。</p>
+<p>つまり、下の構造での表現がLANです。</p>
+<img alt="https://imgur.com/lAH6hiY.png" src="https://imgur.com/lAH6hiY.png" />
+<p>図から見ると、問題は無さそうですけど、実際にネットを立ち上がる時はこうなる：</p>
+<img alt="https://imgur.com/2C4BRF3.png" src="https://imgur.com/2C4BRF3.png" />
+<p>機械の認識は２つのLANが別々で立ち上がります。この場合、もし左のパソコンや設備が右のと連絡（繋がる）時は、なにも設定しないと、接続出来ない。</p>
+<p>この状況は、VLANが必要です。　全てを仮想化で、みんなが繋がれる。</p>
+<p>技術からと述べるなら、SwitchとSwitchの間に、trunk tunnelを構築、全てのパケットをタッグにする。そうすると、みんなは同じロジカルSwitchを繋いてます。</p>
+<p>設定の部分は、Switchに設置で大丈夫です。</p>
+<p>そうすると、構造はこうになった：</p>
+<img alt="https://imgur.com/mf4Xvc9.png" src="https://imgur.com/mf4Xvc9.png" />
+<p>そうして、仮想化だから、指定のパソコンや設備をグループとして、別々のLANを分離するも可能です。</p>
+<img alt="https://imgur.com/Mk6ihh7.png" src="https://imgur.com/Mk6ihh7.png" />
+<p>主のコマンドは：</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">switchport</span> <span class="pre">mode</span> <span class="pre">trunk</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">switchport</span> <span class="pre">trunk</span> <span class="pre">native</span> <span class="pre">vlan</span> <span class="pre">&lt;vlan-id&gt;</span></code></p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="routing-layer3">
+<h2>パケットRouting (Layer3)<a class="headerlink" href="#routing-layer3" title="Permalink to this headline">¶</a></h2>
+<p>Routingは、IPの配属、分割とMACをもっとインターネットの範囲にサポートする為の存在。</p>
+<p>ゼロから世界まで、展開も繋がるも可能です。</p>
+<p>IPの世界にも、プライベート（ローカル）と、パブリック（インターネット）との概念があります。</p>
+<p>現時点のIPも、IPv4とIPv6この二つのメインバージョンが有ります。</p>
+<div class="section" id="ip">
+<h3>IP・マスク・ゲートウェイ<a class="headerlink" href="#ip" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="ipv4">
+<h3>IPv4<a class="headerlink" href="#ipv4" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="ipv6">
+<h3>IPv6<a class="headerlink" href="#ipv6" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>レーヤー４以上<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="windows-10network-indicator">
+<h3>Windows 10のNetwork Indicatorを弄る<a class="headerlink" href="#windows-10network-indicator" title="Permalink to this headline">¶</a></h3>
+<p>地球のオフライン状態で、パソコンアイコンのオンライ状態になるにはローカルのDNSとサーバーを以下の設置が必要です。</p>
+<p>サーバーにconnecttest.txtのファイルが必要です。</p>
+<p>そうして社内のDNSにwww.msftconnecttest.comをサーバーにredirectする。</p>
+<p>設置した後、Windows 10のNetwork Indicatorは常にオンラインです。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cloud.html" class="btn btn-neutral float-right" title="4.クラウド計算" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="itnet.html" class="btn btn-neutral float-left" title="2. IT関連サービス" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, 秋篠詩雨
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
