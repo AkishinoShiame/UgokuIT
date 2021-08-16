@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html4" lang="jp" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>[疑]. 問題集 &mdash; 動く！IT！ v1.0 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -25,20 +28,11 @@
   <![endif]-->
   
     
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'./',
-              VERSION:'v1.0',
-              LANGUAGE:'jp',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -60,7 +54,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> 動く！IT！
+            <a href="index.html" class="icon icon-home"> 動く！IT！
           
 
           
@@ -158,6 +152,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -169,7 +165,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -191,14 +187,14 @@
 <p>まずは以下の状況を試す、もし何もできない場合は、ハードウェアが問題ありの方向で考えます。</p>
 <ul class="simple">
 <li>回復モードのターミナルを開います。もしBitLockerがセットするの場合があれば、回復キーを入力してください。</li>
-<li>diskpartを使って、パーティションの状況を確認。 <code class="docutils literal"><span class="pre">diskpart</span></code> <code class="docutils literal"><span class="pre">lis</span> <span class="pre">dis</span></code> <code class="docutils literal"><span class="pre">sel</span> <span class="pre">dis</span> <span class="pre">&lt;num&gt;</span></code> <code class="docutils literal"><span class="pre">lis</span> <span class="pre">par</span></code>。</li>
+<li>diskpartを使って、パーティションの状況を確認。 <code class="docutils literal notranslate"><span class="pre">diskpart</span></code> <code class="docutils literal notranslate"><span class="pre">lis</span> <span class="pre">dis</span></code> <code class="docutils literal notranslate"><span class="pre">sel</span> <span class="pre">dis</span> <span class="pre">&lt;num&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">lis</span> <span class="pre">par</span></code>。</li>
 <li>パーティションが見える場合は、大体ハードウェアの問題ではないで確認できます。</li>
 <li>ハードウェアではないの状況として、次のコマンドで修復する<ul>
-<li><code class="docutils literal"><span class="pre">chkdsk</span> <span class="pre">/f</span> <span class="pre">C:</span></code> C[システム]ディスクの検索やインデックスを検証と回復する。<strong>大体このステップで修復できます。</strong></li>
-<li><code class="docutils literal"><span class="pre">cd</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">sfc</span> <span class="pre">/scannow</span></code> システムの実際エラーを回復する。 「C」はシステムが居るの場所。</li>
-<li><code class="docutils literal"><span class="pre">cd</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">C:</span></code> でシステムの場所に確定、 <code class="docutils literal"><span class="pre">DISM</span> <span class="pre">/Online</span> <span class="pre">/Cleanup-Image</span> <span class="pre">/CheckHealth</span></code></li>
-<li><code class="docutils literal"><span class="pre">cd</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">C:</span></code> でシステムの場所に確定、 <code class="docutils literal"><span class="pre">DISM</span> <span class="pre">/Online</span> <span class="pre">/Cleanup-Image</span> <span class="pre">/RestoreHealth</span></code></li>
-<li>外部で修復： <code class="docutils literal"><span class="pre">DISM</span> <span class="pre">/Online</span> <span class="pre">/Cleanup-Image</span> <span class="pre">/RestoreHealth</span> <span class="pre">/Source:F:\Sources\install.wim</span></code> Fがインストールメディアの場所です。</li>
+<li><code class="docutils literal notranslate"><span class="pre">chkdsk</span> <span class="pre">/f</span> <span class="pre">C:</span></code> C[システム]ディスクの検索やインデックスを検証と回復する。<strong>大体このステップで修復できます。</strong></li>
+<li><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">sfc</span> <span class="pre">/scannow</span></code> システムの実際エラーを回復する。 「C」はシステムが居るの場所。</li>
+<li><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">C:</span></code> でシステムの場所に確定、 <code class="docutils literal notranslate"><span class="pre">DISM</span> <span class="pre">/Online</span> <span class="pre">/Cleanup-Image</span> <span class="pre">/CheckHealth</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">C:</span> <span class="pre">&amp;&amp;</span> <span class="pre">C:</span></code> でシステムの場所に確定、 <code class="docutils literal notranslate"><span class="pre">DISM</span> <span class="pre">/Online</span> <span class="pre">/Cleanup-Image</span> <span class="pre">/RestoreHealth</span></code></li>
+<li>外部で修復： <code class="docutils literal notranslate"><span class="pre">DISM</span> <span class="pre">/Online</span> <span class="pre">/Cleanup-Image</span> <span class="pre">/RestoreHealth</span> <span class="pre">/Source:F:\Sources\install.wim</span></code> Fがインストールメディアの場所です。</li>
 </ul>
 </li>
 </ul>
@@ -206,7 +202,7 @@
 <div class="section" id="wsuswindows-100x8024401c">
 <h3>WSUSを使うのWindows 10が0x8024401cのエラー<a class="headerlink" href="#wsuswindows-100x8024401c" title="Permalink to this headline">¶</a></h3>
 <p>まずはサーバーとクライアントの接続を試します。:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ping</span> <span class="o">&lt;</span><span class="n">WSUS_Server_IP</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ping</span> <span class="o">&lt;</span><span class="n">WSUS_Server_IP</span><span class="o">&gt;</span>
 <span class="n">telnet</span> <span class="o">&lt;</span><span class="n">WSUS_Server_IP</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">WSUS_Port</span><span class="o">&gt;</span>
 </pre></div>
 </div>
@@ -234,7 +230,7 @@
 <p>このサイトを参考したの修復方法：<a class="reference external" href="https://community.spiceworks.com/topic/2144162-import-to-wsus-fails-direct-import-from-ms-update-catalog?fbclid=IwAR2odP4VRogiES4JPYaT_5Kxvepkn93l8l2vhbyQWpPgN1XktNFrLJqBf3I">https://community.spiceworks.com/topic/2144162-import-to-wsus-fails-direct-import-from-ms-update-catalog?fbclid=IwAR2odP4VRogiES4JPYaT_5Kxvepkn93l8l2vhbyQWpPgN1XktNFrLJqBf3I</a></p>
 <p>これは実際にActive-X addonの問題です。</p>
 <p>下のコマンドを登録する、サーバーを再起動で解決です。</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>reg add HKEY_LOCAL_MACHINE<span class="se">\S</span>OFTWARE<span class="se">\M</span>icrosoft<span class="se">\.</span>NETFramework<span class="se">\v</span><span class="m">4</span>.0.30319 /V SchUseStrongCrypto /T REG_DWORD /D <span class="m">1</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>reg add HKEY_LOCAL_MACHINE<span class="se">\S</span>OFTWARE<span class="se">\M</span>icrosoft<span class="se">\.</span>NETFramework<span class="se">\v</span><span class="m">4</span>.0.30319 /V SchUseStrongCrypto /T REG_DWORD /D <span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -258,7 +254,7 @@
 <p>VScodeをWSLに接続すると、フォントを見やすいなMigu 1Mを変更したいの場合。</p>
 <p>まずはMigu 1Mを公式サイトにダウンロード：<a class="reference external" href="https://mix-mplus-ipa.osdn.jp/migu/">https://mix-mplus-ipa.osdn.jp/migu/</a></p>
 <p>ダウンロードしたのZipを解凍する、以下のフォルダにコピーする:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>[WSL]$ mkdir /usr/share/fonts/truetype/Migu\ 1M
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[WSL]$ mkdir /usr/share/fonts/truetype/Migu\ 1M
 [WSL]$ cp *ttf /usr/share/fonts/truetype/Migu\ 1M/
 </pre></div>
 </div>
@@ -270,7 +266,7 @@
 <div class="section" id="rufuswindows">
 <h3>RufusでWindowsインストールメディアを作成とエラーが出る。<a class="headerlink" href="#rufuswindows" title="Permalink to this headline">¶</a></h3>
 <p>A: explorer.exeのプロセスを停止すると、正常に作ることができます。</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tasklist</span> <span class="o">|</span> <span class="n">find</span> <span class="s2">&quot;explorer.exe&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tasklist</span> <span class="o">|</span> <span class="n">find</span> <span class="s2">&quot;explorer.exe&quot;</span>
 <span class="n">taskkill</span> <span class="o">/</span><span class="n">F</span> <span class="o">/</span><span class="n">PID</span> <span class="o">&lt;</span><span class="n">pid_number</span><span class="o">&gt;</span>
 
 <span class="n">explorer</span><span class="o">.</span><span class="n">exe</span>
@@ -285,37 +281,29 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="tool.html" class="btn btn-neutral float-right" title="[おまけ]. ツール" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="programming.html" class="btn btn-neutral float-left" title="5.プログラミング" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="tool.html" class="btn btn-neutral float-right" title="[おまけ]. ツール" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="programming.html" class="btn btn-neutral float-left" title="5.プログラミング" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, 秋篠詩雨
+        &#169; Copyright 2020, 秋篠詩雨.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
