@@ -22,6 +22,9 @@
 :doc:`0.Prolog`
     プロローグ。
 
+:doc:`1.Chap1`
+    第一章、決着され
+
 :doc:`mobnet`
     初仕事で勉強した技術です。
 
@@ -50,6 +53,7 @@
    :hidden:
 
    0.Prolog
+   1.Chap1
    mobnet
    itnet
    internet
