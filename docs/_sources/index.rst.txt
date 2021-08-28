@@ -25,22 +25,22 @@
 :doc:`1.Hon1`
     第一部、決着され
 
-:doc:`mobnet`
+:doc:`ref.mobnet`
     初仕事で勉強した技術です。
 
-:doc:`itnet`
+:doc:`ref.itnet`
     大学から続いて勉強しているのネット関連とIT知識です。
 
-:doc:`internet`
+:doc:`ref.internet`
     ネットワーク知識整理。
 
-:doc:`cloud`
+:doc:`ref.cloud`
     クラウドや仮想化について技術。
 
-:doc:`programming`
+:doc:`ref.programming`
     プログラミング関連。
 
-:doc:`question`
+:doc:`ref.question`
     仕事で解決した色んな問題です。
 
 :doc:`tool`

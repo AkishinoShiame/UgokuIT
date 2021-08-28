@@ -1,4 +1,4 @@
-.. _question:
+.. _ref.question:
 
 ============
 [疑]. 問題集
