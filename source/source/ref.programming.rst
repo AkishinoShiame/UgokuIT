@@ -1,4 +1,4 @@
-.. _programming:
+.. _ref.programming:
 
 ====================
 Old.5.プログラミング
