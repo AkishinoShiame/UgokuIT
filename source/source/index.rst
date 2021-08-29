@@ -13,7 +13,7 @@
 
 整理者：秋篠詩雨。
 
-.. image:: https://i.imgur.com/Hhf1tow.png
+.. image:: https://raw.githubusercontent.com/AkishinoShiame/UgokuIT/master/res/ZeroHaji.png
 
 
 コンテンツ
