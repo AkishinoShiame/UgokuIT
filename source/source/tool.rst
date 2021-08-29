@@ -88,7 +88,7 @@ Windowsの最新イメージを作成ツール
 DHCPでホストを確認.sh
 -----------------------
 
-.. code-block:: cmd
+.. code-block:: Shell
   :linenos:
 
   #!/bin/bash
@@ -154,7 +154,7 @@ Windows Package 作成
 
 下の部分はbatやcmdファイルに、windowsの最高権限が必要時追加するコードです。
 
-.. code-block:: cmd
+.. code-block:: batch
   :linenos:
   
   cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %params%", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B )

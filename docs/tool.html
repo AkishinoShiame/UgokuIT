@@ -293,7 +293,7 @@ interact
 <h2>ネットワーク探索<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="dhcp-sh">
 <h3>DHCPでホストを確認.sh<a class="headerlink" href="#dhcp-sh" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-cmd notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-Shell notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -311,25 +311,25 @@ interact
 16
 17
 18
-19</pre></div></td><td class="code"><div class="highlight"><pre><span></span>#!/bin/bash
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
-#ここはネットワークの定義コーナー、対話系もスクリプトの後ろでも入力出来ます。
-if [ -z &quot;$1&quot; ] ; then
-        echo Network Header Required \(Ex 10.0.1\):
-        read NetHead
-else
-        NetHead=$1;
-fi
+<span class="c1">#ここはネットワークの定義コーナー、対話系もスクリプトの後ろでも入力出来ます。</span>
+<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> Network Header Required <span class="se">\(</span>Ex <span class="m">10</span>.0.1<span class="se">\)</span>:
+        <span class="nb">read</span> NetHead
+<span class="k">else</span>
+        <span class="nv">NetHead</span><span class="o">=</span><span class="nv">$1</span><span class="p">;</span>
+<span class="k">fi</span>
 
-#本番のネットワーク探知
-for i in {1..255}; do
-        Result=$(nslookup &quot;$NetHead.$i&quot; &lt;DNS_server_IP&gt; | grep -v &#39;NXDOMAIN&#39;); #ここの-v NXDOMAIN は 応用として、grep &#39;arpa&#39; で普通に全ゲットもいいです。
-        if [ -z &quot;$Result&quot; ]; then
-                continue;
-        else
-                printf &quot;$Result\n&quot;;
-        fi
-done
+<span class="c1">#本番のネットワーク探知</span>
+<span class="k">for</span> i in <span class="o">{</span><span class="m">1</span>..255<span class="o">}</span><span class="p">;</span> <span class="k">do</span>
+        <span class="nv">Result</span><span class="o">=</span><span class="k">$(</span>nslookup <span class="s2">&quot;</span><span class="nv">$NetHead</span><span class="s2">.</span><span class="nv">$i</span><span class="s2">&quot;</span> &lt;DNS_server_IP&gt; <span class="p">|</span> grep -v <span class="s1">&#39;NXDOMAIN&#39;</span><span class="k">)</span><span class="p">;</span> <span class="c1">#ここの-v NXDOMAIN は 応用として、grep &#39;arpa&#39; で普通に全ゲットもいいです。</span>
+        <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$Result</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+                <span class="k">continue</span><span class="p">;</span>
+        <span class="k">else</span>
+                <span class="nb">printf</span> <span class="s2">&quot;</span><span class="nv">$Result</span><span class="s2">\n&quot;</span><span class="p">;</span>
+        <span class="k">fi</span>
+<span class="k">done</span>
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -387,7 +387,7 @@ done
 </ul>
 <p>他には、自動実行用の.batファイルが必要です。</p>
 <p>下の部分はbatやcmdファイルに、windowsの最高権限が必要時追加するコードです。</p>
-<div class="highlight-cmd notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>cd /d &quot;%~dp0&quot; &amp;&amp; ( if exist &quot;%temp%\getadmin.vbs&quot; del &quot;%temp%\getadmin.vbs&quot; ) &amp;&amp; fsutil dirty query %systemdrive% 1&gt;nul 2&gt;nul || (  echo Set UAC = CreateObject^(&quot;Shell.Application&quot;^) : UAC.ShellExecute &quot;cmd.exe&quot;, &quot;/k cd &quot;&quot;%~sdp0&quot;&quot; &amp;&amp; %~s0 %params%&quot;, &quot;&quot;, &quot;runas&quot;, 1 &gt;&gt; &quot;%temp%\getadmin.vbs&quot; &amp;&amp; &quot;%temp%\getadmin.vbs&quot; &amp;&amp; exit /B )
+<div class="highlight-batch notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">cd</span> /d <span class="s2">&quot;</span><span class="nv">%~dp0</span><span class="s2">&quot;</span> <span class="p">&amp;&amp;</span> <span class="p">(</span> <span class="k">if</span> <span class="k">exist</span> <span class="s2">&quot;</span><span class="nv">%temp%</span><span class="s2">\getadmin.vbs&quot;</span> <span class="k">del</span> <span class="s2">&quot;</span><span class="nv">%temp%</span><span class="s2">\getadmin.vbs&quot;</span> <span class="p">)</span> <span class="p">&amp;&amp;</span> fsutil dirty query <span class="nv">%systemdrive%</span> <span class="mi">1</span><span class="p">&gt;</span>nul <span class="mi">2</span><span class="p">&gt;</span>nul <span class="p">||</span> <span class="p">(</span>  <span class="k">echo</span> Set UAC = CreateObject<span class="se">^(</span><span class="s2">&quot;Shell.Application&quot;</span><span class="se">^)</span> : UAC.ShellExecute <span class="s2">&quot;cmd.exe&quot;</span>, <span class="s2">&quot;/k cd &quot;&quot;</span><span class="nv">%~sdp0</span><span class="s2">&quot;&quot; &amp;&amp; </span><span class="nv">%~s0</span><span class="s2"> </span><span class="nv">%params%</span><span class="s2">&quot;</span>, <span class="s2">&quot;&quot;</span>, <span class="s2">&quot;runas&quot;</span>, 1 <span class="p">&gt;&gt;</span> <span class="s2">&quot;</span><span class="nv">%temp%</span><span class="s2">\getadmin.vbs&quot;</span> <span class="p">&amp;&amp;</span> <span class="s2">&quot;</span><span class="nv">%temp%</span><span class="s2">\getadmin.vbs&quot;</span> <span class="p">&amp;&amp;</span> <span class="k">exit</span> /B <span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 <p>他に、おすすめのツールは`resource hacker`_という無料EXE編集ツール。</p>

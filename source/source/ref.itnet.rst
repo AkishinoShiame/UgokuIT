@@ -94,7 +94,7 @@ WSUSサーバーはWindows Server Update Servicesです。もう簡単に言う�
 
 イメージ図はこれです
 
-.. code-block:: python
+.. code-block:: none
 
                              ターゲット↓
     +------------------+    +------------------+     +------------------+

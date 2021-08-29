@@ -23,7 +23,7 @@
 構造
 ------
 
-.. image:: 3G.png
+.. image:: images/3G.png
 
 
 OSS
@@ -57,7 +57,7 @@ RANはWBTSやBTSと呼ばれます。
 構造
 --------------
 
-.. image:: 4G.png
+.. image:: images/4G.png
 
 * PS.ピュア環境はサービスを提供としては不可能です。　この構造の中に実際な技術は「GERAN=2G,UTRAN=3G,EUTRAN=4G」です。
 
@@ -100,7 +100,7 @@ RANはMRBTSと呼ばれます。
 構造
 --------------
 
-.. image:: 5G.png
+.. image:: images/5G.png
 
 
 応用
