@@ -25,6 +25,9 @@
 :doc:`1.Hon1`
     第一部、決着され
 
+:doc:`ref.os`
+    いままで覚えたシステムの知識です。
+
 :doc:`ref.mobnet`
     初仕事で勉強した技術です。
 
@@ -54,12 +57,13 @@
 
    0.Prolog
    1.Hon1
-   mobnet
-   itnet
-   internet
-   cloud
-   programming
-   question
+   ref.os
+   ref.mobnet
+   ref.itnet
+   ref.internet
+   ref.cloud
+   ref.programming
+   ref.question
    tool
 
 
