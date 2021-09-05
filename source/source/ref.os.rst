@@ -113,7 +113,7 @@ UEFIのハードウェアはブートメディアに.efiファイルを確認し
 
 　まずは"type"をESDに選択し、そうして、対応のOSヴァージョンとお好みな言語を選択し、ハードウェアによってx86かx64を選択する。
 
-　.. image:: images/Tech-ESD.png
+.. image:: images/Tech-ESD.png
 
 　ESDをダウロードすると、まずはSHA1SUMを確認します。
 
