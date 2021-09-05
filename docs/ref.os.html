@@ -96,7 +96,15 @@
 <li class="toctree-l1"><a class="reference internal" href="0.Prolog.html">0. プロローグ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1.Hon1.html">1. 決着され</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">#Ref.1 オペレーティング・システム（OS）</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows">Windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">簡単ヴァージョン紹介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">インストールメディアの作成</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bios">BIOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#uefi">UEFI</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#linux">Linux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#macososx">MacOS・OSX</a></li>
 </ul>
@@ -177,6 +185,85 @@
 <span id="ref-os"></span><h1>#Ref.1 オペレーティング・システム（OS）<a class="headerlink" href="#ref-1-os" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="windows">
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<p>最初接触したのシステム。初見としてはなんにも知らなかった。</p>
+<p>内蔵のゲーム、マインスイーパーあんまり好きじゃない、逆にピンポールにハマった。</p>
+<p>Windows 95はほぼ子供時代の思い。</p>
+<p>今はこれらのがMicrosoft社作ったソフトウェアとシステムという事が知った。</p>
+<p>これからは雑談より、技術面のメモです。</p>
+<div class="section" id="id1">
+<h3>簡単ヴァージョン紹介<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>いかは知るの部分で今までのシステムの簡単紹介。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="27%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">システム</th>
+<th class="head">俺の時代</th>
+<th class="head">リマーク</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Windows 98</td>
+<td>子供頃のゲーム思い</td>
+<td>ゲームしかない！！！</td>
+</tr>
+<tr class="row-odd"><td>Windows XP</td>
+<td>小学初インストールシステム</td>
+<td>結構使え安い、初インターネットと繋いだ</td>
+</tr>
+<tr class="row-even"><td>Windows Vista</td>
+<td>ほぼ覚えが無いのヴァージョン</td>
+<td>システム創作がクソかったらしい。</td>
+</tr>
+<tr class="row-odd"><td>Windows 7</td>
+<td>大学時代の友</td>
+<td>色んなパソコンでインストールした。</td>
+</tr>
+<tr class="row-even"><td>Windows 8 /8.1</td>
+<td>大学時期短時間試した。</td>
+<td>GUIが革新過ぎ、自分は好きけど、あんまり皆の好みじゃないらしい。</td>
+</tr>
+<tr class="row-odd"><td>Windows 10</td>
+<td>大学院時期初のinsider挑戦。</td>
+<td>結構安定性と便利なシステム、コミュニティ向けの方が面白い。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id2">
+<h3>インストールメディアの作成<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Windowsシステムのインストールは元々簡単だけど、今は最も面倒なシステムです。</p>
+<p>更新の部分は自分がインストールファイルをパッチしないと大変になったシステムです。</p>
+<p>他には、伝統的「Lagacy BIOS」から今流行りの「UEFI」に対して、インストールメディアの制作はちょっと変わった。</p>
+<p>今の技術にUEFI BIOSやSecure Bootなどの技術もMicrosoft社が提出された、主にパソコンをWindowsしかインストールできず為に、と一部のウィルス防犯の為に。</p>
+<p>UEFIについてはもっとストーレジ大きいなサイスをサポート為に提出の技術。</p>
+<p>これから各インストールメディアの作成と対応ヴァージョンの説明。</p>
+<div class="section" id="bios">
+<h4>BIOS<a class="headerlink" href="#bios" title="Permalink to this headline">¶</a></h4>
+<p>Windows 98 から、Windows XP、Windows 7まではだいたいコンパクトディスクに入れてインストールする。</p>
+<p>Windows 7の最初期はBIOSのメディアがメインです。</p>
+<p>市販からのコンパクトディスクをパソコンに入れて、インストールできます。</p>
+<p>もう一個方法は、オンラインでISOファイルをダウンロードして、インストールする。</p>
+<p>Windows XPやWindows 7の場合、だいぶのひとはオリジナル「MSDN」のインストールISOファイルをダウンロードし、パッチも自作で入れる。</p>
+<p>パッチにはWindows Updates Downloader (WUD)_ という便利なツールがあり、全てインストールが必要な更新ファイルをすべてダウンロードし、</p>
+<p>そうして、ISOファイルを編集し、パッチを入れて、Windows内蔵のImageXを使って、パッチをISOに更新する。</p>
+<p>Windows XP の場合は、以前は「SpeedXP」という非公式のISOもありました。</p>
+<p>Windows 7の場合は、インストールISOをUSBスティックでメディアに制作するツールがあった。</p>
+<p>Windows USB/DVD Download <a href="#id3"><span class="problematic" id="id4">Tool_</span></a> という公式リリースしたの便利なツールを使える。</p>
+<p>こちらはだいぶ説明：</p>
+</div>
+<div class="section" id="uefi">
+<h4>UEFI<a class="headerlink" href="#uefi" title="Permalink to this headline">¶</a></h4>
+<p>WindowsシステムはWindows 7以後がサポートする、正式的にはWindows 8からサポートする。</p>
+<p>Windows 8からは元のWIMフォマットのインストールイメージファイルをESDを変わります。</p>
+<p>UEFIのハードウェアはブートメディアに.efiファイルを確認し、そうしてFat32のファイルシステムしか認識できる。</p>
+<p>だから、色んな面倒の確認が必要です。</p>
+<p>幸い、今は OpenSource の世帯だから、インターネットから色んな便利ツールがあり、こちらで紹介する。</p>
+</div>
+</div>
 </div>
 <div class="section" id="linux">
 <h2>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
