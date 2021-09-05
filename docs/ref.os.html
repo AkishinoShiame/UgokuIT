@@ -252,16 +252,40 @@
 <p>そうして、ISOファイルを編集し、パッチを入れて、Windows内蔵のImageXを使って、パッチをISOに更新する。</p>
 <p>Windows XP の場合は、以前は「SpeedXP」という非公式のISOもありました。</p>
 <p>Windows 7の場合は、インストールISOをUSBスティックでメディアに制作するツールがあった。</p>
-<p>Windows USB/DVD Download <a href="#id3"><span class="problematic" id="id4">Tool_</span></a> という公式リリースしたの便利なツールを使える。</p>
+<p><a class="reference external" href="https://www.microsoft.com/ja-jp/download/details.aspx?id=564">Windows USB/DVD Download Tool</a> という公式リリースしたの便利なツールを使える。</p>
 <p>こちらはだいぶ説明：</p>
 </div>
 <div class="section" id="uefi">
 <h4>UEFI<a class="headerlink" href="#uefi" title="Permalink to this headline">¶</a></h4>
-<p>WindowsシステムはWindows 7以後がサポートする、正式的にはWindows 8からサポートする。</p>
+<p>現在Windowsのインストールメディアは大体ISOの中にのWIMやESDファイルがメインです。</p>
+<p>UEFIのWindowsシステムはWindows 7以後がサポートする、正式的にはWindows 8からサポートする。</p>
 <p>Windows 8からは元のWIMフォマットのインストールイメージファイルをESDを変わります。</p>
 <p>UEFIのハードウェアはブートメディアに.efiファイルを確認し、そうしてFat32のファイルシステムしか認識できる。</p>
 <p>だから、色んな面倒の確認が必要です。</p>
 <p>幸い、今は OpenSource の世帯だから、インターネットから色んな便利ツールがあり、こちらで紹介する。</p>
+<ul class="simple">
+<li>Windows 8と8.1のお勧め：</li>
+</ul>
+<p>方法１、公式サイトから <a class="reference external" href="https://www.microsoft.com/software-download/windows8ISO">8.1ISOダウロード</a>　できます。直接のISOが入手可能です。</p>
+<p>　でもこれは絶対最新ヴァージョンでは言えない。</p>
+<p>方法２、ESDファイルからのISO作成。ほぼ最新版のメディアが確保可能です。</p>
+<p>　ESDのダウロードは`TechBench by WZT (v4.1.1)`_というサイトが勧めです。</p>
+<p>　まずは&quot;type&quot;をESDに選択し、そうして、対応のOSヴァージョンとお好みな言語を選択し、ハードウェアによってx86かx64を選択する。</p>
+<p>　.. image:: images/Tech-ESD.png</p>
+<p>　ESDをダウロードすると、まずはSHA1SUMを確認します。</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>SHA1SUM：ファイルの内容確認の一つ方法です。</p>
+<p>インターネット多発されたファイルはネット通信か偽リンクが可能ので、ファイルをダウロードすると、</p>
+<p>CheckSUMというシステムでファイルの確認がおすすめです。</p>
+<p class="last">最も便利と無料な方法は7-ZIP_を使う、内蔵付属のツールを使って確認できます。</p>
+</div>
+<p>　確認できると、ESDをインストール可能な形式になるにはもう一個変換ツールが必要です。</p>
+<p>　それは、<a class="reference external" href="https://rg-adguard.net/decrypt-multi-release/">DECRYPT-MULTI-RELEASE</a> というツールがおすすめです。</p>
+<p>　DECRYPT-MULTI-RELEASE直接ダウンロード：<a class="reference external" href="https://rg-adguard.net/dl-decryp">DMR直接</a> ここにアクセス可能です。</p>
+<ul class="simple">
+<li>Windows 10の作成方法：</li>
+</ul>
 </div>
 </div>
 </div>
