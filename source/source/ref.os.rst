@@ -78,13 +78,13 @@ Windows 7の場合は、インストールISOをUSBスティックでメディ�
 
 こちらはだいぶ説明：
 
-.. _image:: images/W7UDDT-1.png
+.. image:: images/W7UDDT-1.png
 
-.. _image:: images/W7UDDT-2.png
+.. image:: images/W7UDDT-2.png
 
-.. _image:: images/W7UDDT-3.png
+.. image:: images/W7UDDT-3.png
 
-.. _image:: images/W7UDDT-4.png
+.. image:: images/W7UDDT-4.png
 
 UEFI
 ^^^^^^^^
@@ -149,4 +149,4 @@ MacOS・OSX
 .. _TechBench by WZT (v4.1.1): https://tb.rg-adguard.net/public.php
 .. _7-ZIP: https://www.7-zip.org/download.html
 .. _DECRYPT-MULTI-RELEASE: https://rg-adguard.net/decrypt-multi-release/
-.. _DMR直接: https://rg-adguard.net/dl-decryp
+.. _DMR直接: https://rg-adguard.net/dl-decrypt
