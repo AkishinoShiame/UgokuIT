@@ -74,7 +74,7 @@ Windows XP の場合は、以前は「SpeedXP」という非公式のISOもあ�
 
 Windows 7の場合は、インストールISOをUSBスティックでメディアに制作するツールがあった。
 
-Windows USB/DVD Download Tool_ という公式リリースしたの便利なツールを使える。
+`Windows USB/DVD Download Tool`_ という公式リリースしたの便利なツールを使える。
 
 こちらはだいぶ説明：
 
@@ -89,7 +89,9 @@ Windows USB/DVD Download Tool_ という公式リリースしたの便利なツ�
 UEFI
 ^^^^^^^^
 
-WindowsシステムはWindows 7以後がサポートする、正式的にはWindows 8からサポートする。
+現在Windowsのインストールメディアは大体ISOの中にのWIMやESDファイルがメインです。
+
+UEFIのWindowsシステムはWindows 7以後がサポートする、正式的にはWindows 8からサポートする。
 
 Windows 8からは元のWIMフォマットのインストールイメージファイルをESDを変わります。
 
@@ -99,6 +101,39 @@ UEFIのハードウェアはブートメディアに.efiファイルを確認し
 
 幸い、今は OpenSource の世帯だから、インターネットから色んな便利ツールがあり、こちらで紹介する。
 
+* Windows 8と8.1のお勧め：
+
+方法１、公式サイトから 8.1ISOダウロード_　できます。直接のISOが入手可能です。
+
+　でもこれは絶対最新ヴァージョンでは言えない。
+
+方法２、ESDファイルからのISO作成。ほぼ最新版のメディアが確保可能です。
+
+　ESDのダウロードは`TechBench by WZT (v4.1.1)`_というサイトが勧めです。
+
+　まずは"type"をESDに選択し、そうして、対応のOSヴァージョンとお好みな言語を選択し、ハードウェアによってx86かx64を選択する。
+
+　.. image:: images/Tech-ESD.png
+
+　ESDをダウロードすると、まずはSHA1SUMを確認します。
+
+.. Warning::
+
+    SHA1SUM：ファイルの内容確認の一つ方法です。
+
+    インターネット多発されたファイルはネット通信か偽リンクが可能ので、ファイルをダウロードすると、
+
+    CheckSUMというシステムでファイルの確認がおすすめです。
+
+    最も便利と無料な方法は7-ZIP_を使う、内蔵付属のツールを使って確認できます。
+
+　確認できると、ESDをインストール可能な形式になるにはもう一個変換ツールが必要です。
+
+　それは、`DECRYPT-MULTI-RELEASE`_ というツールがおすすめです。
+
+　DECRYPT-MULTI-RELEASE直接ダウンロード：`DMR直接`_ ここにアクセス可能です。
+
+* Windows 10の作成方法：
 
 Linux
 ============
@@ -109,4 +144,9 @@ MacOS・OSX
 
 
 .. _(WUD): https://www.windowsupdatedownloader.com/
-.. _Windows USB/DVD Download Tool: https://www.microsoft.com/ja-jp/download/details.aspx?id=56485
+.. _Windows USB/DVD Download Tool: https://www.microsoft.com/ja-jp/download/details.aspx?id=564
+.. _8.1ISOダウロード: https://www.microsoft.com/software-download/windows8ISO
+.. _TechBench by WZT (v4.1.1): https://tb.rg-adguard.net/public.php
+.. _7-ZIP: https://www.7-zip.org/download.html
+.. _DECRYPT-MULTI-RELEASE: https://rg-adguard.net/decrypt-multi-release/
+.. _DMR直接: https://rg-adguard.net/dl-decryp
