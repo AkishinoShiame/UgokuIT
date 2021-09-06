@@ -290,9 +290,48 @@
 <p>　ISOを変換の場合は、ダウロードしたツールを解凍する、そうしてESDファイルを同じフォルダに入れる。</p>
 <p>　次のように実行すると、ISOが作ります：</p>
 <img alt="_images/DMR-W81.png" src="_images/DMR-W81.png" />
+<p>　そうして、作ったISOファイルを最後で <a class="reference external" href="https://rufus.ie/">RUFUS</a> というツールをUSBに書き込みます。</p>
+<img alt="https://rufus.ie/pics/rufus_jp.png" src="https://rufus.ie/pics/rufus_jp.png" />
 <ul class="simple">
 <li>Windows 10の作成方法：</li>
 </ul>
+<p>方法１、マイクロソフト公式サイトで <a class="reference external" href="https://www.microsoft.com/software-download/windows10ISO">Windows 10 のディスク イメージ (ISO ファイル) のダウンロード</a> 、もしくは</p>
+<p>　Windows システムでアクセスの場合、 <a class="reference external" href="https://www.microsoft.com/software-download/windows10">Windows 10 Update Assistant</a> でEXEファイルをダウンロードし、公式的にダウロードと作成可能です。</p>
+<p>方法２、自力作成。</p>
+<p>　他には、最新版のISOが欲しいけど、マイクロソフト社がリリースしていないという悩みがあれば、
+　あるグループな人が努力し、開発したのコマンドツールがあります。</p>
+<p>　そのツールはマイクロソフト社に直接最新版のアップデートとインストールファイルをダウンロードし、ISOファイルを作成します。</p>
+<p>　UUPというツールで名を付けました。</p>
+<p>　おすすめのUUPツールは二つのサイトから使用できます：</p>
+<ul class="simple">
+<li>UUP dump - <a class="reference external" href="https://uupdump.ml/">https://uupdump.ml/</a></li>
+</ul>
+<img alt="_images/UUP-D1.png" src="_images/UUP-D1.png" />
+<img alt="_images/UUP-D2.png" src="_images/UUP-D2.png" />
+<p>　Buildについては説明いただきます。Cumulative Updateは安全性が優先で、必要な更新をパッチするだけ。</p>
+<p>　まだ、Feature updateは、安全性と新しい機能もぱっちする。</p>
+<p>　Architectureはハードウェア・CPUによって、最適のを選択する。</p>
+<img alt="_images/UUP-D3.png" src="_images/UUP-D3.png" />
+<img alt="_images/UUP-D4.png" src="_images/UUP-D4.png" />
+<img alt="_images/UUP-D5.png" src="_images/UUP-D5.png" />
+<p>　Conversion optionsについて、Component Cleanupは不必要なゴミをクリーニング、ISOはより小さくなれる。</p>
+<p>　.Net Framework 3.5は、Windows 10以後はデフォルト4.5を実装するだけ、これをチェックしたら、この機能を先にインストール可能になる。</p>
+<p>　最後はzipファイルをダウンロード、解凍し、スクリプトファイルに実行すると、自動的にダウロードとISOを作成する。</p>
+<ul class="simple">
+<li>UUP Generation Project (v2.4.10) [by &#64;rgadguard &amp; whatever127] - <a class="reference external" href="https://uup.rg-adguard.net/">https://uup.rg-adguard.net/</a></li>
+</ul>
+<img alt="_images/UUP-ADG.png" src="_images/UUP-ADG.png" />
+<p>どちらでダウロードしたのISOは、<a class="reference external" href="https://rufus.ie/">RUFUS</a> というツールをUSBに書き込みます。</p>
+<img alt="https://rufus.ie/pics/rufus_jp.png" src="https://rufus.ie/pics/rufus_jp.png" />
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p><strong>ここでは一つ注意点があります</strong></p>
+<p>完全な UEFI＋Security Boot にはEFI・Fat32のインストールメディアが必要。</p>
+<p>この全ての更新をパッチする場合には、 <strong>install.wim</strong> ファイルが fat32の4G制限を超えす。</p>
+<p>4G以上のinstall.wimにはfat32ファイルシステムに格納できず。</p>
+<p class="last">だから、WIMをSWMに分割が必要です。</p>
+</div>
+<p>　分割の方法は以下のスクリプトを実行が必要、そうしてISOファイルを再パッケージが必要です。</p>
 </div>
 </div>
 </div>

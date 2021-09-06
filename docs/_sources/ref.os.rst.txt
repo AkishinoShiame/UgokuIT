@@ -139,7 +139,78 @@ UEFIのハードウェアはブートメディアに.efiファイルを確認し
 
 .. image:: images/DMR-W81.png
 
+　そうして、作ったISOファイルを最後で RUFUS_ というツールをUSBに書き込みます。
+
+.. image:: https://rufus.ie/pics/rufus_jp.png
+
+
 * Windows 10の作成方法：
+
+方法１、マイクロソフト公式サイトで `Windows 10 のディスク イメージ (ISO ファイル) のダウンロード`_ 、もしくは
+
+　Windows システムでアクセスの場合、 `Windows 10 Update Assistant`_ でEXEファイルをダウンロードし、公式的にダウロードと作成可能です。
+
+方法２、自力作成。
+
+　他には、最新版のISOが欲しいけど、マイクロソフト社がリリースしていないという悩みがあれば、
+　あるグループな人が努力し、開発したのコマンドツールがあります。
+
+　そのツールはマイクロソフト社に直接最新版のアップデートとインストールファイルをダウンロードし、ISOファイルを作成します。
+
+　UUPというツールで名を付けました。
+
+　おすすめのUUPツールは二つのサイトから使用できます：
+
+* UUP dump - https://uupdump.ml/
+
+.. image:: images/UUP-D1.png
+
+.. image:: images/UUP-D2.png
+
+　Buildについては説明いただきます。Cumulative Updateは安全性が優先で、必要な更新をパッチするだけ。
+
+　まだ、Feature updateは、安全性と新しい機能もぱっちする。
+
+　Architectureはハードウェア・CPUによって、最適のを選択する。
+
+.. image:: images/UUP-D3.png
+
+.. image:: images/UUP-D4.png
+
+.. image:: images/UUP-D5.png
+
+　Conversion optionsについて、Component Cleanupは不必要なゴミをクリーニング、ISOはより小さくなれる。
+
+　.Net Framework 3.5は、Windows 10以後はデフォルト4.5を実装するだけ、これをチェックしたら、この機能を先にインストール可能になる。
+
+　最後はzipファイルをダウンロード、解凍し、スクリプトファイルに実行すると、自動的にダウロードとISOを作成する。
+
+* UUP Generation Project (v2.4.10) [by @rgadguard & whatever127] - https://uup.rg-adguard.net/
+
+.. image:: images/UUP-ADG.png
+
+どちらでダウロードしたのISOは、RUFUS_ というツールをUSBに書き込みます。
+
+.. image:: https://rufus.ie/pics/rufus_jp.png
+
+.. warning::
+
+    **ここでは一つ注意点があります**
+
+    完全な UEFI＋Security Boot にはEFI・Fat32のインストールメディアが必要。
+
+    この全ての更新をパッチする場合には、 **install.wim** ファイルが fat32の4G制限を超えす。
+
+    4G以上のinstall.wimにはfat32ファイルシステムに格納できず。
+    
+    だから、WIMをSWMに分割が必要です。
+
+　分割の方法は以下のスクリプトを実行が必要、そうしてISOファイルを再パッケージが必要です。
+
+.. code-block::
+
+    Dism /Split-Image /ImageFile:install.wim /SWMFile:install.swm /FileSize:4096
+
 
 Linux
 ============
@@ -156,3 +227,6 @@ MacOS・OSX
 .. _7-ZIP: https://www.7-zip.org/download.html
 .. _DECRYPT-MULTI-RELEASE: https://rg-adguard.net/decrypt-multi-release/
 .. _DMR直接: https://rg-adguard.net/dl-decrypt
+.. _RUFUS: https://rufus.ie/
+.. _Windows 10 のディスク イメージ (ISO ファイル) のダウンロード: https://www.microsoft.com/software-download/windows10ISO
+.. _Windows 10 Update Assistant: https://www.microsoft.com/software-download/windows10
