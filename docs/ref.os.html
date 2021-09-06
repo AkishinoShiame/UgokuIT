@@ -112,7 +112,15 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#linux">Linux</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id5">システムコアとビルド</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#live">ダウンロード・Live・とインストールメディア作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#live">ダウンロード・Live・とインストールメディア作成</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">既知Linuxシステム</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">システム・ディスク・パーティション</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8">伝統型（BIOS）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">EFI型（UEFI）</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#macososx">MacOS・OSX</a></li>
@@ -510,7 +518,413 @@
 <p><strong>UNetBootin</strong></p>
 <img alt="https://unetbootin.github.io/screenshot1.jpg" src="https://unetbootin.github.io/screenshot1.jpg" />
 <img alt="https://unetbootin.github.io/screenshot4.jpg" src="https://unetbootin.github.io/screenshot4.jpg" />
+<div class="section" id="id6">
+<h4>既知Linuxシステム<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="9%" />
+<col width="21%" />
+<col width="61%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">OS名</th>
+<th class="head">ソフト管理</th>
+<th class="head">公式サイト（英語）</th>
+<th class="head">ダウロードページ</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Ubuntu</td>
+<td>apt</td>
+<td><a class="reference external" href="https://ubuntu.com/">https://ubuntu.com/</a></td>
+<td><a class="reference external" href="https://ubuntu.com/download">https://ubuntu.com/download</a></td>
+</tr>
+<tr class="row-odd"><td>CentOS</td>
+<td>yum</td>
+<td><a class="reference external" href="https://www.centos.org/">https://www.centos.org/</a></td>
+<td><a class="reference external" href="https://www.centos.org/download/">https://www.centos.org/download/</a></td>
+</tr>
+<tr class="row-even"><td>RedHat</td>
+<td>yum</td>
+<td><a class="reference external" href="https://www.redhat.com/">https://www.redhat.com/</a></td>
+<td><a class="reference external" href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux/try-it">https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux/try-it</a></td>
+</tr>
+<tr class="row-odd"><td>Kubuntu</td>
+<td>apt</td>
+<td><a class="reference external" href="https://kubuntu.org/">https://kubuntu.org/</a></td>
+<td><a class="reference external" href="https://kubuntu.org/getkubuntu/">https://kubuntu.org/getkubuntu/</a></td>
+</tr>
+<tr class="row-even"><td>Linux Mint</td>
+<td>apt</td>
+<td><a class="reference external" href="https://linuxmint.com/">https://linuxmint.com/</a></td>
+<td><a class="reference external" href="https://linuxmint.com/download.php">https://linuxmint.com/download.php</a></td>
+</tr>
+<tr class="row-odd"><td>Arch Linux</td>
+<td>pacman</td>
+<td><a class="reference external" href="https://archlinux.org/">https://archlinux.org/</a></td>
+<td><a class="reference external" href="https://archlinux.org/download/">https://archlinux.org/download/</a></td>
+</tr>
+<tr class="row-even"><td>Fedora</td>
+<td>dnf</td>
+<td><a class="reference external" href="https://getfedora.org/">https://getfedora.org/</a></td>
+<td><a class="reference external" href="https://getfedora.org/workstation/download/">https://getfedora.org/workstation/download/</a></td>
+</tr>
+<tr class="row-odd"><td>openSUSE</td>
+<td>zypper</td>
+<td><a class="reference external" href="https://www.opensuse.org/">https://www.opensuse.org/</a></td>
+<td><a class="reference external" href="https://get.opensuse.org/">https://get.opensuse.org/</a></td>
+</tr>
+<tr class="row-even"><td>FreeBSD</td>
+<td>pkg</td>
+<td><a class="reference external" href="https://www.freebsd.org/">https://www.freebsd.org/</a></td>
+<td><a class="reference external" href="https://www.freebsd.org/where/">https://www.freebsd.org/where/</a></td>
+</tr>
+</tbody>
+</table>
+<p>Windowsシステムの場合は <a class="reference external" href="https://rufus.ie/">RUFUS</a> も勧めです。</p>
+<p>同時にLive USBも作成できますし、インストールメディアもできます。</p>
+<img alt="_images/RU-Linux1.png" src="_images/RU-Linux1.png" />
+<img alt="_images/RU-Linux2.png" src="_images/RU-Linux2.png" />
+</div>
+</div>
+<div class="section" id="id7">
+<h3>システム・ディスク・パーティション<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h4>伝統型（BIOS）<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p><strong>Lagacyの基本型：</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="72%" />
+<col width="28%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>/ (/root)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td>SWAP
+[swap]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lagacyの独立型：</strong></p>
+<p><em>Type 1</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="35%" />
+<col width="24%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>Boot(/boot)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>/ (/root)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td>SWAP
+[swap]</td>
+</tr>
+</tbody>
+</table>
+<p><em>Type 2</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="25%" />
+<col width="29%" />
+<col width="17%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>Boot(/boot)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>/ (/root)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>Home(/home)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td>SWAP
+[swap]</td>
+</tr>
+</tbody>
+</table>
+<p><em>Type 3</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="20%" />
+<col width="20%" />
+<col width="23%" />
+<col width="14%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>Boot(/boot)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>/ (/root)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>var(/var)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>Home(/home)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td>SWAP
+[swap]</td>
+</tr>
+</tbody>
+</table>
+<p><em>Type 4</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="16%" />
+<col width="16%" />
+<col width="19%" />
+<col width="18%" />
+<col width="11%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>Boot(/boot)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>/ (/root)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>var(/var)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>Home(/home)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>Temp(/tmp)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td>SWAP
+[swap]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id9">
+<h4>EFI型（UEFI）<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p><strong>UEFIの基本型：</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="53%" />
+<col width="20%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>EFI (/efi)</dt>
+<dd>[fat32]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>/ (/root)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td>SWAP
+[swap]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>UEFIの独立型：</strong></p>
+<p><em>Type 1</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="30%" />
+<col width="26%" />
+<col width="18%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>EFI (/efi)</dt>
+<dd>[fat32]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>Boot(/boot)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>/ (/root)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td>SWAP
+[swap]</td>
+</tr>
+</tbody>
+</table>
+<p><em>Type 2</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="23%" />
+<col width="20%" />
+<col width="23%" />
+<col width="14%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>EFI (/efi)</dt>
+<dd>[fat32]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>Boot(/boot)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>/ (/root)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>Home(/home)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td>SWAP
+[swap]</td>
+</tr>
+</tbody>
+</table>
+<p><em>Type 3</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="19%" />
+<col width="17%" />
+<col width="17%" />
+<col width="19%" />
+<col width="12%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>EFI (/efi)</dt>
+<dd>[fat32]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>Boot(/boot)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>/ (/root)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>var(/var)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>Home(/home)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td>SWAP
+[swap]</td>
+</tr>
+</tbody>
+</table>
+<p><em>Type 4</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="16%" />
+<col width="14%" />
+<col width="14%" />
+<col width="16%" />
+<col width="15%" />
+<col width="10%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>EFI (/efi)</dt>
+<dd>[fat32]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>Boot(/boot)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>/ (/root)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>var(/var)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>Home(/home)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>Temp(/tmp)</dt>
+<dd>[ext4]</dd>
+</dl>
+</td>
+<td>SWAP
+[swap]</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Linuxでのスワップ（SWAP）空間はメモリ不足の時に臨時用空間。</p>
+<p>基本的には作った方が良いです。</p>
+<p class="last">サイズはメモリサイズの１．５倍にかける。メモリサイズが小さいの場合は最適に2GBがおすすめ。</p>
+</div>
 <hr class="docutils" />
+</div>
 </div>
 </div>
 <hr class="docutils" />
