@@ -207,7 +207,7 @@ UEFIのハードウェアはブートメディアに.efiファイルを確認し
 
 　分割の方法は以下のスクリプトを実行が必要、そうしてISOファイルを再パッケージが必要です。
 
-.. code-block::
+.. code-block:: shell
 
     Dism /Split-Image /ImageFile:install.wim /SWMFile:install.swm /FileSize:4096
 
