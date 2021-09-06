@@ -260,6 +260,9 @@ EFI型（UEFI）
 --------
 
 
+--------
+
+
 Linux
 ============
 
@@ -299,9 +302,25 @@ Linux概念：
 * Red Hat系
 * Slackware系
 * 他（など）
-  - Arch Linux
-  - FreeBSDコア
-  - Android
+    - Arch Linux
+    - FreeBSDコア
+    - Android
+
+
+ダウンロード・Live・とインストールメディア作成
+------------------------------------------------
+
+ダウロードには各公式サイトにダウロードする。もしくは UNetBootin_ という便利ツールもあります。
+
+**UNetBootin**
+
+.. image:: https://unetbootin.github.io/screenshot1.jpg
+
+.. image:: https://unetbootin.github.io/screenshot4.jpg
+
+
+
+--------
 
 
 --------
@@ -323,3 +342,4 @@ MacOS・OSX
 .. _Windows 10 のディスク イメージ (ISO ファイル) のダウンロード: https://www.microsoft.com/software-download/windows10ISO
 .. _Windows 10 Update Assistant: https://www.microsoft.com/software-download/windows10
 .. _Linux Kernel: https://www.kernel.org/
+.. _UNetbootin: https://unetbootin.github.io/
