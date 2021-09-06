@@ -384,9 +384,6 @@
 </div>
 <div class="section" id="windows">
 <h4>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h4>
-<p>Windowsシステムのインストールと更新は最も面倒なシステムです。</p>
-<p>今の技術でのUEFI BIOSやSecure Bootなどの技術も彼らが提出されたの。</p>
-<p>現在Windowsのインストールメディアは大体ISOの中にのWIMやESDファイルがメインです。</p>
 <p>オフィシャルから、現在は <a class="reference external" href="https://go.microsoft.com/fwlink/?LinkId=691209">メディア作成ツール</a> がありますけど、最新版ではないです。
 便利で作成出来ますけど、システムをインストールすると、いっぱいなアップロードが必要でとても面倒です。</p>
 <p>現在、Windows 10はinsiderというプロジェクトの状態で、一程度なESDをりりーすし、もっと最新版のイメージを提供するです。</p>
@@ -766,120 +763,6 @@ UUPというツールで名を付けました。</p>
 <div class="section" id="id12">
 <h4>Windows<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
 <p>Windows Systemは以前からLagacy BIOSだけをサポートする。Windows 7は革新の分水嶺です。 Windows 7から以降のシステムはEFI/UEFIもLagacyもサポートして居ます。</p>
-<p>Lagacy：</p>
-<p><em>形１</em></p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>C:¥ (OS files)</dt>
-<dd>[NTFS]</dd>
-</dl>
-</td>
-</tr>
-</tbody>
-</table>
-<p><em>形２（おすすめ）</em></p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="63%" />
-<col width="37%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>System Reserved (Boot Loader)</dt>
-<dd>[NTFS]</dd>
-</dl>
-</td>
-<td><dl class="first last docutils">
-<dt>C:¥ (OS files)</dt>
-<dd>[NTFS]</dd>
-</dl>
-</td>
-</tr>
-</tbody>
-</table>
-<p>EFI：</p>
-<p><em>形１</em></p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="53%" />
-<col width="48%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>EFI (Boot Loader)</dt>
-<dd>[fat32]</dd>
-</dl>
-</td>
-<td><dl class="first last docutils">
-<dt>C:¥ (OS files)</dt>
-<dd>[NTFS]</dd>
-</dl>
-</td>
-</tr>
-</tbody>
-</table>
-<p><em>形２</em></p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="31%" />
-<col width="40%" />
-<col width="28%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>EFI (Boot Loader)</dt>
-<dd>[fat32]</dd>
-</dl>
-</td>
-<td><dl class="first last docutils">
-<dt>MSR (Project GPT format)</dt>
-<dd>[MSR]</dd>
-</dl>
-</td>
-<td><dl class="first last docutils">
-<dt>C:¥ (OS files)</dt>
-<dd>[NTFS]</dd>
-</dl>
-</td>
-</tr>
-</tbody>
-</table>
-<p><em>形３</em></p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="21%" />
-<col width="27%" />
-<col width="19%" />
-<col width="32%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><dl class="first last docutils">
-<dt>EFI (Boot Loader)</dt>
-<dd>[fat32]</dd>
-</dl>
-</td>
-<td><dl class="first last docutils">
-<dt>MSR (Project GPT format)</dt>
-<dd>[MSR]</dd>
-</dl>
-</td>
-<td><dl class="first last docutils">
-<dt>C:¥ (OS files)</dt>
-<dd>[NTFS]</dd>
-</dl>
-</td>
-<td><dl class="first last docutils">
-<dt>Recovery (回復用OSが入ってる)</dt>
-<dd>[NTFS]</dd>
-</dl>
-</td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="section" id="id13">

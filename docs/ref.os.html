@@ -103,6 +103,11 @@
 <li class="toctree-l4"><a class="reference internal" href="#uefi">UEFI</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">システム・ディスク・パーティション</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">伝統型（BIOS）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#efi-uefi">EFI型(UEFI)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#linux">Linux</a></li>
@@ -337,7 +342,129 @@
 </div>
 </div>
 </div>
+<div class="section" id="id3">
+<h3>システム・ディスク・パーティション<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h4>伝統型（BIOS）<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p><em>形１</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>C:¥ (OS files)</dt>
+<dd>[NTFS]</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>形２（おすすめ）</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%" />
+<col width="37%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>System Reserved (Boot Loader)</dt>
+<dd>[NTFS]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>C:¥ (OS files)</dt>
+<dd>[NTFS]</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
+<div class="section" id="efi-uefi">
+<h4>EFI型(UEFI)<a class="headerlink" href="#efi-uefi" title="Permalink to this headline">¶</a></h4>
+<p><em>形１</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="53%" />
+<col width="48%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>EFI (Boot Loader)</dt>
+<dd>[fat32]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>C:¥ (OS files)</dt>
+<dd>[NTFS]</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>形２</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="40%" />
+<col width="28%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>EFI (Boot Loader)</dt>
+<dd>[fat32]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>MSR (Project GPT format)</dt>
+<dd>[MSR]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>C:¥ (OS files)</dt>
+<dd>[NTFS]</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>形３</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="27%" />
+<col width="19%" />
+<col width="32%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><dl class="first last docutils">
+<dt>EFI (Boot Loader)</dt>
+<dd>[fat32]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>MSR (Project GPT format)</dt>
+<dd>[MSR]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>C:¥ (OS files)</dt>
+<dd>[NTFS]</dd>
+</dl>
+</td>
+<td><dl class="first last docutils">
+<dt>Recovery (回復用OSが入ってる)</dt>
+<dd>[NTFS]</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<hr class="docutils" />
 <div class="section" id="linux">
 <h2>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
 </div>
