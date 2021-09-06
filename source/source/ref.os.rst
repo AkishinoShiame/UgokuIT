@@ -528,25 +528,29 @@ UnlockerというツールはMACシステムをVMに実装可能です。
 
 *Catalina:*
 
-.. code-block::bash
-    
+.. code-block:: bash
+    :linenos:
+
     sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/<Volume名>
 
 *Mojave:*
 
-.. code-block::bash
-    
+.. code-block:: bash
+    :linenos:
+
     sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/<Volume名>
 
 *High Sierra:*
 
-.. code-block::bash
-    
+.. code-block:: bash
+    :linenos:
+
     sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/<Volume名>
 
 *El Capitan:*
 
-.. code-block::bash
+.. code-block:: bash
+    :linenos:
     
     sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/<Volume名> --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app
 
