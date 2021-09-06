@@ -133,6 +133,12 @@ UEFIのハードウェアはブートメディアに.efiファイルを確認し
 
 　DECRYPT-MULTI-RELEASE直接ダウンロード：`DMR直接`_ ここにアクセス可能です。
 
+　ISOを変換の場合は、ダウロードしたツールを解凍する、そうしてESDファイルを同じフォルダに入れる。
+
+　次のように実行すると、ISOが作ります：
+
+.. image:: images/DMR-W81.png
+
 * Windows 10の作成方法：
 
 Linux
