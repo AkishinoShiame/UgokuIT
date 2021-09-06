@@ -123,7 +123,15 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#macososx">MacOS・OSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#macososx">MacOS・OSX</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">大体のヴァージョン紹介</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#vmware-workstation-player">VMware Workstation/Playerツール</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">インストールメディアの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">システム・ディスク・パーティション</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ref.mobnet.html">#Ref.4 モバイルネットワーク</a></li>
@@ -930,6 +938,123 @@
 <hr class="docutils" />
 <div class="section" id="macososx">
 <h2>MacOS・OSX<a class="headerlink" href="#macososx" title="Permalink to this headline">¶</a></h2>
+<p>これはアップル( <a class="reference external" href="https://www.apple.com/">Apple</a> )社が開発されたシステムです。</p>
+<p>一般状況はアップル制作したのハードウェアしか使える。</p>
+<p>MacBookから、iMacとか、パソコン・ラップトップ機械までは使える。</p>
+<p>最初のシステムは有料で、今は全て無料になります。</p>
+<p>一部のハッカーさんはVMware VirtualMachine向けのプラグインを開発し、VMもインストール出来ることも有った。</p>
+<p>ここはちょっとVMのも紹介し、メインは公式方法を使う。</p>
+<div class="section" id="id10">
+<h3>大体のヴァージョン紹介<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>自分が知っていたのマックはOSXとの名前から、コードはLeopardと呼ぶ。</p>
+<p>今現在がメインのはMacOSのBig Surです。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="28%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名前・ヴァーション</th>
+<th class="head">コード名</th>
+<th class="head">リリース日</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>OS X 10.5</td>
+<td>Leopard</td>
+<td>26 October 2007</td>
+</tr>
+<tr class="row-odd"><td>OS X 10.6</td>
+<td>Snow Leopard</td>
+<td>28 August 2009</td>
+</tr>
+<tr class="row-even"><td>OS X 10.7</td>
+<td>Lion</td>
+<td>20 July 2011</td>
+</tr>
+<tr class="row-odd"><td>OS X 10.8</td>
+<td>Mountain Lion</td>
+<td>25 July 2012</td>
+</tr>
+<tr class="row-even"><td>OS X 10.9</td>
+<td>Mavericks</td>
+<td>22 October 2013</td>
+</tr>
+<tr class="row-odd"><td>OS X 10.10</td>
+<td>Yosemite</td>
+<td>16 October 2014</td>
+</tr>
+<tr class="row-even"><td>OS X 10.11</td>
+<td>El Capitan</td>
+<td>30 September 2015</td>
+</tr>
+<tr class="row-odd"><td>macOS 10.12</td>
+<td>Sierra</td>
+<td>20 September 2016</td>
+</tr>
+<tr class="row-even"><td>macOS 10.13</td>
+<td>High Sierra</td>
+<td>25 September 2017</td>
+</tr>
+<tr class="row-odd"><td>macOS 10.14</td>
+<td>Mojave</td>
+<td>24 September 2018</td>
+</tr>
+<tr class="row-even"><td>macOS 10.15</td>
+<td>Catalina</td>
+<td>7 October 2019</td>
+</tr>
+<tr class="row-odd"><td>macOS 11</td>
+<td>Big Sur</td>
+<td>12 November 2020</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="vmware-workstation-player">
+<h4>VMware Workstation/Playerツール<a class="headerlink" href="#vmware-workstation-player" title="Permalink to this headline">¶</a></h4>
+<p>UnlockerというツールはMACシステムをVMに実装可能です。</p>
+<p>古いと新しいGitHubレポジトリーでダウロード可能です。</p>
+<p>実装方法や内容は自己責任でサイトにご参考ください。</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/theJaxon/unlocker">theJaxon/unlocker</a></li>
+<li><a class="reference external" href="https://github.com/paolo-projects/unlocker">paolo-projects/unlocker</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>インストールメディアの作成<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>システムメディアのダウロードは直接アップルストアからで入手可能です。</p>
+<p>それからのステップは簡単です、ストアからダウンロードしたとか確認すると、次のコマンドでbootable installerのUSBメディアを作成する。</p>
+<p><a class="reference external" href="https://support.apple.com/HT211683">オフィシャルダウロードサイト</a> に参考とダウロードがおすすめです。</p>
+<p><em>Catalina:</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">/Applications/Install\</span> <span class="pre">macOS\</span> <span class="pre">Catalina.app/Contents/Resources/createinstallmedia</span> <span class="pre">--volume</span> <span class="pre">/Volumes/&lt;Volume名&gt;</span></code></p>
+<p><em>Mojave:</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">/Applications/Install\</span> <span class="pre">macOS\</span> <span class="pre">Mojave.app/Contents/Resources/createinstallmedia</span> <span class="pre">--volume</span> <span class="pre">/Volumes/&lt;Volume名&gt;</span></code></p>
+<p><em>High Sierra:</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">/Applications/Install\</span> <span class="pre">macOS\</span> <span class="pre">High\</span> <span class="pre">Sierra.app/Contents/Resources/createinstallmedia</span> <span class="pre">--volume</span> <span class="pre">/Volumes/&lt;Volume名&gt;</span></code></p>
+<p><em>El Capitan:</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">/Applications/Install\</span> <span class="pre">OS\</span> <span class="pre">X\</span> <span class="pre">El\</span> <span class="pre">Capitan.app/Contents/Resources/createinstallmedia</span> <span class="pre">--volume</span> <span class="pre">/Volumes/&lt;Volume名&gt;</span> <span class="pre">--applicationpath</span> <span class="pre">/Applications/Install\</span> <span class="pre">OS\</span> <span class="pre">X\</span> <span class="pre">El\</span> <span class="pre">Capitan.app</span></code></p>
+</div>
+<div class="section" id="id12">
+<h3>システム・ディスク・パーティション<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>マックシステムのはとてもシンプルです。アップル社が全てを用意したので、インストールしたいの時は１つのパーティションで大丈夫です。</p>
+<p>アップルの内蔵ディスク分割ソフトで大丈夫です。</p>
+<p>MACのシステムはGPTがデフォルト。</p>
+<p>パーティションの形式はOSの時期によって、HFS+やAPFSがデフォルトでインストールする。</p>
+<ul class="simple">
+<li>ハードティースクの構成</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>HFS+ / APFS</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 

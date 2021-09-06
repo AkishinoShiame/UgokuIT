@@ -446,6 +446,7 @@ EFI型（UEFI）
 
     サイズはメモリサイズの１．５倍にかける。メモリサイズが小さいの場合は最適に2GBがおすすめ。
 
+
 --------
 
 
@@ -456,6 +457,108 @@ EFI型（UEFI）
 MacOS・OSX
 ================
 
+これはアップル( Apple_ )社が開発されたシステムです。
+
+一般状況はアップル制作したのハードウェアしか使える。
+
+MacBookから、iMacとか、パソコン・ラップトップ機械までは使える。
+
+最初のシステムは有料で、今は全て無料になります。
+
+一部のハッカーさんはVMware VirtualMachine向けのプラグインを開発し、VMもインストール出来ることも有った。
+
+ここはちょっとVMのも紹介し、メインは公式方法を使う。
+
+
+大体のヴァージョン紹介
+------------------------
+
+自分が知っていたのマックはOSXとの名前から、コードはLeopardと呼ぶ。
+
+今現在がメインのはMacOSのBig Surです。
+
++--------------------+---------------+-------------------+
+| 名前・ヴァーション | コード名      | リリース日        |
++====================+===============+===================+
+| OS X 10.5          | Leopard       | 26 October 2007   |
++--------------------+---------------+-------------------+
+| OS X 10.6          | Snow Leopard  | 28 August 2009    |
++--------------------+---------------+-------------------+
+| OS X 10.7          | Lion          | 20 July 2011      |
++--------------------+---------------+-------------------+
+| OS X 10.8          | Mountain Lion | 25 July 2012      |
++--------------------+---------------+-------------------+
+| OS X 10.9          | Mavericks     | 22 October 2013   |
++--------------------+---------------+-------------------+
+| OS X 10.10         | Yosemite      | 16 October 2014   |
++--------------------+---------------+-------------------+
+| OS X 10.11         | El Capitan    | 30 September 2015 |
++--------------------+---------------+-------------------+
+| macOS 10.12        | Sierra        | 20 September 2016 |
++--------------------+---------------+-------------------+
+| macOS 10.13        | High Sierra   | 25 September 2017 |
++--------------------+---------------+-------------------+
+| macOS 10.14        | Mojave        | 24 September 2018 |
++--------------------+---------------+-------------------+
+| macOS 10.15        | Catalina      | 7 October 2019    |
++--------------------+---------------+-------------------+
+| macOS 11           | Big Sur       | 12 November 2020  |
++--------------------+---------------+-------------------+
+
+VMware Workstation/Playerツール
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+UnlockerというツールはMACシステムをVMに実装可能です。
+
+古いと新しいGitHubレポジトリーでダウロード可能です。
+
+実装方法や内容は自己責任でサイトにご参考ください。
+
+* `theJaxon/unlocker`_ 
+* `paolo-projects/unlocker`_
+
+インストールメディアの作成
+------------------------------
+
+システムメディアのダウロードは直接アップルストアからで入手可能です。
+
+それからのステップは簡単です、ストアからダウンロードしたとか確認すると、次のコマンドでbootable installerのUSBメディアを作成する。
+
+オフィシャルダウロードサイト_ に参考とダウロードがおすすめです。
+
+*Catalina:*
+
+``sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/<Volume名>``
+
+*Mojave:*
+
+``sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/<Volume名>``
+
+*High Sierra:*
+
+``sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/<Volume名>``
+
+*El Capitan:*
+
+``sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/<Volume名> --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app``
+
+
+システム・ディスク・パーティション
+----------------------------------------
+
+マックシステムのはとてもシンプルです。アップル社が全てを用意したので、インストールしたいの時は１つのパーティションで大丈夫です。
+
+アップルの内蔵ディスク分割ソフトで大丈夫です。
+
+MACのシステムはGPTがデフォルト。
+
+パーティションの形式はOSの時期によって、HFS+やAPFSがデフォルトでインストールする。
+
+* ハードティースクの構成
+
++-------------------------------------+
+| HFS+ / APFS                         |
++-------------------------------------+
 
 .. _(WUD): https://www.windowsupdatedownloader.com/
 .. _Windows USB/DVD Download Tool: https://www.microsoft.com/ja-jp/download/details.aspx?id=564
@@ -469,3 +572,7 @@ MacOS・OSX
 .. _Windows 10 Update Assistant: https://www.microsoft.com/software-download/windows10
 .. _Linux Kernel: https://www.kernel.org/
 .. _UNetbootin: https://unetbootin.github.io/
+.. _Apple: https://www.apple.com/
+.. _オフィシャルダウロードサイト: https://support.apple.com/HT211683
+.. _theJaxon/unlocker: https://github.com/theJaxon/unlocker
+.. _paolo-projects/unlocker: https://github.com/paolo-projects/unlocker
