@@ -28,6 +28,9 @@
 :doc:`ref.os`
     いままで覚えたシステムの知識です。
 
+:doc:`ref.programming`
+    プログラミング関連。
+
 :doc:`ref.mobnet`
     初仕事で勉強した技術です。
 
@@ -39,9 +42,6 @@
 
 :doc:`ref.cloud`
     クラウドや仮想化について技術。
-
-:doc:`ref.programming`
-    プログラミング関連。
 
 :doc:`ref.question`
     仕事で解決した色んな問題です。
@@ -58,11 +58,11 @@
    0.Prolog
    1.Hon1
    ref.os
+   ref.programming
    ref.mobnet
    ref.itnet
    ref.internet
    ref.cloud
-   ref.programming
    ref.question
    tool
 

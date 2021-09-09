@@ -104,11 +104,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ref.os.html">#Ref.1 オペレーティング・システム（OS）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ref.programming.html">#Ref.2 プログラミング</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ref.mobnet.html">#Ref.4 モバイルネットワーク</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ref.itnet.html">#Ref.5 IT関連サービス</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ref.internet.html">#Ref.3 ネットワーク・管理</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ref.cloud.html">#Ref.6 クラウド計算</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ref.programming.html">#Ref.2 プログラミング</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ref.question.html">[疑]. 問題集</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tool.html">[おまけ]. ツール</a></li>
 </ul>
@@ -461,6 +461,59 @@
 <p>思わずイラッとなった自分は、その本を隣に置いといた。</p>
 <p>結局今日はほぼ何も知らないままで、一朝を過ごした。</p>
 <p>「あぁ～あ。今日は時間を無駄にしてた。」っとつぶやいた。</p>
+<p>半日が過ごしたけど、お昼を食べたら、脳がもっと眠いモードに成った。</p>
+<p>でも、もう今はリラックスしたいなパタンだから、平気だと思った。</p>
+<p>パソコンをもう一度開いたら、Steamを開いて、ゲームを遊ぶ初めた。</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Steamは、とある国に開発されたソフトウェア兼プラットフォーム</p>
+<p>色んな開発者は作ったゲームをアップロードし、ここでゲームを売りる。</p>
+<p>そうしてこのプラットフォームは色んな時期にセールがあります。</p>
+<p class="last">人々はセールときでゲームを大量購入というイベントがある。</p>
+</div>
+<p>一旦、一時間程にゲームをやった、いよいよ飽きた。丁度、脳からヒントが出来て、まだネットに学校科の資料をもっと検索した。</p>
+<p>先生の資格や、お得意分野とか、教える教科とか、色々調べ見ていた。</p>
+<p>プログラミング、3Dアニメション制作、放送基礎、などなど。おぉ！目に付いた物を発見。</p>
+<p><strong>基礎ゲーム制作プログラミング</strong>　という授業が目に入った。</p>
+<p>なんと！ゲーム制作って。僕はこれに興味が釣りだした。</p>
+<p>でもその前に、気が付いた事はあった、プログラミングは基礎だって。</p>
+<p>そうしてその熱いの情熱はちょこちょこ冷めちゃった。</p>
+<p>ーーー</p>
+<p>まだ、そのCプログラミングの本を開いたある日。</p>
+<p>もうその何も得ない前章の部分を読み終わったら、いよいよ本題に入った。</p>
+<p>まずは環境設定、今使ってるのはWindowsシステム、だから環境設定は....と調べ始まる。</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>パソコンでのプログラミングには色んな言語が発展していたの</p>
+<p>お作りたいの応用によって、最適なプログラミング言語を選びます。</p>
+<p class="last">詳細の部分は論理的に、構造的に <a class="reference external" href="ref.programming.html">ref-prog</a> で確認できます。</p>
+</div>
+<p>新しいファイルを立てて、ファイル名は「myfirst.c」って変わって、中身は以下のコードを入力した。</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World !</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>【環境設定にはgccコンパイルエラーをインストールが必要、Mingwか、 <a class="reference external" href="https://gcc.gnu.org/">GNUオフィシャルサイト</a> かダウロードできます】って本で書いた。</p>
+<p>結局まだネットサーフィンで、GCCをダウロード出来た。</p>
+<p>そうしてさっきの本に戻ったと、コンパイルする事が必要って。</p>
+<p>コマンドプロンプトで <code class="docutils literal notranslate"><span class="pre">C:\GCC練習&gt;</span> <span class="pre">gcc</span> <span class="pre">-o</span> <span class="pre">myfirst</span> <span class="pre">myfirst.c</span></code> を入力。</p>
+<p>コンパイルした後、まだファイルの中に新しいファイルがでた。名前が「myfirst.exe」で書いたらしい。</p>
+<p>結局、うまく実行したら、黒のウィンドウで &quot;Hello World !&quot; の文字が出た。</p>
+<p>いよいよ何が達成感が強いって、「よっしゃー」ってつぶやいた。</p>
+<p>こうやって、初めてのCプログラミングはいよいよ出来た。</p>
+<p>まだ、興味と自信が戻るって、Cプログラミング本で続けで、もっと新しい知識に勉強に進む。</p>
+<p>例えば、そう。</p>
+<p>【基本の計算は「＋」ってプラス、「-」ってマイナス、「*」ってかけ。割りはちょっと特殊で、パソコンの計算法的に、「/」と「%」２つがあります。】</p>
+<p>ほう、ほう、ほーうぅ、結構面白そうね。</p>
+<p>でもここの割り算についてはよく分からないあなぁ、その概念はちょっと何がズレてるなぁ。普通の計算が違う。</p>
+<p>結局もっと下に見たら、細かい説明が書いた。</p>
+<p>【割り算についてはここに説明します。】</p>
 </div>
 <div class="section" id="id4">
 <h2>第三章 大学生も始業式<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
