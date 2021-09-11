@@ -31,6 +31,9 @@
 :doc:`ref.programming`
     プログラミング関連。
 
+:doc:`ref.script`
+    。
+
 :doc:`ref.mobnet`
     初仕事で勉強した技術です。
 
@@ -63,6 +66,7 @@
    ref.itnet
    ref.internet
    ref.cloud
+   ref.script
    ref.question
    tool
 
