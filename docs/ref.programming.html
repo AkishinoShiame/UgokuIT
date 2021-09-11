@@ -100,6 +100,13 @@
 <li class="toctree-l1"><a class="reference internal" href="1.Hon1.html">1. 決着され</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ref.os.html">#Ref.1 オペレーティング・システム（OS）</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">#Ref.2 プログラミング</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">この参考について</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">プログラミング基礎</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#library">外部・内部 Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">変数・関数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">基本構文</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#python">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#go">Go</a></li>
 </ul>
@@ -178,6 +185,94 @@
             
   <div class="section" id="ref-2">
 <span id="ref-programming"></span><h1>#Ref.2 プログラミング<a class="headerlink" href="#ref-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>この参考について<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>個人はCプログラミング言語が最初勉強し始めた言語だけど、それから色んな言語も勉強したことがあります。</p>
+<p>C、C++、C#、JAVA、PYTHON、などの言語を勉強後、一個メインコンセプトがわかりました。</p>
+<p>大部の言語は基本の判断構文やループ構文の概念が似てるだらか、通用に書くのはそれらのロジック的に説明がメインと思います。</p>
+<p>だからここの最初は基準的に方法をメモする。別パーツは各言語の特殊なポイントが記録する。</p>
+</div>
+<div class="section" id="id2">
+<h2>プログラミング基礎<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="library">
+<h3>外部・内部 Library<a class="headerlink" href="#library" title="Permalink to this headline">¶</a></h3>
+<p>大部の言語は一般開発者に便利をメインに考えてある、だからだいぶのコアLibraryがあります。</p>
+<p>言語によっても、大部のプログラミング言語は <code class="docutils literal notranslate"><span class="pre">include</span></code> か <code class="docutils literal notranslate"><span class="pre">import</span></code> か使う。</p>
+<p>Library名は、各言語の公式サイトや、ネットで検索で分かる。</p>
+<p>例えば、Cはstdio.h、stdlib.hとか、Pythonはosとか。</p>
+</div>
+<div class="section" id="id3">
+<h3>変数・関数<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>これについては主に２類で分類出来ます。開発者区別派と言語自動作成派。</p>
+<p>開発者区別での変数作成は：</p>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span>int &lt;変数名&gt;    説明：整数。
+float &lt;変数名&gt;  説明：小数。
+double &lt;変数名&gt; 説明：小数や整数の特に大きいサイス。
+char &lt;変数名&gt;   説明：１文字。
+string &lt;変数名&gt; 説明：複数文字。
+bool &lt;変数名&gt;   説明：ロジックの真、偽。
+date &lt;変数名&gt;   説明：時間構造の変数。
+
+(上の定義) &lt;変数名&gt;［&lt;数字&gt;］ 説明：陣列、複数空間。
+
+class &lt;変数名&gt; {} 説明：大括弧に複数上の変数を定義出来る、これは自定義クラスで呼ぶ。
+</pre></div>
+</td></tr></table></div>
+<p>これらの例は、C、C++、JAVA、など。</p>
+<p>言語自動作成の変数定義は：</p>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>var &lt;変数名&gt;
+&lt;変数名&gt; = &lt;内容&gt;
+
+説明：どちらも出来る。
+</pre></div>
+</td></tr></table></div>
+<p>こういう言語は大体、 <code class="docutils literal notranslate"><span class="pre">type</span></code> が <code class="docutils literal notranslate"><span class="pre">typeof</span></code> という関数で変数の形式を確認可能です。</p>
+<p>このデサインは例えば、PYTHON、PHPなど。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>基本構文<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>+、-、<a href="#id5"><span class="problematic" id="id6">*</span></a>、/、%とかは基本の基本。後は内容表示&quot;print&quot;か&quot;printf&quot;。</p>
+<p>他主にはIF、IF-ELSE、SWITCH-CASE、WHILE、FORなど。</p>
+<p>後もう一個はロジックの真偽判断。AND（＆）とOR（｜）。</p>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span>1 + 1  // =2
+1 - 1  // =0
+3 * 4  // =12
+5 / 3  // =1
+5 % 3  // =2
+
+print(&quot;Hello World !&quot;)  //画面：Hello World !
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>画面表示は言語によって使う構文が違う。</p>
+<p>例えばこれらのも同じ結果。</p>
+<p>printf(&quot;Hello World !&quot;);</p>
+<p>print(&quot;Hello World !&quot;)</p>
+<p>system.out.prtinln(&quot;Hello World !&quot;)</p>
+<p class="last">console.log(&quot;Hello World !&quot;)</p>
+</div>
+</div>
 <div class="section" id="python">
 <h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
 </div>
