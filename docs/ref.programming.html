@@ -107,6 +107,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id4">基本構文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">ライブラリ(Library)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#python">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#go">Go</a></li>
 </ul>
@@ -272,6 +273,81 @@ print(&quot;Hello World !&quot;)  //画面：Hello World !
 <p>system.out.prtinln(&quot;Hello World !&quot;)</p>
 <p class="last">console.log(&quot;Hello World !&quot;)</p>
 </div>
+<p>これからはIF-ELSE、SWITCH-CASE、WHILE、FORなどの紹介。</p>
+<p>AND（＆）とOR（｜）は大体True（真）やFalse（偽）の判断と応用だから。</p>
+<p>ここにメモの必要はないと思う。</p>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span>if(＜条件＞)
+    ＜真の場合実行する＞
+elseif(＜他の条件＞) //これはオプション、そうして言語によって、偶に&quot;elif&quot;の書く方もあります。
+    ＜”他の条件”が真の場合実行する＞
+else
+    ＜前の全ての条件が外れときの場合実行する＞
+
+for(＜初期化＞;＜判断条件＞;＜毎回追加＞)
+    ＜実行するコード＞
+</pre></div>
+</td></tr></table></div>
+<p>Forの場合は、最初の初期化は例えば <code class="docutils literal notranslate"><span class="pre">i=1</span></code> を指定する、それから判断条件は <code class="docutils literal notranslate"><span class="pre">i&lt;3</span></code> で定義なら、今のiは1で、3より小さいから、下のコードを実行する。</p>
+<p>最後の毎回追加でもし、 <code class="docutils literal notranslate"><span class="pre">i=2+i</span></code> に定義したら、さっき＜実行するコード＞を実行完了すると、ここにiを2を足りると、iは今3になる。</p>
+<p>そうして、この構文の続きはiをもう一回 <code class="docutils literal notranslate"><span class="pre">i&lt;3</span></code> を判断し、iは今3だから、この条件は偽だから、このforループを終了する。</p>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span>switch(＜変数＞)
+    case ＜条件＞:
+        ＜変数と条件が同じ時実行する＞ //これは必要の場合増幅する。
+
+    default:
+        ＜以上の条件は全て満ちない場合実行＞
+
+While(＜条件＞)
+    ＜実行するコード＞
+
+// whileの場合は条件に当てるの時はいつも中身のコードを実行する。
+</pre></div>
+</td></tr></table></div>
+<p>ここ以上の全ては基本です。</p>
+<p>他のは各言語公式サイトにlibraryなどの参考。</p>
+<p>これから少しclassと陣列の説明。</p>
+<div class="highlight-none notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>class ＜変数名を定義＞{
+    int ＜内部変数の定義１＞
+    char ＜内部変数の定義２＞
+}
+
+＜変数名を定義＞.＜内部変数の定義１＞ = ＜ある数字＞ //こうやってclass内の内容を変わるや更新
+
+float ＜変数名＞[＜数字＞] //これはその数字の量のfloatを定義。
+
+＜変数名＞[0] = ２ //変数名の第一の所を2を変更。
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id7">
+<h2>ライブラリ(Library)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="python">
 <h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
